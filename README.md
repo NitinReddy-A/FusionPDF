@@ -1,4 +1,4 @@
-# Seamless PDF Content Extraction and Merging Tool
+# ******FusionPDF****** : A Seamless PDF Content Extraction and Merging Tool
 
 ## Overview
 This tool allows you to seamlessly extract text and images from a PDF document, and merge them into a new PDF while preserving the original layout, formatting, and images.
