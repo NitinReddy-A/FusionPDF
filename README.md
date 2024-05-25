@@ -58,7 +58,7 @@ Contributions are welcome! Please follow these steps:
   
   - Create a new Pull Request.
 
-## Acknowledgements
+## Libraries
   - PyMuPDF - Python bindings for the MuPDF library.
   
   - ReportLab - Python PDF generation library.
