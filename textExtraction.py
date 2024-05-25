@@ -43,8 +43,6 @@ def create_new_pdf(new_pdf_path, content_list, original_pdf_path):
                         x, y = span["bbox"][0], span["bbox"][1]
                         font_size = span["size"]
                         font_name = span["font"]
-                        
-                        # Map to a standard font
                         font_name = font_map.get(font_name, 'Helvetica')
                         
                         c.setFont(font_name, font_size)
@@ -54,10 +52,7 @@ def create_new_pdf(new_pdf_path, content_list, original_pdf_path):
 
 
 
-
-
-# Example usage:
-pdf_path = r"C:\Users\len\OneDrive\Desktop\Repo\Incident Analyzer\Document\TransitionProbabilityApproach.pdf"
+pdf_path = r"Path.pdf"
 new_pdf_path = r"pdf_file.pdf"
 content_list = extract_content(pdf_path)
 create_new_pdf(new_pdf_path, content_list,pdf_path)
