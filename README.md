@@ -4,13 +4,13 @@
 This tool allows you to seamlessly extract text and images from a PDF document, and merge them into a new PDF while preserving the original layout, formatting, and images.
 
 ## Features
-  Extract text and images from PDF documents.
+  - Extract text and images from PDF documents.
   
-  Merge extracted text and images into a new PDF.
+  - Merge extracted text and images into a new PDF.
   
-  Preserve the layout, formatting, and images of the original PDF.
+  - Preserve the layout, formatting, and images of the original PDF.
   
-  Handle multiple pages in the original PDF.
+  - Handle multiple pages in the original PDF.
   
 ## Installation
 Clone the repository:
@@ -46,21 +46,21 @@ Replace pdf_path with the path to the original PDF, new_pdf_path with the desire
 ## Contributing
 Contributions are welcome! Please follow these steps:
 
-  Fork the repo.
+  - Fork the repo.
 
-  Create a new branch (git checkout -b feature/new-feature).
+  - Create a new branch (git checkout -b feature/new-feature).
   
-  Make your changes.
+  - Make your changes.
   
-  Commit your changes (git commit -am 'Add new feature').
+  - Commit your changes (git commit -am 'Add new feature').
   
-  Push to the branch (git push origin feature/new-feature).
+  - Push to the branch (git push origin feature/new-feature).
   
-  Create a new Pull Request.
+  - Create a new Pull Request.
 
 ## Acknowledgements
-  PyMuPDF - Python bindings for the MuPDF library.
+  - PyMuPDF - Python bindings for the MuPDF library.
   
-  ReportLab - Python PDF generation library.
+  - ReportLab - Python PDF generation library.
   
-  Pillow - Python Imaging Library (PIL) fork.
+  - Pillow - Python Imaging Library (PIL) fork.
