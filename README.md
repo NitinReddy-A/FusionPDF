@@ -19,6 +19,10 @@ Clone the repository:
 Navigate to the project directory:
 
     cd FusionPDF
+Steup a virtual env(Optional):
+
+    python -m venv virtual-env
+    virtual-env\Scripts\activate
 Install the required dependencies:
 
     pip install -r requirements.txt
@@ -42,7 +46,7 @@ Replace pdf_path with the path to the original PDF, new_pdf_path with the desire
 ## Contributing
 Contributions are welcome! Please follow these steps:
 
-  Fork the repository.
+  Fork the repo.
 
   Create a new branch (git checkout -b feature/new-feature).
   
