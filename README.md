@@ -19,7 +19,7 @@ Clone the repository:
 Navigate to the project directory:
 
     cd FusionPDF
-Steup a virtual env(Optional):
+Setup a virtual env(Optional):
 
     python -m venv virtual-env
     virtual-env\Scripts\activate
