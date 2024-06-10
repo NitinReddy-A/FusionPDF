@@ -4,7 +4,7 @@ import os
 from PIL import Image
 
 # Define the path to the PDF file
-pdf_path = r"C:\Users\len\OneDrive\Desktop\Repo\FusionPDF\try\demo.pdf"
+pdf_path = r"try\demo.pdf"
 
 # Create a document object
 doc = fitz.open(pdf_path)

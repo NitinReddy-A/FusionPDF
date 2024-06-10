@@ -2,8 +2,8 @@
 import fitz
 
 # Define the path to the original PDF file and the path to the new PDF file
-original_pdf_path = r"C:\Users\len\OneDrive\Desktop\Repo\FusionPDF\try\demo.pdf"
-new_pdf_path = r"C:\Users\len\OneDrive\Desktop\Repo\FusionPDF\try\new_demo.pdf"
+original_pdf_path = r"try\demo.pdf"
+new_pdf_path = r"try\new_demo.pdf"
 
 # Create a document object for the original PDF
 original_doc = fitz.open(original_pdf_path)

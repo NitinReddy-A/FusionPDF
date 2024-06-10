@@ -106,7 +106,7 @@ def create_new_pdf(new_pdf_path, content_list, original_pdf_path):
 
     c.save()
 
-pdf_path = r"C:\Users\len\OneDrive\Desktop\Repo\FusionPDF\try\demo.pdf"
+pdf_path = r"try\demo.pdf"
 new_pdf_path = r"pdf_file.pdf"
 content_list = extract_content(pdf_path)
 register_fonts(content_list)

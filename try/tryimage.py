@@ -5,7 +5,7 @@ from PIL import Image
 import io
 
 # Define path to PDF file
-file_path = r"C:\Users\len\OneDrive\Desktop\Repo\FusionPDF\try\demo.pdf"
+file_path = r"try\demo.pdf"
 
 # Define path for saved images
 images_path = 'images/'
