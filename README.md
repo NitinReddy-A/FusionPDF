@@ -26,22 +26,6 @@ Setup a virtual env(Optional):
 Install the required dependencies:
 
     pip install -r requirements.txt
-## Usage
-Import the necessary modules:
-
-    import fitz  # PyMuPDF
-    from reportlab.pdfgen import canvas
-    from reportlab.lib.pagesizes import letter
-    from PIL import Image
-    import io
-    import os
-Extract content from a PDF document:
-
-    content_list = extract_content(pdf_path)
-Create a new PDF with the extracted content:
-
-    create_new_pdf(new_pdf_path, content_list, pdf_path)
-Replace pdf_path with the path to the original PDF, new_pdf_path with the desired path for the new PDF, and content_list with the extracted content.
 
 ## Contributing
 Contributions are welcome! Please follow these steps:
