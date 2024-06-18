@@ -36,7 +36,7 @@ with open(output_file_path, "w", encoding="utf-8") as output_file:
         for img_index, img in enumerate(image_list):
             xref = img[0]
             base_image = doc.extract_image(xref)
-    
+            
             # Save the image
             image_file = f"images/page{page_index}-image{img_index}.jpg"
             with open(image_file, "wb") as img_file:
@@ -47,6 +47,7 @@ with open(output_file_path, "w", encoding="utf-8") as output_file:
             bbox = page.get_image_bbox(image_list[i])
             # Draw text on the new page with default font style
             new_page.insert_image(bbox, stream=open(f"images/page{page_index}-image{i}.jpg", "rb").read())
+            
             # Write text with coordinates to the file
             output_file.write(f"Image {i} on page {page_index}: {bbox}")
             output_file.write("\n")
