@@ -1,3 +1,4 @@
+# Extracting images from pdf ##pikepdf ##new method
 from pikepdf import Pdf, Name, PdfImage
 
 old_pdf = Pdf.open("demo.pdf")
