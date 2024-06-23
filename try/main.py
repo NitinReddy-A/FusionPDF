@@ -1,7 +1,10 @@
 #Working ---> Able to sort out noisy images
 
 import fitz  # PyMuPDF
-
+import os
+# Create the images directory if it doesn't exist
+if not os.path.exists('images/'):
+    os.mkdir('images/')
 
 def get_pixmaps_in_pdf(pdf_filename):
     doc = fitz.open(pdf_filename)
