@@ -12,8 +12,8 @@ def get_pixmaps_in_pdf(pdf_filename):
     for page_index in range(doc.page_count):
         for image in doc.get_page_images(page_index):
             #print(image[7])
-            if image[7].startswith("Im"):
-                xrefs.append(image[0])
+            #if image[7].startswith("Im"):
+            xrefs.append(image[0])
             #xrefs.add(image[0])  # Add XREFs to set so duplicates are ignored
     pixmaps = [fitz.Pixmap(doc, xref) for xref in xrefs]
     doc.close()
