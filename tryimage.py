@@ -35,6 +35,7 @@ with open(output_file_path, "w", encoding="utf-8") as output_file:
         # Iterate through each image and save it in the images folder
         for img_index, img in enumerate(image_list):
             xref = img[0]
+            pix = fitz.Pixmap(doc, xref)
             base_image = doc.extract_image(xref)
             print(img)
             #bbox = page.get_image_rects(xref)[0]  # delivers list, because one image maybe displayed multiple times
@@ -43,8 +44,9 @@ with open(output_file_path, "w", encoding="utf-8") as output_file:
             # Save the image
             if img[7].startswith("Im"):
                 image_file = f"images/page{page_index}-image{img_index}.jpg"
-                with open(image_file, "wb") as img_file:
-                    img_file.write(base_image["image"])
+                pix.save(image_file)
+                #with open(image_file, "wb") as img_file:
+                #    img_file.write(base_image["image"])
     
         # Find the image coordinates and print the location of the image aswell
         for i in range (len(image_list)):
@@ -52,7 +54,7 @@ with open(output_file_path, "w", encoding="utf-8") as output_file:
             if image_list[i][7].startswith("Im"):
                 # Draw text on the new page with default font style
                 new_page.insert_image(bbox, stream=open(f"images/page{page_index}-image{i}.jpg", "rb").read())
-                
+
                 # Write text with coordinates to the file
                 output_file.write(f"Image {i} on page {page_index}: {bbox}")
                 output_file.write("\n")
