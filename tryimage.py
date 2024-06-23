@@ -36,7 +36,7 @@ with open(output_file_path, "w", encoding="utf-8") as output_file:
         for img_index, img in enumerate(image_list):
             xref = img[0]
             base_image = doc.extract_image(xref)
-            print(xref)
+            print(img)
             bbox = page.get_image_rects(xref)[0]  # delivers list, because one image maybe displayed multiple times
             pix = page.get_pixmap(dpi=150, clip=bbox)
             pix.save(f"images/page{page_index}-image{img_index}.jpg")
