@@ -3,8 +3,8 @@
 import fitz  # PyMuPDF
 import os
 # Create the images directory if it doesn't exist
-if not os.path.exists('images/'):
-    os.mkdir('images/')
+if not os.path.exists('image/'):
+    os.mkdir('image/')
 
 def get_pixmaps_in_pdf(pdf_filename):
     doc = fitz.open(pdf_filename)
@@ -22,7 +22,7 @@ def get_pixmaps_in_pdf(pdf_filename):
 
 def save_pixmaps(pixmaps):
     for i, pixmap in enumerate(pixmaps):
-        pixmap.save(f'images/{i}.jpg')  # Might want to come up with a better name
+        pixmap.save(f'image/{i}.jpg')  # Might want to come up with a better name
 
 
 pixmaps = get_pixmaps_in_pdf(r"demo.pdf")

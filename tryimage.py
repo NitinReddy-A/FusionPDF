@@ -41,22 +41,22 @@ with open(output_file_path, "w", encoding="utf-8") as output_file:
             #pix = page.get_pixmap(dpi=150, clip=bbox)
             #pix.save(f"images/page{page_index}-image{img_index}.jpg")
             # Save the image
-            #if img[7].startswith("Im"):
-            image_file = f"images/page{page_index}-image{img_index}.jpg"
-            with open(image_file, "wb") as img_file:
-                img_file.write(base_image["image"])
+            if img[7].startswith("Im"):
+                image_file = f"images/page{page_index}-image{img_index}.jpg"
+                with open(image_file, "wb") as img_file:
+                    img_file.write(base_image["image"])
     
         # Find the image coordinates and print the location of the image aswell
         for i in range (len(image_list)):
             bbox = page.get_image_bbox(image_list[i])
-            print(image_list[i])
-            # Draw text on the new page with default font style
-            new_page.insert_image(bbox, stream=open(f"images/page{page_index}-image{i}.jpg", "rb").read())
-            
-            # Write text with coordinates to the file
-            output_file.write(f"Image {i} on page {page_index}: {bbox}")
-            output_file.write("\n")
-            print(f"Image {i} on page {page_index}: {bbox}")
+            if image_list[i][7].startswith("Im"):
+                # Draw text on the new page with default font style
+                new_page.insert_image(bbox, stream=open(f"images/page{page_index}-image{i}.jpg", "rb").read())
+                
+                # Write text with coordinates to the file
+                output_file.write(f"Image {i} on page {page_index}: {bbox}")
+                output_file.write("\n")
+                print(f"Image {i} on page {page_index}: {bbox}")
 
 
     # Save the new PDF document
