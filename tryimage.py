@@ -49,7 +49,7 @@ with open(output_file_path, "w", encoding="utf-8") as output_file:
         # Find the image coordinates and print the location of the image aswell
         for i in range (len(image_list)):
             bbox = page.get_image_bbox(image_list[i])
-            
+            print(image_list[i])
             # Draw text on the new page with default font style
             new_page.insert_image(bbox, stream=open(f"images/page{page_index}-image{i}.jpg", "rb").read())
             
