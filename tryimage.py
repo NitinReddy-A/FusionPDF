@@ -37,13 +37,14 @@ with open(output_file_path, "w", encoding="utf-8") as output_file:
             xref = img[0]
             base_image = doc.extract_image(xref)
             print(img)
-            bbox = page.get_image_rects(xref)[0]  # delivers list, because one image maybe displayed multiple times
-            pix = page.get_pixmap(dpi=150, clip=bbox)
-            pix.save(f"images/page{page_index}-image{img_index}.jpg")
+            #bbox = page.get_image_rects(xref)[0]  # delivers list, because one image maybe displayed multiple times
+            #pix = page.get_pixmap(dpi=150, clip=bbox)
+            #pix.save(f"images/page{page_index}-image{img_index}.jpg")
             # Save the image
-            #image_file = f"images/page{page_index}-image{img_index}.jpg"
-            #with open(image_file, "wb") as img_file:
-            #    img_file.write(base_image["image"])
+            #if img[7].startswith("Im"):
+            image_file = f"images/page{page_index}-image{img_index}.jpg"
+            with open(image_file, "wb") as img_file:
+                img_file.write(base_image["image"])
     
         # Find the image coordinates and print the location of the image aswell
         for i in range (len(image_list)):

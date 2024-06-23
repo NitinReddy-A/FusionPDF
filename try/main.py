@@ -22,8 +22,8 @@ def get_pixmaps_in_pdf(pdf_filename):
 
 def save_pixmaps(pixmaps):
     for i, pixmap in enumerate(pixmaps):
-        pixmap.save(f'images/{i}.png')  # Might want to come up with a better name
+        pixmap.save(f'images/{i}.jpg')  # Might want to come up with a better name
 
 
-pixmaps = get_pixmaps_in_pdf(r"demo1.pdf")
+pixmaps = get_pixmaps_in_pdf(r"demo.pdf")
 save_pixmaps(pixmaps)
