@@ -1,29 +1,31 @@
-# Not working
-import fitz
 import io
-import os
+import fitz
 from PIL import Image
-from PIL import Image, ImageFile
-ImageFile.LOAD_TRUNCATED_IMAGES = True
-file = 'demo.pdf'
+
+# file path you want to extract images from
+file = "demo2.pdf"
+# open the file
 pdf_file = fitz.open(file)
-for page_number in range(len(pdf_file)): 
-    page=pdf_file[page_number]
+
+# iterate over pdf pages
+for page_index in range(len(pdf_file)):
+    # get the page itself
+    page = pdf_file[page_index]
     image_list = page.get_images()
-    print(image_list)
-    
-    for image_index, img in enumerate(page.get_images(),start=1):
-        print(image_index)
-        xref = img[0] 
-        # extract image bytes 
+    # printing number of images found in this page
+    if image_list:
+        print(f"[+] Found a total of {len(image_list)} images in page {page_index}")
+    else:
+        print("[!] No images found on page", page_index)
+    for image_index, img in enumerate(page.get_images(), start=1):
+        # get the XREF of the image
+        xref = img[0]
+        # extract the image bytes
         base_image = pdf_file.extract_image(xref)
         image_bytes = base_image["image"]
-        # get image extension
+        # get the image extension
         image_ext = base_image["ext"]
-        #print(base_image)
-# Create a PIL Image object from the image bytes
-        pil_image = Image.open(io.BytesIO(image_bytes))
-
-        # Save the image to disk
-        image_path = f"image_{page_number}_{image_index}.{image_ext}"
-        pil_image.save(image_path)
+        # load it to PIL
+        image = Image.open(io.BytesIO(image_bytes))
+        # save it to local disk
+        image.save(open(f"images/image{page_index+1}_{image_index}.{image_ext}", "wb"))

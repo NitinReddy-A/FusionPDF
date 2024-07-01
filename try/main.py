@@ -25,5 +25,5 @@ def save_pixmaps(pixmaps):
         pixmap.save(f'image/{i}.jpg')  # Might want to come up with a better name
 
 
-pixmaps = get_pixmaps_in_pdf(r"demo.pdf")
+pixmaps = get_pixmaps_in_pdf(r"output2.pdf")
 save_pixmaps(pixmaps)
