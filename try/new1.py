@@ -4,7 +4,7 @@ import os
 from PIL import Image
 
 # file path you want to extract images from
-file = "output.pdf"
+file = "demo2.pdf"
 # open the file
 pdf_file = fitz.open(file)
 
