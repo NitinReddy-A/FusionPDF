@@ -3,8 +3,8 @@ import pymupdf
 import os
 
 # Open the PDF document
-doc = fitz.open(r"documents/demo.pdf")
-new_pdf_path = r"new_demo1.pdf"
+doc = fitz.open(r"documents/demo2.pdf")
+new_pdf_path = r"outputdemo2.pdf"
 
 # Create a new PDF document
 new_doc = fitz.open()
