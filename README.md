@@ -27,20 +27,5 @@ Install the required dependencies:
 
     pip install -r requirements.txt
 
-## Contributing
-Contributions are welcome! Please follow these steps:
-
-  - Fork the repo.
-
-  - Create a new branch (git checkout -b feature/new-feature).
-  
-  - Make your changes.
-  
-  - Commit your changes (git commit -am 'Add new feature').
-  
-  - Push to the branch (git push origin feature/new-feature).
-  
-  - Create a new Pull Request.
-
 ## Libraries
   - PyMuPDF 
