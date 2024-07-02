@@ -4,8 +4,8 @@ import os
 from PIL import Image
 
 # Define the path to the PDF file
-pdf_path = r"documents/demo.pdf"
-new_pdf_path = r"new_demo1.pdf"
+pdf_path = r"documents/demo2.pdf"
+new_pdf_path = r"outputdemo2.pdf"
 
 # Define default font style for the new PDF
 default_font = "helv"  # Helvetica font family

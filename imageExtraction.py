@@ -40,7 +40,7 @@ with open(output_file_path, "w", encoding="utf-8") as output_file:
                 if pix.n - pix.alpha > 3: # CMYK: convert to RGB first
                     pix = pymupdf.Pixmap(pymupdf.csRGB, pix)
 
-                pix.save(f"images/page{page_index}-image{img_index}.jpg") # save the image as png
+                pix.save(f"images/page{page_index}-image{img_index}.png") # save the image as png
                 pix = None
                 #xref = img[0]
                 #pix = fitz.Pixmap(doc, xref)
@@ -60,7 +60,7 @@ with open(output_file_path, "w", encoding="utf-8") as output_file:
             bbox = page.get_image_bbox(image_list[i])
             if image_list[i][1] == 0:
                 # Draw text on the new page with default font style
-                new_page.insert_image(bbox, stream=open(f"images/page{page_index}-image{i}.jpg", "rb").read())
+                new_page.insert_image(bbox, stream=open(f"images/page{page_index}-image{i}.png", "rb").read())
 
                 # Write text with coordinates to the file
                 output_file.write(f"Image {i} on page {page_index}: {bbox}")
