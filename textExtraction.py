@@ -4,8 +4,8 @@ import os
 from PIL import Image
 
 # Define the path to the PDF file
-pdf_path = r"demo.pdf"
-new_pdf_path = r"new_demo.pdf"
+pdf_path = r"documents/demo.pdf"
+new_pdf_path = r"new_demo1.pdf"
 
 # Define default font style for the new PDF
 default_font = "helv"  # Helvetica font family
@@ -14,7 +14,7 @@ default_font = "helv"  # Helvetica font family
 doc = fitz.open(pdf_path)
 
 # Create a new PDF document
-new_doc = fitz.open()
+new_doc = fitz.open(new_pdf_path)
 
 # Extract the number of pages
 print(f"Number of pages: {doc.page_count}")
@@ -35,7 +35,7 @@ with open(output_file_path, "w", encoding="utf-8") as output_file:
         original_page = doc.load_page(i)
     
         # Create a new page with the same size as the original page
-        new_page = new_doc.new_page(width=original_page.rect.width, height=original_page.rect.height)
+        new_page = new_doc.load_page(i)
         
         # Extract text blocks from the page
         blocks = page.get_text_blocks()
@@ -55,7 +55,7 @@ with open(output_file_path, "w", encoding="utf-8") as output_file:
         output_file.write(f"Text with coordinates on page {i + 1}:\n{text_with_coordinates}\n")
         output_file.write("\n")
     # Save the new PDF document
-    new_doc.save(new_pdf_path)
+    new_doc.saveIncr()
 
     # Close all documents
     doc.close()
