@@ -6,9 +6,9 @@ def remove_images(input_pdf,output_pdf):
         img_list = page.get_images()
         for img in img_list:
             print(img)
-            if img[5] == 'DeviceGray':
+            if img[1] != 0:
                 page.delete_image(img[0])
 
     doc.save(output_pdf)
 
-remove_images("demo.pdf","output.pdf")
+remove_images("documents/demo2.pdf","output.pdf")
