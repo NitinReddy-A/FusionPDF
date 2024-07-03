@@ -15,14 +15,14 @@ def translate_docx(input_path, output_path, src_lang='en', dest_lang='kn'):
             paragraph.text = translated_text
 
     # Translate text in each table cell
-    for table in document.tables:
-        for row in table.rows:
-            for cell in row.cells:
-                if cell.text.strip():  # Only translate non-empty cells
-                    print("original:", cell.text)
-                    translated_text = translator.translate(cell.text, src=src_lang, dest=dest_lang).text
-                    print("translated:", translated_text)
-                    cell.text = translated_text
+    #for table in document.tables:
+    #    for row in table.rows:
+    #        for cell in row.cells:
+    #            if cell.text.strip():  # Only translate non-empty cells
+    #                print("original:", cell.text)
+    #                translated_text = translator.translate(cell.text, src=src_lang, dest=dest_lang).text
+    #                print("translated:", translated_text)
+    #                cell.text = translated_text
 
     # Save the translated document
     document.save(output_path)
