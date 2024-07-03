@@ -6,7 +6,7 @@ original_pdf_path = r"documents/demo1.pdf"
 new_pdf_path = r"documents/new_demo.pdf"
 
 # Define the path to the Noto Sans Kannada TTF file
-noto_sans_kannada_path = r"/content/SundarBharati-Regular.otf"  # Update this with the correct path
+noto_sans_kannada_path = r"documents/SundarBharati-Regular.otf"  # Update this with the correct path
 
 # Create a document object for the original PDF
 original_doc = fitz.open(original_pdf_path)
@@ -14,8 +14,8 @@ original_doc = fitz.open(original_pdf_path)
 # Create a new PDF document
 new_doc = fitz.open()
 
-# Define default font style for the new PDF
-default_font = noto_sans_kannada_path  # Use the path to the TTF file
+# Load the font
+font = fitz.Font(noto_sans_kannada_path)
 
 # Initialize the translator
 translator = Translator()
@@ -24,7 +24,7 @@ translator = Translator()
 def translate_text(text, dest_language='kn'):  # Change 'kn' to your desired language code
     try:
         translated = translator.translate(text, dest=dest_language)
-        print("trans",translated.text)
+        print("trans", translated.text)
         return translated.text
     except Exception as e:
         print(f"Error in translation: {e}")
@@ -51,8 +51,8 @@ for i in range(original_doc.page_count):
             # Translate the text to Kannada
             translated_text = translate_text(text)
 
-            # Draw translated text on the new page with default font style
-            new_page.insert_text((x0, y0), translated_text, fontname=default_font, fontsize=12, color=(0, 0, 0))
+            # Draw translated text on the new page with the loaded font
+            new_page.insert_text((x0, y0), translated_text, fontfile=noto_sans_kannada_path, fontsize=12, color=(0, 0, 0))
         except Exception as e:
             print(f"Error processing text block: {e}")
 
@@ -63,4 +63,4 @@ new_doc.save(new_pdf_path)
 original_doc.close()
 new_doc.close()
 
-print("New PDF with translated content created successfully.")
+print("New PDF with translated content created successfully.")
