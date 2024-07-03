@@ -8,6 +8,9 @@ new_pdf_path = r"documents/new_demo.pdf"
 # Define the path to the Noto Sans Kannada TTF file
 noto_sans_kannada_path = r"fonts/NotoSansKannada-VariableFont_wdth,wght.ttf"  # Update this with the correct path
 
+# Define default font style for the new PDF
+default_font = "helv"  # Helvetica font family
+
 # Create a document object for the original PDF
 original_doc = fitz.open(original_pdf_path)
 
@@ -18,7 +21,7 @@ new_doc = fitz.open()
 translator = Translator()
 
 # Function to translate text
-def translate_text(text, dest_language='kn'):  # Change 'kn' to your desired language code
+def translate_text(text, dest_language='ko'):  # Change 'kn' to your desired language code
     try:
         translated = translator.translate(text, dest=dest_language)
         print("trans", translated.text)
@@ -52,8 +55,7 @@ for i in range(original_doc.page_count):
             new_page.insert_text(
                 (x0, y0),
                 translated_text,
-                fontname='noto_sans_kannada',
-                fontfile=noto_sans_kannada_path,
+                fontname=default_font,
                 fontsize=12,
                 color=(0, 0, 0)
             )
