@@ -2,8 +2,8 @@ import fitz
 from googletrans import Translator
 
 # Define the path to the original PDF file and the path to the new PDF file
-original_pdf_path = r"/content/History6 (1).pdf"
-new_pdf_path = r"new_demo.pdf"
+original_pdf_path = r"documents/demo1.pdf"
+new_pdf_path = r"documents/new_demo.pdf"
 
 # Define the path to the Noto Sans Kannada TTF file
 noto_sans_kannada_path = r"/content/SundarBharati-Regular.otf"  # Update this with the correct path
