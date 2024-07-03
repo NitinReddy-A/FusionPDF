@@ -28,6 +28,6 @@ def translate_docx(input_path, output_path, src_lang='en', dest_lang='kn'):
     document.save(output_path)
 
 # Example usage
-input_docx = 'demo1.docx'
-output_docx = 'outputdemo1.docx'
-translate_docx(input_docx, output_docx, src_lang='en', dest_lang='kn')
+input_docx = 'documents/demo1.docx'
+output_docx = 'documents/output1demo1.docx'
+translate_docx(input_docx, output_docx, src_lang='en',dest_lang='kn')
