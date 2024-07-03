@@ -52,6 +52,7 @@ for i in range(original_doc.page_count):
             new_page.insert_text(
                 (x0, y0),
                 translated_text,
+                fontname='noto_sans_kannada',
                 fontfile=noto_sans_kannada_path,
                 fontsize=12,
                 color=(0, 0, 0)
