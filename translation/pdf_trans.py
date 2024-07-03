@@ -21,7 +21,7 @@ new_doc = fitz.open()
 translator = Translator()
 
 # Function to translate text
-def translate_text(text, dest_language='ko'):  # Change 'kn' to your desired language code
+def translate_text(text, dest_language='kn'):  # Change 'kn' to your desired language code
     try:
         translated = translator.translate(text, dest=dest_language)
         print("trans", translated.text)
