@@ -17,7 +17,7 @@ doc = fitz.open(pdf_path)
 #new_doc = fitz.open()  # Create an empty new PDF
 
 # Define the path to the Noto Sans Kannada TTF file
-noto_sans_kannada_path = r"fonts/NotoSansKannada-VariableFont_wdth,wght.ttf"  # Update this with the correct path
+noto_sans_kannada_path = r"NotoSansKannada-VariableFont_wdth,wght.ttf"  # Update this with the correct path
 
 # Extract the number of pages
 print(f"Number of pages: {doc.page_count}")

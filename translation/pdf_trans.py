@@ -7,7 +7,7 @@ original_pdf_path = r"documents/demo1.pdf"
 new_pdf_path = r"documents/new_demo.pdf"
 
 # Define the path to the Noto Sans Kannada TTF file
-noto_sans_kannada_path = r"C:\Users\len\OneDrive\Desktop\Repo\FusionPDF\fonts\Noto_Sans_Kannada\NotoSansKannada-VariableFont_wdth,wght.ttf"
+noto_sans_kannada_path = r"NotoSansKannada-VariableFont_wdth,wght.ttf"
 
 # Check if the font file exists
 if not os.path.isfile(noto_sans_kannada_path):
@@ -64,7 +64,7 @@ for i in range(original_doc.page_count):
             new_page.insert_text(
                 (x0, y0),
                 translated_text,
-                #fontfile=font_buffer,
+                fontfile=noto_sans_kannada_path,
                 fontsize=12,
                 color=(0, 0, 0)
             )
