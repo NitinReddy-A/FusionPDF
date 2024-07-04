@@ -3,8 +3,8 @@ from googletrans import Translator
 import os
 
 # Define the path to the original PDF file and the path to the new PDF file
-original_pdf_path = r"documents/demo1.pdf"
-new_pdf_path = r"documents/new_demo.pdf"
+original_pdf_path = r"documents/demo2.pdf"
+new_pdf_path = r"documents/translateddemo2.pdf"
 
 # Define the path to the Noto Sans Kannada TTF file
 noto_sans_kannada_path = r"NotoSansKannada-VariableFont_wdth,wght.ttf"
@@ -17,7 +17,7 @@ if not os.path.isfile(noto_sans_kannada_path):
 original_doc = fitz.open(original_pdf_path)
 
 # Create a new PDF document
-new_doc = fitz.open()
+new_doc = fitz.open(new_pdf_path)
 
 # Load the font into a buffer
 with open(noto_sans_kannada_path, "rb") as font_file:
@@ -42,7 +42,7 @@ for i in range(original_doc.page_count):
     original_page = original_doc.load_page(i)
 
     # Create a new page with the same size as the original page
-    new_page = new_doc.new_page(width=original_page.rect.width, height=original_page.rect.height)
+    new_page = new_doc.load_page(i)
 
     # Extract text blocks from the original page
     blocks = original_page.get_text("blocks")
@@ -64,15 +64,16 @@ for i in range(original_doc.page_count):
             new_page.insert_text(
                 (x0, y0),
                 translated_text,
+                fontname='NotoSansKannada',
                 fontfile=noto_sans_kannada_path,
-                fontsize=12,
+                fontsize=10,
                 color=(0, 0, 0)
             )
         except Exception as e:
             print(f"Error processing text block: {e}")
 
 # Save the new PDF document
-new_doc.save(new_pdf_path)
+new_doc.saveIncr()
 
 # Close all documents
 original_doc.close()
