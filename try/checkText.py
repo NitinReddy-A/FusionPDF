@@ -14,7 +14,7 @@ default_font = "helv"  # Helvetica font family
 doc = fitz.open(pdf_path)
 
 # Create a new PDF document
-new_doc = fitz.open()  # Create an empty new PDF
+#new_doc = fitz.open()  # Create an empty new PDF
 
 # Define the path to the Noto Sans Kannada TTF file
 noto_sans_kannada_path = r"fonts/NotoSansKannada-VariableFont_wdth,wght.ttf"  # Update this with the correct path
@@ -23,7 +23,7 @@ noto_sans_kannada_path = r"fonts/NotoSansKannada-VariableFont_wdth,wght.ttf"  # 
 print(f"Number of pages: {doc.page_count}")
 
 # Extract metadata
-print("Metadata:", doc.metadata)
+#print("Metadata:", doc.metadata)
 
 # Iterate through all pages
 for i in range(doc.page_count):
@@ -33,11 +33,11 @@ for i in range(doc.page_count):
     original_page = doc.load_page(i)
 
     # Create a new page with the same size as the original page
-    new_page = new_doc.new_page(width=original_page.rect.width, height=original_page.rect.height)
+    #new_page = new_doc.new_page(width=original_page.rect.width, height=original_page.rect.height)
     
     # Extract text blocks from the page
     blocks = page.get_text_blocks()
-    font = doc.get_page_fonts(page)
+    font = doc.get_page_fonts(page, full=False)
     print(font)
     
     # Extract text with coordinates
@@ -49,11 +49,11 @@ for i in range(doc.page_count):
         # Append to the result
         text_with_coordinates += f"Text: {text}, Coordinates: ({x0}, {y0}) - ({x1}, {y1})\n"
         # Draw text on the new page with default font style
-        new_page.insert_text((x0, y0), text, fontfile=noto_sans_kannada_path, fontsize=12, color=(0, 0, 0))
+        #new_page.insert_text((x0, y0), text, fontfile=noto_sans_kannada_path, fontsize=12, color=(0, 0, 0))
 
 # Save the new PDF document
-new_doc.save(new_pdf_path)
+#new_doc.save(new_pdf_path)
 
 # Close all documents
 doc.close()
-new_doc.close()
+#new_doc.close()
