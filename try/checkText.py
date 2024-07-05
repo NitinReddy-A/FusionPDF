@@ -4,8 +4,8 @@ import os
 from PIL import Image
 
 # Define the path to the PDF file
-pdf_path = r"documents/demo1Kannada.pdf"
-new_pdf_path = r"documents/new_demo1.pdf"
+pdf_path = r"documents/Final_Chapter_1.pdf"
+new_pdf_path = r"documents/output.pdf"
 
 # Define default font style for the new PDF
 default_font = "helv"  # Helvetica font family
@@ -14,7 +14,7 @@ default_font = "helv"  # Helvetica font family
 doc = fitz.open(pdf_path)
 
 # Create a new PDF document
-#new_doc = fitz.open()  # Create an empty new PDF
+new_doc = fitz.open()  # Create an empty new PDF
 
 # Define the path to the Noto Sans Kannada TTF file
 noto_sans_kannada_path = r"NotoSansKannada-VariableFont_wdth,wght.ttf"  # Update this with the correct path
@@ -33,7 +33,7 @@ for i in range(doc.page_count):
     original_page = doc.load_page(i)
 
     # Create a new page with the same size as the original page
-    #new_page = new_doc.new_page(width=original_page.rect.width, height=original_page.rect.height)
+    new_page = new_doc.new_page(width=original_page.rect.width, height=original_page.rect.height)
     
     # Extract text blocks from the page
     blocks = page.get_text_blocks()
@@ -49,11 +49,12 @@ for i in range(doc.page_count):
         # Append to the result
         text_with_coordinates += f"Text: {text}, Coordinates: ({x0}, {y0}) - ({x1}, {y1})\n"
         # Draw text on the new page with default font style
-        #new_page.insert_text((x0, y0), text, fontfile=noto_sans_kannada_path, fontsize=12, color=(0, 0, 0))
+        new_page.insert_text((x0, y0), text,fontname='NotoSansKannada',
+                fontfile=noto_sans_kannada_path, fontsize=9, color=(0, 0, 0))
 
 # Save the new PDF document
-#new_doc.save(new_pdf_path)
+new_doc.save(new_pdf_path)
 
 # Close all documents
 doc.close()
-#new_doc.close()
+new_doc.close()

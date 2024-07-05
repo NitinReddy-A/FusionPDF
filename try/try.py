@@ -4,10 +4,10 @@ import os
 
 # Define the path to the original PDF file and the path to the new PDF file
 original_pdf_path = r"documents/demo1.pdf"
-new_pdf_path = r"documents/translatedemo1.pdf"
+new_pdf_path = r"documents/translatedemo111.pdf"
 
 # Define the path to the Noto Sans Kannada TTF file
-noto_sans_kannada_path = r"tunga-regular-unicode-kannada-font.ttf"
+noto_sans_kannada_path = r"NotoSansKannada-VariableFont_wdth,wght.ttf"
 
 # Check if the font file exists
 if not os.path.isfile(noto_sans_kannada_path):
@@ -27,14 +27,14 @@ with open(noto_sans_kannada_path, "rb") as font_file:
 translator = Translator()
 
 # Function to translate text
-def translate_text(text, dest_language='kn'):  # Change 'kn' to your desired language code
-    try:
-        translated = translator.translate(text, dest=dest_language)
-        print("Translated:", translated.text)
-        return translated.text
-    except Exception as e:
-        print(f"Error in translation: {e}")
-        return text
+#def translate_text(text, dest_language='kn'):  # Change 'kn' to your desired language code
+#    try:
+#        translated = translator.translate(text, dest=dest_language)
+#        print("Translated:", translated.text)
+#        return translated.text
+#    except Exception as e:
+#        print(f"Error in translation: {e}")
+#        return text
 
 # Iterate through all pages of the original PDF
 for i in range(original_doc.page_count):
@@ -55,16 +55,15 @@ for i in range(original_doc.page_count):
             x0, y0, x1, y1 = b[:4]
 
             # Translate the text to Kannada
-            translated_text = translate_text(text)
+            #translated_text = translate_text(text)
 
             # Ensure UTF-8 encoding
-            translated_text = translated_text.encode('utf-8').decode('utf-8')
-
+            translated_text = 'ಮುಂದಿನ ನಿಲ್ದಾಣ ಉದ್ಯಾನ ನಗರ'
             # Draw translated text on the new page with the font buffer
             new_page.insert_text(
                 (x0, y0),
                 translated_text,
-                fontname='Tunga',
+                fontname='NotoSansKannada',
                 fontfile=noto_sans_kannada_path,
                 fontsize=10,
                 color=(0, 0, 0)
