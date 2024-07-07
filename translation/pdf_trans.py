@@ -55,7 +55,7 @@ for i in range(original_doc.page_count):
             x0, y0, x1, y1 = b[:4]
 
             # Translate the text to Kannada
-            translated_text = 'translate_text(text)'
+            translated_text = translate_text(text)
 
             # Ensure UTF-8 encoding
             translated_text = translated_text.encode('utf-8').decode('utf-8')
