@@ -5,7 +5,7 @@ import convertapi
 convertapi.api_secret = '4OYbALQ2RREClhvm'
 
 #Specify the file path here
-doc = 'documents/TranslatedDemo2'
+doc = 'documents/TranslatedDemo1'
 
 convertapi.convert('docx', {
     'File': f'{doc}.pdf' 
