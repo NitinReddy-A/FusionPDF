@@ -1,3 +1,4 @@
 pymupdf
-reportlab
-pillow
+googletrans
+convertapi
+p2j
