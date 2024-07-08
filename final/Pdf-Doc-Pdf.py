@@ -4,7 +4,7 @@ import convertapi
 
 convertapi.api_secret = '4OYbALQ2RREClhvm'
 
-#Specify the doc path here
+#Specify the file path here
 doc = 'documents/TranslatedDemo2'
 
 convertapi.convert('docx', {
