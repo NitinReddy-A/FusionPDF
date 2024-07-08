@@ -4,7 +4,7 @@ import os
 from PIL import Image
 
 # Define the path to the PDF file
-pdf_path = r"documents/demo1.pdf"
+pdf_path = r"documents/demo3.pdf"
 new_pdf_path = r"documents/translateddemo1.pdf"
 
 # Define default font style for the new PDF
