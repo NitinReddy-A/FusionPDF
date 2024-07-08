@@ -4,8 +4,8 @@ from googletrans import Translator
 import os
 
 # Open the PDF document
-doc = fitz.open(r"documents/demo1.pdf")
-new_pdf_path = r"documents/TranslatedDemo1.pdf"
+doc = fitz.open(r"documents/demo2.pdf")
+new_pdf_path = r"documents/TranslatedDemo2.pdf"
 
 # Create a new PDF document
 new_doc = fitz.open()

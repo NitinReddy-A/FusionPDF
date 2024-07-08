@@ -1,15 +1,16 @@
 # Code snippet is using the ConvertAPI Python Client: https://github.com/ConvertAPI/convertapi-python
 
 import convertapi
-from apikey import key
+
+convertapi.api_secret = '4OYbALQ2RREClhvm'
 
 #Specify the doc path here
-doc = 'documents/TranslatedDemo1'
+doc = 'documents/TranslatedDemo2'
 
-key('docx', {
+convertapi.convert('docx', {
     'File': f'{doc}.pdf' 
 }, from_format = 'pdf').save_files('documents')
 
-key('pdf', {
+convertapi.convert('pdf', {
     'File': f'{doc}.docx' 
 }, from_format = 'docx').save_files('documents')
