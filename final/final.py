@@ -2,10 +2,17 @@ import fitz
 import pymupdf
 from googletrans import Translator
 import os
+import convertapi
+
+# API Key 
+convertapi.api_secret = '4OYbALQ2RREClhvm'
 
 # Open the PDF document
 doc = fitz.open(r"documents/demo2.pdf") #---------> Specify the input file
 new_pdf_path = r"documents/TranslatedDemo2.pdf" #-----------> Specify the output file
+
+#Specify the file path here
+docf = 'documents/TranslatedDemo2' #-----------------> new_pdf_path ***but without extension***
 
 # Create a new PDF document
 new_doc = fitz.open()
@@ -114,4 +121,14 @@ new_doc.saveIncr()
 doc.close()
 new_doc.close()
 
-print("New PDF with translated content created successfully.")
+#For docx generation
+convertapi.convert('docx', {
+    'File': f'{doc}.pdf' 
+}, from_format = 'pdf').save_files('documents')
+
+#For pdf generation
+convertapi.convert('pdf', {
+    'File': f'{doc}.docx' 
+}, from_format = 'docx').save_files('documents')
+
+print("New PDF and Docx with translated content generated successfully.")
