@@ -1,7 +1,7 @@
 import pymupdf
 import os
 
-doc = pymupdf.open("documents/demo2.pdf") # open a document
+doc = pymupdf.open("documents/demo3.pdf") # open a document
 
 # Create the images directory if it doesn't exist
 if not os.path.exists('image/'):
