@@ -5,16 +5,8 @@ import json
 from PIL import Image
 
 # Define the path to the PDF file
-pdf_path = r"documents\demo1.pdf"
+pdf_path = r"documents\TranslatedDemo1.pdf"
 new_pdf_path = r"d.pdf"
-
-def count_total_characters(extracted_data):
-    total_characters = 0
-    for page_data in extracted_data.values():
-        for block in page_data:
-            total_characters += len(block["text"])
-        print(total_characters)
-
 
 # Define default font style for the new PDF
 default_font = "NotoSansKannada"
@@ -43,6 +35,15 @@ output_json_path = r"extracted_text_with_coordinates.json"
 
 # Dictionary to store text with coordinates
 extracted_data = {}
+
+# Function to count total characters in extracted data
+def count_total_characters(extracted_data):
+    for page_num, page_data in extracted_data.items():
+        print(f"Page {page_num}:")
+        for block_num, block in enumerate(page_data, 1):
+            text = block["text"]
+            character_count = len(text)
+            print(f"Block {block_num}: Text '{text}' has {character_count} characters.")
 
 # Iterate through all pages
 for i in range(doc.page_count):
@@ -81,7 +82,6 @@ for i in range(doc.page_count):
     
     # Add the page data to the extracted data dictionary
     extracted_data[f"page_{i + 1}"] = page_data
-    count_total_characters(extracted_data=extracted_data)
 
 # Save the new PDF document
 new_doc.save(new_pdf_path)
@@ -94,5 +94,5 @@ with open(output_json_path, "w", encoding="utf-8") as json_file:
 doc.close()
 new_doc.close()
 
-print(f"Text with coordinates has been saved to {output_json_path}")
-print(f"New PDF has been saved to {new_pdf_path}")
+# Print the total number of characters for each text block
+count_total_characters(extracted_data)
