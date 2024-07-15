@@ -1,81 +1,125 @@
-import fitz
-from googletrans import Translator
+import fitz  # PyMuPDF
 import os
-
-# Define the path to the original PDF file and the path to the new PDF file
-original_pdf_path = r"documents/demo1.pdf"
-new_pdf_path = r"documents/translatedemo111.pdf"
 
 # Define the path to the Noto Sans Kannada TTF file
 noto_sans_kannada_path = r"NotoSansKannada-VariableFont_wdth,wght.ttf"
-
-# Check if the font file exists
-if not os.path.isfile(noto_sans_kannada_path):
-    raise FileNotFoundError(f"The font file was not found: {noto_sans_kannada_path}")
-
-# Create a document object for the original PDF
-original_doc = fitz.open(original_pdf_path)
-
-# Create a new PDF document
-new_doc = fitz.open()
 
 # Load the font into a buffer
 with open(noto_sans_kannada_path, "rb") as font_file:
     font_buffer = font_file.read()
 
-# Initialize the translator
-translator = Translator()
+def add_spaces_to_text(text, space_width):
+    words = text.split()
+    spaced_text = f"{' ' * space_width}".join(words)
+    return spaced_text
 
-# Function to translate text
-#def translate_text(text, dest_language='kn'):  # Change 'kn' to your desired language code
-#    try:
-#        translated = translator.translate(text, dest=dest_language)
-#        print("Translated:", translated.text)
-#        return translated.text
-#    except Exception as e:
-#        print(f"Error in translation: {e}")
-#        return text
+def calculate_text_width(page, text, fontsize, fontname):
+    temp_page = page.parent.new_page()
+    temp_page.insert_text((0, 0), text, fontsize=fontsize, fontname=fontname)
+    text_width = temp_page.get_text("widths")[0][4]  # Get the width of the inserted text
+    temp_page.parent.delete_page(-1)
+    return text_width
 
-# Iterate through all pages of the original PDF
-for i in range(original_doc.page_count):
-    # Get the original page
-    original_page = original_doc.load_page(i)
+def insert_text_without_overlap(page, rect, spaced_text, fontsize, space_width, fontname):
+    # Split the text into words
+    words = spaced_text.split(' ' * space_width)
+    line_height = fontsize * 1.2  # Adjust the line height as necessary
+    max_width = rect.width
+    x, y = rect.x0, rect.y0
+    current_line = ""
+    
+    for word in words:
+        # Calculate the width of the current line with the new word
+        test_line = f"{current_line} {word}".strip()
+        word_width = calculate_text_width(page, test_line, fontsize, fontname)
+        
+        # Check if adding the word exceeds the max width
+        if word_width <= max_width:
+            # If it fits, add the word to the current line
+            if current_line:
+                current_line += f"{' ' * space_width}{word}"
+            else:
+                current_line = word
+        else:
+            # If it doesn't fit, insert the current line and start a new one
+            if current_line:
+                page.insert_text((x, y), current_line, fontsize=fontsize, fontname=fontname, color=(0, 0, 0))
+                y += line_height
+                current_line = word
+            else:
+                current_line = word
+        
+        # Check if y exceeds the bottom of the page
+        if y + line_height > page.rect.y1:
+            x = rect.x0
+            y = rect.y0
+            current_line = word
+        
+    # Insert the last line
+    if current_line:
+        page.insert_text((x, y), current_line, fontsize=fontsize, fontname=fontname, color=(0, 0, 0))
 
-    # Create a new page with the same size as the original page
-    new_page = new_doc.new_page(width=original_page.rect.width, height=original_page.rect.height)
+def clean_and_reformat_pdf(input_pdf_path, output_pdf_path, space_width=2):
+    # Check if the input file exists
+    if not os.path.exists(input_pdf_path):
+        print(f"Error: The file '{input_pdf_path}' does not exist.")
+        return
 
-    # Extract text blocks from the original page
-    blocks = original_page.get_text("blocks")
+    # Open the input PDF
+    try:
+        document = fitz.open(input_pdf_path)
+    except Exception as e:
+        print(f"Error opening the file: {e}")
+        return
 
-    # Add text with coordinates to the new page
-    for b in blocks:
-        try:
-            # Extract text and coordinates
-            text = b[4]
-            x0, y0, x1, y1 = b[:4]
+    # Register the custom font
+    fontname = "NotoSansKannada"
+    fontfile = document._insert_font(fontbuffer=font_buffer)
 
-            # Translate the text to Kannada
-            #translated_text = translate_text(text)
+    if not fontfile:
+        print(f"Error: Could not insert font '{fontname}' from '{noto_sans_kannada_path}'.")
+        return
 
-            # Ensure UTF-8 encoding
-            translated_text = 'ಮುಂದಿನ ನಿಲ್ದಾಣ ಉದ್ಯಾನ ನಗರ'
-            # Draw translated text on the new page with the font buffer
-            new_page.insert_text(
-                (x0, y0),
-                translated_text,
-                fontname='NotoSansKannada',
-                fontfile=noto_sans_kannada_path,
-                fontsize=10,
-                color=(0, 0, 0)
-            )
-        except Exception as e:
-            print(f"Error processing text block: {e}")
+    # Iterate through each page and clean it
+    for page_num in range(document.page_count):
+        page = document.load_page(page_num)
+        
+        # Wrap contents if not already wrapped
+        if not page.is_wrapped:
+            page.wrap_contents()
+        
+        # Clean the page contents
+        page.clean_contents(sanitize=True)
+        
+        # Get text blocks
+        text_blocks = page.get_text("blocks")
+        
+        # Iterate through text blocks
+        for block in text_blocks:
+            # Extract the original text
+            text = block[4]
+            if not text.strip():
+                continue  # Skip empty text blocks
+            
+            # Add spaces to text
+            spaced_text = add_spaces_to_text(text, space_width)
+            
+            # Get the coordinates of the text block
+            rect = fitz.Rect(block[:4])
+            
+            # Insert the modified text without overlapping
+            insert_text_without_overlap(page, rect, spaced_text, block[3], space_width, fontname)
 
-# Save the new PDF document
-new_doc.save(new_pdf_path)
+    # Save the cleaned and modified PDF to a new file
+    try:
+        document.save(output_pdf_path, deflate=True, garbage=3)
+        print(f"Successfully cleaned, reformatted, and saved the PDF as '{output_pdf_path}'.")
+    except Exception as e:
+        print(f"Error saving the file: {e}")
 
-# Close all documents
-original_doc.close()
-new_doc.close()
+# Specify the input and output file paths
+input_pdf_path = 'translated_document.pdf'  # Replace with your translated PDF file path
+output_pdf_path = 'cleaned_reformatted_translated_document.pdf'  # Replace with your desired output file path
 
-print("New PDF with translated content created successfully.")
+# Clean and reformat the PDF
+clean_and_reformat_pdf(input_pdf_path, output_pdf_path, space_width=2)
