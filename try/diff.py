@@ -5,8 +5,16 @@ import json
 from PIL import Image
 
 # Define the path to the PDF file
-pdf_path = r"documents\TranslatedDemo1.pdf"
+pdf_path = r"documents\demo1.pdf"
 new_pdf_path = r"d.pdf"
+
+def count_total_characters(extracted_data):
+    total_characters = 0
+    for page_data in extracted_data.values():
+        for block in page_data:
+            total_characters += len(block["text"])
+        print(total_characters)
+
 
 # Define default font style for the new PDF
 default_font = "NotoSansKannada"
@@ -57,21 +65,6 @@ for i in range(doc.page_count):
         text = b[4]
         x0, y0, x1, y1 = b[:4]
 
-        # Check if text contains multiple '\n'
-        if text.count('\n') >= 1:
-            # Multiply the coordinates by 0.5
-            z = 999
-            #x0 *= 0.5
-            #y0 *= 0.5
-            #x1 *= 0.5
-            #y1 *= 0.5
-        else:
-            # Multiply the coordinates by 1.5 to expand the text box area
-            x0 *= 1.5
-            y0 *= 1.5
-            x1 *= 1.5
-            y1 *= 1.5
-
         # Append to the result
         page_data.append({
             "text": text,
@@ -88,6 +81,7 @@ for i in range(doc.page_count):
     
     # Add the page data to the extracted data dictionary
     extracted_data[f"page_{i + 1}"] = page_data
+    count_total_characters(extracted_data=extracted_data)
 
 # Save the new PDF document
 new_doc.save(new_pdf_path)
