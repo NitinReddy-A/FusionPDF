@@ -1,4 +1,3 @@
-# Import required dependencies
 import fitz
 import json
 
@@ -35,32 +34,28 @@ for i in range(doc.page_count):
     page = doc.load_page(i)  # or page = doc[i]
     
     # Extract text blocks from the page
-    blocks = page.get_text_blocks()
+    blocks = page.get_text("dict", flags=11)["blocks"]
     
     # List to store text and coordinates for the current page
     page_data = []
 
     for b in blocks:
-        # Extract text and coordinates
-        text = b[4]
-        x0, y0, x1, y1 = b[:4]
-        character_count = len(text)
-        
-        # Calculate font size using the height of the bounding box
-        font_size = y1 - y0
+        for l in b["lines"]:  # iterate through the text lines
+            for s in l["spans"]:  # iterate through the text spans
+                text = s["text"]
+                bbox = s["bbox"]
+                origin = s["origin"]
+                font_size = s["size"]
+                character_count = len(text)
 
-        # Append to the result
-        page_data.append({
-            "text": text,
-            "IniCharacter_count": character_count,
-            "IniFontsize": font_size,
-            "coordinates": {
-                "x0": x0,
-                "y0": y0,
-                "x1": x1,
-                "y1": y1
-            }
-        })
+                # Append to the result
+                page_data.append({
+                    "coordinates": bbox,
+                    "origin": origin,
+                    "text": text,
+                    "IniCharacter_count": character_count,
+                    "IniFontsize": font_size,
+                })
 
     # Add the page data to the extracted data dictionary
     extracted_data[f"page_{i + 1}"] = page_data

@@ -30,20 +30,18 @@ for page_num, page_data in extracted_data.items():
     # Iterate through the text blocks on the current page
     for block in page_data:
         translated_text = block.get("translated_text", "")
-        #font_size=block["IniFontsize"]
         coordinates = block["coordinates"]
-        x0, y0, x1, y1 = coordinates["x0"], coordinates["y0"], coordinates["x1"], coordinates["y1"]
+        origin = block["origin"]
+        x0, y0, x1, y1 = coordinates[0], coordinates[1], coordinates[2], coordinates[3]
 
         # Set the font size based on the height of the bounding box
-        font_size = y1 - y0
+        font_size = block["IniFontsize"]
 
-        # Draw the translated text on the new page
-        #new_page.insert_text((x0, y0), translated_text, fontsize=font_size, fontname="helv")
-        # Draw translated text on the new page with the font file
+        # Draw translated text on the new page with the font file using insert_textbox
         new_page.insert_text(
-            (x0, y0),
-            translated_text,
-            fontsize=9,
+            (x0,y0),
+            text=translated_text,
+            fontsize=font_size,
             fontname='NotoSansKannada',
             fontfile=noto_sans_kannada_path
         )

@@ -9,7 +9,7 @@ def translate_text(text, dest_language='kn'):  # Change 'kn' to your desired lan
     try:
         translated = translator.translate(text, dest=dest_language)
         print("Translated:", translated.text)
-        return (translated.text + '\n')
+        return (translated.text)
     except Exception as e:
         print(f"Error in translation: {e}")
         return text

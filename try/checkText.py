@@ -1,60 +1,42 @@
-# Import required dependencies
-import fitz
-import os
-from PIL import Image
+import sys
 
-# Define the path to the PDF file
-pdf_path = r"documents/demo1KannadaCorr.pdf"
-new_pdf_path = r"documents/output.pdf"
+import pymupdf
 
-# Define default font style for the new PDF
-default_font = "helv"  # Helvetica font family
 
-# Create a document object
-doc = fitz.open(pdf_path)
+def flags_decomposer(flags):
+    """Make font flags human readable."""
+    l = []
+    if flags & 2 ** 0:
+        l.append("superscript")
+    if flags & 2 ** 1:
+        l.append("italic")
+    if flags & 2 ** 2:
+        l.append("serifed")
+    else:
+        l.append("sans")
+    if flags & 2 ** 3:
+        l.append("monospaced")
+    else:
+        l.append("proportional")
+    if flags & 2 ** 4:
+        l.append("bold")
+    return ", ".join(l)
 
-# Create a new PDF document
-new_doc = fitz.open()  # Create an empty new PDF
 
-# Define the path to the Noto Sans Kannada TTF file
-noto_sans_kannada_path = r"Nirmala.ttf"  # Update this with the correct path
+doc = pymupdf.open('documents/demo1.pdf')
+page = doc[0]
 
-# Extract the number of pages
-print(f"Number of pages: {doc.page_count}")
-
-# Extract metadata
-#print("Metadata:", doc.metadata)
-
-# Iterate through all pages
-for i in range(doc.page_count):
-    # Get the page
-    page = doc.load_page(i)  # or page = doc[i]
-    # Get the original page
-    original_page = doc.load_page(i)
-
-    # Create a new page with the same size as the original page
-    new_page = new_doc.new_page(width=original_page.rect.width, height=original_page.rect.height)
-    
-    # Extract text blocks from the page
-    blocks = page.get_text_blocks()
-    font = doc.get_page_fonts(page, full=False)
-    print(font)
-    
-    # Extract text with coordinates
-    text_with_coordinates = ""
-    for b in blocks:
-        # Extract text and coordinates
-        text = b[4]
-        x0, y0, x1, y1 = b[:4]
-        # Append to the result
-        text_with_coordinates += f"Text: {text}, Coordinates: ({x0}, {y0}) - ({x1}, {y1})\n"
-        # Draw text on the new page with default font style
-        new_page.insert_text((x0, y0), text,fontname='Nirmala',
-                fontfile=noto_sans_kannada_path, fontsize=9, color=(0, 0, 0),encoding='Identity-H')
-
-# Save the new PDF document
-new_doc.save(new_pdf_path)
-
-# Close all documents
-doc.close()
-new_doc.close()
+# read page text as a dictionary, suppressing extra spaces in CJK fonts
+blocks = page.get_text("dict", flags=11)["blocks"]
+for b in blocks:  # iterate through the text blocks
+    for l in b["lines"]:  # iterate through the text lines
+        for s in l["spans"]:  # iterate through the text spans
+            print(s)
+            #font_properties = "Font: '%s' (%s), size %g, color #%06x" % (
+            #    s["font"],  # font name
+            #    flags_decomposer(s["flags"]),  # readable font flags
+            #    s["size"],  # font size
+            #    s["color"],  # font color
+            #)
+            #print("Text: '%s'" % s["text"])  # simple print of text
+            #print(font_properties)
