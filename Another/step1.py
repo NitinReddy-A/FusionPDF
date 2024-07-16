@@ -1,30 +1,9 @@
 # Import required dependencies
 import fitz
-import os
 import json
-from PIL import Image
 
 # Define the path to the PDF file
 pdf_path = r"documents\demo1.pdf"
-
-# Define default font style for the new PDF
-default_font = "NotoSansKannada"
-
-# Define the path to the Noto Sans Kannada TTF file
-noto_sans_kannada_path = r"NotoSansKannada-VariableFont_wdth,wght.ttf"
-
-# Load the font into a buffer
-with open(noto_sans_kannada_path, "rb") as font_file:
-    font_buffer = font_file.read()
-
-# Create a document object
-doc = fitz.open(pdf_path)
-
-# Extract the number of pages
-print(f"Number of pages: {doc.page_count}")
-
-# Extract metadata
-print("Metadata:", doc.metadata)
 
 # Define the path to the output JSON file
 output_json_path = r"extracted_text_with_coordinates.json"
@@ -38,8 +17,17 @@ def count_total_characters(extracted_data):
         print(f"Page {page_num}:")
         for block_num, block in enumerate(page_data, 1):
             text = block["text"]
-            character_count = block["character_count"]
+            character_count = block["IniCharacter_count"]
             print(f"Block {block_num}: has {character_count} characters.")
+
+# Create a document object
+doc = fitz.open(pdf_path)
+
+# Extract the number of pages
+print(f"Number of pages: {doc.page_count}")
+
+# Extract metadata
+print("Metadata:", doc.metadata)
 
 # Iterate through all pages
 for i in range(doc.page_count):
@@ -57,11 +45,15 @@ for i in range(doc.page_count):
         text = b[4]
         x0, y0, x1, y1 = b[:4]
         character_count = len(text)
+        
+        # Calculate font size using the height of the bounding box
+        font_size = y1 - y0
 
         # Append to the result
         page_data.append({
             "text": text,
-            "character_count": character_count,
+            "IniCharacter_count": character_count,
+            "IniFontsize": font_size,
             "coordinates": {
                 "x0": x0,
                 "y0": y0,
@@ -77,7 +69,7 @@ for i in range(doc.page_count):
 with open(output_json_path, "w", encoding="utf-8") as json_file:
     json.dump(extracted_data, json_file, ensure_ascii=False, indent=4)
 
-# Close all documents
+# Close the document
 doc.close()
 
 # Print the total number of characters for each text block
