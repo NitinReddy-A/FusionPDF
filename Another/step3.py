@@ -6,7 +6,7 @@ import os
 json_path = r"extracted_text_with_coordinates.json"
 
 # Path to the output translated PDF file
-output_pdf_path = r"translated_demo1.pdf"
+output_pdf_path = r"translated_demo1_new.pdf"
 
 # Define the path to the Noto Sans Kannada TTF file
 noto_sans_kannada_path = r"NotoSansKannada-VariableFont_wdth,wght.ttf"
@@ -31,7 +31,7 @@ for page_num, page_data in extracted_data.items():
     for block in page_data:
         translated_text = block.get("translated_text", "")
         coordinates = block["coordinates"]
-        origin = block["origin"]
+        #origin = block["origin"]
         x0, y0, x1, y1 = coordinates[0], coordinates[1], coordinates[2], coordinates[3]
 
         # Set the font size based on the height of the bounding box
@@ -41,7 +41,7 @@ for page_num, page_data in extracted_data.items():
         new_page.insert_text(
             (x0,y0),
             text=translated_text,
-            fontsize=font_size,
+            fontsize=font_size*0.8,
             fontname='NotoSansKannada',
             fontfile=noto_sans_kannada_path
         )
