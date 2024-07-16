@@ -5,8 +5,7 @@ import json
 from PIL import Image
 
 # Define the path to the PDF file
-pdf_path = r"documents\TranslatedDemo1.pdf"
-new_pdf_path = r"d.pdf"
+pdf_path = r"documents\translatedDemo1.pdf"
 
 # Define default font style for the new PDF
 default_font = "NotoSansKannada"
@@ -21,9 +20,6 @@ with open(noto_sans_kannada_path, "rb") as font_file:
 # Create a document object
 doc = fitz.open(pdf_path)
 
-# Create a new PDF document
-new_doc = fitz.open()
-
 # Extract the number of pages
 print(f"Number of pages: {doc.page_count}")
 
@@ -31,9 +27,9 @@ print(f"Number of pages: {doc.page_count}")
 print("Metadata:", doc.metadata)
 
 # Define the path to the output JSON file
-output_json_path = r"extracted_text_with_coordinates.json"
+output_json_path = r"extracted_text_with_coordinates1.json"
 
-# Dictionary to store text with coordinates
+# Dictionary to store text with coordinates and character count
 extracted_data = {}
 
 # Function to count total characters in extracted data
@@ -42,18 +38,13 @@ def count_total_characters(extracted_data):
         print(f"Page {page_num}:")
         for block_num, block in enumerate(page_data, 1):
             text = block["text"]
-            character_count = len(text)
-            print(f"Block {block_num}: Text '{text}' has {character_count} characters.")
+            character_count = block["character_count"]
+            print(f"Block {block_num}: has {character_count} characters.")
 
 # Iterate through all pages
 for i in range(doc.page_count):
     # Get the page
     page = doc.load_page(i)  # or page = doc[i]
-    # Get the original page
-    original_page = doc.load_page(i)
-    
-    # Create a new page with the same size as the original page
-    new_page = new_doc.new_page(width=original_page.rect.width, height=original_page.rect.height)
     
     # Extract text blocks from the page
     blocks = page.get_text_blocks()
@@ -65,10 +56,12 @@ for i in range(doc.page_count):
         # Extract text and coordinates
         text = b[4]
         x0, y0, x1, y1 = b[:4]
+        character_count = len(text)
 
         # Append to the result
         page_data.append({
             "text": text,
+            "character_count": character_count,
             "coordinates": {
                 "x0": x0,
                 "y0": y0,
@@ -77,14 +70,8 @@ for i in range(doc.page_count):
             }
         })
 
-        # Draw text on the new page with default font style
-        new_page.insert_text((x0, y0), text, fontname=default_font, fontfile=noto_sans_kannada_path, fontsize=9, color=(0, 0, 0))
-    
     # Add the page data to the extracted data dictionary
     extracted_data[f"page_{i + 1}"] = page_data
-
-# Save the new PDF document
-new_doc.save(new_pdf_path)
 
 # Save the extracted data to a JSON file
 with open(output_json_path, "w", encoding="utf-8") as json_file:
@@ -92,7 +79,6 @@ with open(output_json_path, "w", encoding="utf-8") as json_file:
 
 # Close all documents
 doc.close()
-new_doc.close()
 
 # Print the total number of characters for each text block
 count_total_characters(extracted_data)
