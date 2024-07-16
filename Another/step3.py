@@ -41,7 +41,7 @@ for page_num, page_data in extracted_data.items():
         new_page.insert_text(
             (x0,y0),
             text=translated_text,
-            fontsize=font_size*0.8,
+            fontsize=font_size*0.75,
             fontname='NotoSansKannada',
             fontfile=noto_sans_kannada_path
         )
@@ -51,4 +51,3 @@ new_doc.save(output_pdf_path)
 
 # Close the document
 new_doc.close()
-ಹಿಂಡೋಸ್ 
