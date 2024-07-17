@@ -6,7 +6,7 @@ import os
 json_path = r"extracted_text_with_coordinates.json"
 
 # Path to the output translated PDF file
-output_pdf_path = r"translated_demo1_new.pdf"
+output_pdf_path = r"op.pdf"
 
 # Define the path to the Noto Sans Kannada TTF file
 noto_sans_kannada_path = r"NotoSansKannada-VariableFont_wdth,wght.ttf"
@@ -20,12 +20,12 @@ with open(json_path, "r", encoding="utf-8") as json_file:
     extracted_data = json.load(json_file)
 
 # Create a new PDF document
-new_doc = fitz.open()
+new_doc = fitz.open(output_pdf_path)
 
 # Iterate through the pages in the JSON data
 for page_num, page_data in extracted_data.items():
-    # Create a new page
-    new_page = new_doc.new_page()
+    # Load a page
+    new_page = new_doc.load_page(int(page_num)-1)
 
     # Iterate through the text blocks on the current page
     for block in page_data:
@@ -47,7 +47,7 @@ for page_num, page_data in extracted_data.items():
         )
 
 # Save the new PDF
-new_doc.save(output_pdf_path)
+new_doc.saveIncr()
 
 # Close the document
 new_doc.close()
