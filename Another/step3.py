@@ -3,10 +3,10 @@ import json
 import os
 
 # Path to the JSON file
-json_path = r"extracted_text_with_coordinates.json"
+json_path = r"extracted_text_with_coordinates1.json"
 
 # Path to the output translated PDF file
-output_pdf_path = r"op.pdf"
+output_pdf_path = r"op1.pdf"
 
 # Define the path to the Noto Sans Kannada TTF file
 noto_sans_kannada_path = r"NotoSansKannada-VariableFont_wdth,wght.ttf"
@@ -29,7 +29,7 @@ for page_num, page_data in extracted_data.items():
 
     # Iterate through the text blocks on the current page
     for block in page_data:
-        translated_text = block.get("translated_text", "")
+        translated_text = block.get("Translated_text", "")
         coordinates = block["coordinates"]
         #origin = block["origin"]
         x0, y0, x1, y1 = coordinates[0], coordinates[1], coordinates[2], coordinates[3]

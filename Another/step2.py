@@ -13,9 +13,27 @@ def translate_text(text, dest_language='kn'):  # Change 'kn' to your desired lan
     except Exception as e:
         print(f"Error in translation: {e}")
         return text
+    
+def insert_newlines(text, translated_text):
+    # Find positions of '\n' in the original text
+    newline_positions = [pos for pos, char in enumerate(text) if char == '\n']
+    
+    # Adjust positions for translated text
+    adjusted_positions = []
+    offset = 0
+    for pos in newline_positions:
+        while pos + offset < len(translated_text) and translated_text[pos + offset] != ' ':
+            offset += 1
+        adjusted_positions.append(pos + offset)
+    
+    # Insert '\n' at the adjusted positions
+    for pos in reversed(adjusted_positions):  # reversed to avoid messing up positions
+        translated_text = translated_text[:pos] + '\n' + translated_text[pos:]
+    
+    return translated_text
 
 # Path to the input JSON file
-json_path = r"extracted_text_with_coordinates.json"
+json_path = r"extracted_text_with_coordinates1.json"
 
 # Load the JSON data
 with open(json_path, "r", encoding="utf-8") as json_file:
@@ -28,8 +46,9 @@ for page_num, page_data in extracted_data.items():
         c1 = block["Character_count"]
         f = block["IniFontsize"]
         translated_text = translate_text(original_text, dest_language='kn')  # Change 'kn' to your desired language code
-        block["translated_text"] = translated_text
+        #block["translated_text"] = translated_text
         block["translated_character_count"] = len(translated_text)
+        block["Translated_text"] = insert_newlines(block["text"], translated_text)
         if c1 < len(translated_text):
             block["Font_Size"] = len(translated_text) * f / c1
 
