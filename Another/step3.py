@@ -42,16 +42,16 @@ for page_num, page_data in extracted_data.items():
         print(translated_text)
 
         # Draw translated text on the new page with the font file using insert_textbox
-        new_page.insert_textbox(
-            rect,
-            buffer=translated_text,
-            align=0,
-            fontsize=font_size*0.75,
-            fontname='NotoSansKannada',
-            fontfile=noto_sans_kannada_path,
-            color=(0, 0, 0),
-            oc=0
-        )
+        new_page.insert_htmlbox(
+            coordinates,
+            translated_text,
+            #align=0,
+            #fontsize=font_size,
+            #fontname='NotoSansKannada',
+            #fontfile=noto_sans_kannada_path,
+            #color=(0, 0, 0),
+            #oc=0
+        )#
 
 # Save the new PDF
 new_doc.saveIncr()

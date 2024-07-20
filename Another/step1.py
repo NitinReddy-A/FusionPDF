@@ -27,7 +27,7 @@ for i in range(doc.page_count):
     # Extract text blocks from the page
     blocks = page.get_text("dict", flags=11)["blocks"]
 
-    blocks1 = page.get_text("blocks")
+    #blocks1 = page.get_text("blocks")
     
     # List to store text and coordinates for the current page
     page_data = []
