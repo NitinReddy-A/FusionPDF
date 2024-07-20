@@ -6,7 +6,7 @@ import os
 json_path = r"extracted_text_with_coordinates.json"
 
 # Path to the output translated PDF file
-output_pdf_path = r"op1.pdf"
+output_pdf_path = r"op.pdf"
 
 # Define the path to the Noto Sans Kannada TTF file
 noto_sans_kannada_path = r"NotoSansKannada-VariableFont_wdth,wght.ttf"
@@ -29,7 +29,7 @@ for page_num, page_data in extracted_data.items():
 
     # Iterate through the text blocks on the current page
     for block in page_data:
-        translated_text = block.get("translated_text", "")
+        translated_text = block["translated_text"]
         coordinates = block["coordinates"]
         #origin = block["origin"]
         x0, y0, x1, y1 = coordinates[0], coordinates[1], coordinates[2], coordinates[3]
@@ -39,13 +39,18 @@ for page_num, page_data in extracted_data.items():
 
         rect = fitz.Rect(x0, y0, x1, y1)
 
+        print(translated_text)
+
         # Draw translated text on the new page with the font file using insert_textbox
         new_page.insert_textbox(
             rect,
-            translated_text,
+            buffer=translated_text,
+            align=0,
             fontsize=font_size*0.75,
             fontname='NotoSansKannada',
-            fontfile=noto_sans_kannada_path
+            fontfile=noto_sans_kannada_path,
+            color=(0, 0, 0),
+            oc=0
         )
 
 # Save the new PDF
