@@ -2,10 +2,10 @@ import fitz
 import json
 
 # Define the path to the PDF file
-pdf_path = r"documents\demo1.pdf"
+pdf_path = r"documents\sp.pdf"
 
 # Define the path to the output JSON file
-json_path = r"extracted_text_with_coordinates.json"
+json_path = r"extracted_text_with_coordinates1.json"
 
 # Load the JSON data
 with open(json_path, "r", encoding="utf-8") as json_file:

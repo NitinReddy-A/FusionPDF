@@ -810,5 +810,671 @@
             "translated_character_count": 7,
             "Font_Size": 9.0
         }
+    ],
+    "8": [
+        {
+            "coordinates": [
+                164.8800048828125,
+                722.8118286132812,
+                184.32000732421875,
+                735.6661376953125
+            ],
+            "IniFontsize": 12.0,
+            "text": "n 8\n",
+            "Character_count": 4,
+            "translated_text": "n 8",
+            "translated_character_count": 3,
+            "Font_Size": 12.0
+        },
+        {
+            "coordinates": [
+                117.60000610351562,
+                739.4733276367188,
+                184.2939910888672,
+                752.4733276367188
+            ],
+            "IniFontsize": 9.100000381469727,
+            "text": "OUR PASTS–I\n",
+            "Character_count": 12,
+            "translated_text": "ನಮ್ಮ ಪಾಸ್ಟ್ಸ್ -ನಾನು",
+            "translated_character_count": 19,
+            "Font_Size": 14.408333937327066
+        },
+        {
+            "coordinates": [
+                308.3999938964844,
+                109.46846771240234,
+                435.8466491699219,
+                125.46846771240234
+            ],
+            "IniFontsize": 16.0,
+            "text": "Letters with dates\n",
+            "Character_count": 19,
+            "translated_text": "ದಿನಾಂಕಗಳೊಂದಿಗೆ ಅಕ್ಷರಗಳು",
+            "translated_character_count": 23,
+            "Font_Size": 19.36842105263158
+        },
+        {
+            "coordinates": [
+                215.99996948242188,
+                133.42994689941406,
+                528.7249755859375,
+                332.1087951660156
+            ],
+            "IniFontsize": 12.5,
+            "text": "BC, we have seen stands for ‘Before Christ.’\nYou will sometimes find AD before dates. This\nstands for two Latin words, ‘Anno Domini’, meaning\n‘in the year of the Lord’ (i.e. Christ). So 2012 can\nalso be written as AD 2012.\nSometimes CE is used instead of AD and BCE\ninstead of BC. The letters CE stand for ‘Common\nEra’ and BCE for ‘Before Common Era’. We use\nthese terms because the Christian Era is now used\nin most countries of the world. In India we began\nusing this form of dating from about two hundred\nyears ago.\nAnd sometimes, the letters BP meaning ‘Before\nPresent’ are used.\n",
+            "Character_count": 584,
+            "translated_text": "ಕ್ರಿ.ಪೂ., ನಾವು ‘ಕ್ರಿಸ್ತನ ಮೊದಲು’ ಎಂದರೆ ಸ್ಟ್ಯಾಂಡ್‌ಗಳನ್ನು ನೋಡಿದ್ದೇವೆ.\nದಿನಾಂಕಗಳ ಮೊದಲು ನೀವು ಕೆಲವೊಮ್ಮೆ ಜಾಹೀರಾತನ್ನು ಕಾಣಬಹುದು.ಈ\nಎರಡು ಲ್ಯಾಟಿನ್ ಪದಗಳು, ‘ಅನ್ನೋ ಡೊಮಿನಿ’, ಅರ್ಥ\n‘ಭಗವಂತನ ವರ್ಷದಲ್ಲಿ’ (ಅಂದರೆ ಕ್ರಿಸ್ತ).ಆದ್ದರಿಂದ 2012 ಮಾಡಬಹುದು\nಕ್ರಿ.ಶ 2012 ರಂತೆ ಬರೆಯಬೇಕು.\nಕೆಲವೊಮ್ಮೆ ಕ್ರಿ.ಶ. ಮತ್ತು BCE ಬದಲಿಗೆ CE ಅನ್ನು ಬಳಸಲಾಗುತ್ತದೆ\nಕ್ರಿ.ಪೂ. ಬದಲಿಗೆ.ಸಿ ಅಕ್ಷರಗಳು ‘ಸಾಮಾನ್ಯ‘\n‘ಸಾಮಾನ್ಯ ಯುಗದ ಮೊದಲು’ ಯುಗ ಮತ್ತು BCE.ನಾವು ಉಪಯೋಗಿಸುತ್ತೀವಿ\nಈ ಪದಗಳು ಕ್ರಿಶ್ಚಿಯನ್ ಯುಗವನ್ನು ಈಗ ಬಳಸಲಾಗುತ್ತದೆ\nವಿಶ್ವದ ಹೆಚ್ಚಿನ ದೇಶಗಳಲ್ಲಿ.ಭಾರತದಲ್ಲಿ ನಾವು ಪ್ರಾರಂಭಿಸಿದ್ದೇವೆ\nಈ ರೀತಿಯ ಡೇಟಿಂಗ್ ಅನ್ನು ಸುಮಾರು ಇನ್ನೂರುದಿಂದ ಬಳಸುವುದು\nವರ್ಷಗಳ ಹಿಂದೆ.\nಮತ್ತು ಕೆಲವೊಮ್ಮೆ, ಬಿಪಿ ಅಕ್ಷರಗಳು ‘ಮೊದಲು‘ ಮೊದಲು\nಪ್ರಸ್ತುತ ’ಬಳಸಲಾಗುತ್ತದೆ.",
+            "translated_character_count": 634,
+            "Font_Size": 13.570205479452055
+        },
+        {
+            "coordinates": [
+                215.99996948242188,
+                333.768798828125,
+                528.4993286132812,
+                361.1488037109375
+            ],
+            "IniFontsize": 12.5,
+            "text": "Find two dates mentioned on page 3. Which set\nof letters would you use for them?\n",
+            "Character_count": 81,
+            "translated_text": "ಪುಟ 3 ರಲ್ಲಿ ಉಲ್ಲೇಖಿಸಲಾದ ಎರಡು ದಿನಾಂಕಗಳನ್ನು ಹುಡುಕಿ. ಇದು ಹೊಂದಿಸಲಾಗಿದೆ\nನೀವು ಅವರಿಗೆ ಪತ್ರಗಳನ್ನು ಬಳಸುತ್ತೀರಾ?",
+            "translated_character_count": 101,
+            "Font_Size": 15.58641975308642
+        },
+        {
+            "coordinates": [
+                264.719970703125,
+                402.5085144042969,
+                342.00555419921875,
+                418.5085144042969
+            ],
+            "IniFontsize": 16.0,
+            "text": "Elsewhere\n",
+            "Character_count": 10,
+            "translated_text": "ಬೇರೆಡೆ",
+            "translated_character_count": 6,
+            "Font_Size": 16.0
+        },
+        {
+            "coordinates": [
+                78.23997497558594,
+                427.1287841796875,
+                528.5098876953125,
+                499.6287841796875
+            ],
+            "IniFontsize": 12.5,
+            "text": "We have seen that inscriptions are inscribed on hard surfaces. Many of\nthese were inscribed several hundreds of years ago. All inscriptions contain\nboth scripts and languages. Languages which were used, as well as scripts,\nhave changed over time. So how do scholars understand what was\ninscribed? This can be done through a process known as decipherment.\n",
+            "Character_count": 355,
+            "translated_text": "ವ್ಯವಸ್ಥೆಗಳನ್ನು ಗಟ್ಟಿಯಾದ ಮೇಲ್ಮೈಗಳಲ್ಲಿ ಕೆತ್ತಲಾಗಿದೆ ಎಂದು ನಾವು ನೋಡಿದ್ದೇವೆ.ತುಂಬಾ\nಇವುಗಳನ್ನು ನೂರಾರು ವರ್ಷಗಳ ಹಿಂದೆ ಕೆತ್ತಲಾಗಿದೆ.ಎಲ್ಲಾ ಶಾಸನಗಳು ಇರುತ್ತವೆ\nಸ್ಕ್ರಿಪ್ಟ್‌ಗಳು ಮತ್ತು ಭಾಷೆಗಳು ಎರಡೂ.ಬಳಸಿದ ಭಾಷೆಗಳು, ಜೊತೆಗೆ ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳು,\nಕಾಲಾನಂತರದಲ್ಲಿ ಬದಲಾಗಿದೆ.ಆದ್ದರಿಂದ ವಿದ್ವಾಂಸರು ಏನೆಂದು ಹೇಗೆ ಅರ್ಥಮಾಡಿಕೊಳ್ಳುತ್ತಾರೆ\nಕೆತ್ತಲಾಗಿದೆ?ಅರ್ಥೈಸುವಿಕೆ ಎಂದು ಕರೆಯಲ್ಪಡುವ ಪ್ರಕ್ರಿಯೆಯ ಮೂಲಕ ಇದನ್ನು ಮಾಡಬಹುದು.",
+            "translated_character_count": 361,
+            "Font_Size": 12.711267605633802
+        },
+        {
+            "coordinates": [
+                130.0800018310547,
+                698.4583740234375,
+                475.47802734375,
+                714.4583740234375
+            ],
+            "IniFontsize": 16.0,
+            "text": " K        L         I    O       P      A     D (T)      R       A\n",
+            "Character_count": 67,
+            "translated_text": "K l i o p a d (t) r a",
+            "translated_character_count": 21,
+            "Font_Size": 16.0
+        },
+        {
+            "coordinates": [
+                134.40000915527344,
+                586.6183471679688,
+                477.88909912109375,
+                602.6183471679688
+            ],
+            "IniFontsize": 16.0,
+            "text": "P         T       O            L                M          I    I     S\n",
+            "Character_count": 72,
+            "translated_text": "P t o l m i i s",
+            "translated_character_count": 15,
+            "Font_Size": 16.0
+        },
+        {
+            "coordinates": [
+                164.8800048828125,
+                722.8118286132812,
+                184.32000732421875,
+                735.6661376953125
+            ],
+            "IniFontsize": 12.0,
+            "text": "n 8\n",
+            "Character_count": 4,
+            "translated_text": "n 8",
+            "translated_character_count": 3,
+            "Font_Size": 12.0
+        },
+        {
+            "coordinates": [
+                117.60000610351562,
+                739.4733276367188,
+                184.2939910888672,
+                752.4733276367188
+            ],
+            "IniFontsize": 9.100000381469727,
+            "text": "OUR PASTS–I\n",
+            "Character_count": 12,
+            "translated_text": "ನಮ್ಮ ಪಾಸ್ಟ್ಸ್ -ನಾನು",
+            "translated_character_count": 19,
+            "Font_Size": 14.408333937327066
+        },
+        {
+            "coordinates": [
+                298.4849853515625,
+                805.7586059570312,
+                331.5073547363281,
+                815.8132934570312
+            ],
+            "IniFontsize": 9.0,
+            "text": "2018-19\n",
+            "Character_count": 8,
+            "translated_text": "2018-19",
+            "translated_character_count": 7,
+            "Font_Size": 9.0
+        }
+    ],
+    "9": [
+        {
+            "coordinates": [
+                445.9200134277344,
+                711.7718505859375,
+                465.41241455078125,
+                724.6261596679688
+            ],
+            "IniFontsize": 11.0,
+            "text": "9 n\n",
+            "Character_count": 4,
+            "translated_text": "9 ಎನ್",
+            "translated_character_count": 5,
+            "Font_Size": 13.75
+        },
+        {
+            "coordinates": [
+                464.39996337890625,
+                459.6661682128906,
+                544.5601196289062,
+                597.6661376953125
+            ],
+            "IniFontsize": 12.0,
+            "text": "KEYWORDS\ntravelling\nmanuscript\ninscription\narchaeology\nhistorian\nsource\ndecipherment\n",
+            "Character_count": 85,
+            "translated_text": "ಕೀವರ್ಡ್ಗಳು\nಪ್ರಯಾಣ\nಹಸ್ತಪ್ರತಿ\nಶಾಸನ\nಪುರಾತನತ್ವ\nಇತಿಹಾಸಕಾರ\nಮೂಲ\nಅರ್ಥಚಕ್ರವಾಗಿ",
+            "translated_character_count": 69,
+            "Font_Size": 12.0
+        },
+        {
+            "coordinates": [
+                230.63999938964844,
+                308.4294738769531,
+                284.6432189941406,
+                324.4294738769531
+            ],
+            "IniFontsize": 16.0,
+            "text": "Imagine\n",
+            "Character_count": 8,
+            "translated_text": "ವಾಗಿಸು",
+            "translated_character_count": 6,
+            "Font_Size": 16.0
+        },
+        {
+            "coordinates": [
+                90.719970703125,
+                333.2897644042969,
+                424.80255126953125,
+                360.6697692871094
+            ],
+            "IniFontsize": 12.5,
+            "text": "You have to interview an archaeologist. Prepare a list\nof five questions that you would like to ask her/him.\n",
+            "Character_count": 109,
+            "translated_text": "ನೀವು ಪುರಾತತ್ವಶಾಸ್ತ್ರಜ್ಞರನ್ನು ಸಂದರ್ಶಿಸಬೇಕು.ಪಟ್ಟಿಯನ್ನು ತಯಾರಿಸಿ\nನೀವು ಅವಳನ್ನು/ಅವನನ್ನು ಕೇಳಲು ಬಯಸುವ ಐದು ಪ್ರಶ್ನೆಗಳಲ್ಲಿ.",
+            "translated_character_count": 112,
+            "Font_Size": 12.844036697247706
+        },
+        {
+            "coordinates": [
+                101.51998901367188,
+                384.9894714355469,
+                186.24749755859375,
+                400.9894714355469
+            ],
+            "IniFontsize": 16.0,
+            "text": "Let’s recall\n",
+            "Character_count": 13,
+            "translated_text": "ನೆನಪಿಸಿಕೊಳ್ಳೋಣ",
+            "translated_character_count": 14,
+            "Font_Size": 17.23076923076923
+        },
+        {
+            "coordinates": [
+                90.71998596191406,
+                422.7061462402344,
+                233.99911499023438,
+                434.7061462402344
+            ],
+            "IniFontsize": 12.0,
+            "text": "1.\nMatch the following:\n",
+            "Character_count": 24,
+            "translated_text": "1.\nಕೆಳಗಿನವುಗಳನ್ನು ಹೊಂದಿಸಿ:",
+            "translated_character_count": 26,
+            "Font_Size": 13.0
+        },
+        {
+            "coordinates": [
+                115.43998718261719,
+                447.6661376953125,
+                414.7198486328125,
+                459.6661376953125
+            ],
+            "IniFontsize": 12.0,
+            "text": "Narmada Valley\nThe first big kingdom\n",
+            "Character_count": 37,
+            "translated_text": "ನರ್ಮದ ಕಣಿವೆ\nಮೊದಲ ದೊಡ್ಡ ರಾಜ್ಯ",
+            "translated_character_count": 28,
+            "Font_Size": 12.0
+        },
+        {
+            "coordinates": [
+                115.44000244140625,
+                472.3861389160156,
+                424.5599670410156,
+                484.3861389160156
+            ],
+            "IniFontsize": 12.0,
+            "text": "Magadha\nHunting and gathering\n",
+            "Character_count": 30,
+            "translated_text": "ಮಣಿದು\nಬೇಟೆ ಮತ್ತು ಒಟ್ಟುಗೂಡಿಸುವಿಕೆ",
+            "translated_character_count": 32,
+            "Font_Size": 12.8
+        },
+        {
+            "coordinates": [
+                115.44000244140625,
+                497.34613037109375,
+                392.87994384765625,
+                523.26611328125
+            ],
+            "IniFontsize": 12.0,
+            "text": "Garo hills\nCities about 2500\nyears ago\n",
+            "Character_count": 39,
+            "translated_text": "ಗಾದೆ ಬೆಟ್ಟಗಳು\nನಗರಗಳು ಸುಮಾರು 2500\nವರ್ಷಗಳ ಹಿಂದೆ",
+            "translated_character_count": 45,
+            "Font_Size": 13.846153846153847
+        },
+        {
+            "coordinates": [
+                115.44000244140625,
+                535.9861450195312,
+                388.5592041015625,
+                547.9861450195312
+            ],
+            "IniFontsize": 12.0,
+            "text": "Indus and its tributaries\nEarly agriculture\n",
+            "Character_count": 44,
+            "translated_text": "ಸಿಂಧೂ ಮತ್ತು ಅದರ ಉಪನದಿಗಳು\nಆರಂಭಿಕ ಕೃಷಿ",
+            "translated_character_count": 36,
+            "Font_Size": 12.0
+        },
+        {
+            "coordinates": [
+                115.44000244140625,
+                560.9461059570312,
+                371.28045654296875,
+                572.9461059570312
+            ],
+            "IniFontsize": 12.0,
+            "text": "Ganga Valley\nThe first cities\n",
+            "Character_count": 30,
+            "translated_text": "ಕಣಿವೆ\nಮೊದಲ ನಗರಗಳು",
+            "translated_character_count": 17,
+            "Font_Size": 12.0
+        },
+        {
+            "coordinates": [
+                90.72000122070312,
+                590.2261352539062,
+                424.8006286621094,
+                616.6260986328125
+            ],
+            "IniFontsize": 12.0,
+            "text": "2.\nList one major difference between manuscripts and\ninscriptions.\n",
+            "Character_count": 67,
+            "translated_text": "2.\nಹಸ್ತಪ್ರತಿಗಳ ನಡುವೆ ಒಂದು ಪ್ರಮುಖ ವ್ಯತ್ಯಾಸವನ್ನು ಪಟ್ಟಿ ಮಾಡಿ ಮತ್ತು\nಶಾಸನಗಳು.",
+            "translated_character_count": 72,
+            "Font_Size": 12.895522388059701
+        },
+        {
+            "coordinates": [
+                101.52000427246094,
+                651.62939453125,
+                196.08726501464844,
+                667.62939453125
+            ],
+            "IniFontsize": 16.0,
+            "text": "Let’s discuss\n",
+            "Character_count": 14,
+            "translated_text": "ಚರ್ಚಿಸೋಣ",
+            "translated_character_count": 8,
+            "Font_Size": 16.0
+        },
+        {
+            "coordinates": [
+                90.72000122070312,
+                689.3461303710938,
+                424.7984619140625,
+                715.74609375
+            ],
+            "IniFontsize": 12.0,
+            "text": "3.\nReturn to Rasheeda’s question. Can you think of some\nanswers to it?\n",
+            "Character_count": 71,
+            "translated_text": "3.\nರಶೀದಾ ಅವರ ಪ್ರಶ್ನೆಗೆ ಹಿಂತಿರುಗಿ.ನೀವು ಕೆಲವು ಬಗ್ಗೆ ಯೋಚಿಸಬಹುದೇ?\nಅದಕ್ಕೆ ಉತ್ತರಗಳು?",
+            "translated_character_count": 78,
+            "Font_Size": 13.183098591549296
+        },
+        {
+            "coordinates": [
+                445.9200134277344,
+                727.7133178710938,
+                552.9610595703125,
+                752.7133178710938
+            ],
+            "IniFontsize": 13.0,
+            "text": "WHAT, WHERE, HOW\nAND WHEN?\n",
+            "Character_count": 27,
+            "translated_text": "ಏನು, ಎಲ್ಲಿ, ಹೇಗೆ\nಮತ್ತು ಯಾವಾಗ?",
+            "translated_character_count": 29,
+            "Font_Size": 13.962962962962964
+        },
+        {
+            "coordinates": [
+                101.52001953125,
+                114.64974212646484,
+                552.0081176757812,
+                277.1497497558594
+            ],
+            "IniFontsize": 12.5,
+            "text": "One of the most famous stories of decipherment comes from Egypt, a\ncountry in north Africa where there were kings and queens about 5000\nyears ago.\nRosetta is a town on the north coast of Egypt, and here an inscribed\nstone was found, which contained inscriptions in three different languages\nand scripts (Greek, and two forms of Egyptian). Scholars who could read\nGreek figured out that the names of kings and queens were enclosed in a\nlittle frame, called a cartouche. They then placed the Greek and the Egyptian\nsigns side by side, and identified the sounds for which the Egyptian letters\nstood. As you can see, a lion stood for L, and a bird for A. Once they knew\nwhat the letters stood for, they could read other inscriptions as well.\n",
+            "Character_count": 738,
+            "translated_text": "ಅರ್ಥೈಸುವಿಕೆಯ ಅತ್ಯಂತ ಪ್ರಸಿದ್ಧ ಕಥೆಗಳಲ್ಲಿ ಒಂದು ಈಜಿಪ್ಟ್‌ನಿಂದ ಬಂದಿದೆ, ಎ\nಉತ್ತರ ಆಫ್ರಿಕಾದಲ್ಲಿ ಕಿಂಗ್ಸ್ ಮತ್ತು ಕ್ವೀನ್ಸ್ ಸುಮಾರು 5000\nವರ್ಷಗಳ ಹಿಂದೆ.\nರೊಸೆಟ್ಟಾ ಈಜಿಪ್ಟಿನ ಉತ್ತರ ಕರಾವಳಿಯಲ್ಲಿರುವ ಒಂದು ಪಟ್ಟಣವಾಗಿದೆ, ಮತ್ತು ಇಲ್ಲಿ ಕೆತ್ತಲಾಗಿದೆ\nಕಲ್ಲು ಕಂಡುಬಂದಿದೆ, ಇದರಲ್ಲಿ ಮೂರು ವಿಭಿನ್ನ ಭಾಷೆಗಳಲ್ಲಿ ಶಾಸನಗಳಿವೆ\nಮತ್ತು ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳು (ಗ್ರೀಕ್, ಮತ್ತು ಈಜಿಪ್ಟಿನ ಎರಡು ರೂಪಗಳು).ಓದಬಲ್ಲ ವಿದ್ವಾಂಸರು\nರಾಜರು ಮತ್ತು ರಾಣಿಯರ ಹೆಸರುಗಳನ್ನು ಎ ನಲ್ಲಿ ಸುತ್ತುವರಿಯಲಾಗಿದೆ ಎಂದು ಗ್ರೀಕ್ ಕಂಡುಕೊಂಡರು\nಸ್ವಲ್ಪ ಫ್ರೇಮ್, ಕಾರ್ಟೂಚ್ ಎಂದು ಕರೆಯಲಾಗುತ್ತದೆ.ನಂತರ ಅವರು ಗ್ರೀಕ್ ಮತ್ತು ಈಜಿಪ್ಟಿನವರನ್ನು ಇರಿಸಿದರು\nಚಿಹ್ನೆಗಳು ಅಕ್ಕಪಕ್ಕದಲ್ಲಿ, ಮತ್ತು ಈಜಿಪ್ಟಿನ ಅಕ್ಷರಗಳು ಯಾವ ಶಬ್ದಗಳನ್ನು ಗುರುತಿಸಿವೆ\nನಿಂತಿದೆ.ನೀವು ನೋಡುವಂತೆ, ಸಿಂಹವು ಎಲ್ ಗಾಗಿ ನಿಂತಿತು, ಮತ್ತು ಎ.\nಅಕ್ಷರಗಳು ಏನು ನಿಂತಿವೆ, ಅವರು ಇತರ ಶಾಸನಗಳನ್ನು ಸಹ ಓದಬಹುದು.",
+            "translated_character_count": 706,
+            "Font_Size": 12.5
+        },
+        {
+            "coordinates": [
+                298.4849853515625,
+                805.7586059570312,
+                331.5073547363281,
+                815.8132934570312
+            ],
+            "IniFontsize": 9.0,
+            "text": "2018-19\n",
+            "Character_count": 8,
+            "translated_text": "2018-19",
+            "translated_character_count": 7,
+            "Font_Size": 9.0
+        }
+    ],
+    "10": [
+        {
+            "coordinates": [
+                157.1999969482422,
+                722.8118286132812,
+                184.3199920654297,
+                735.6661376953125
+            ],
+            "IniFontsize": 12.0,
+            "text": "n 10\n",
+            "Character_count": 5,
+            "translated_text": "n 10",
+            "translated_character_count": 4,
+            "Font_Size": 12.0
+        },
+        {
+            "coordinates": [
+                117.59999084472656,
+                739.4733276367188,
+                184.29397583007812,
+                752.4733276367188
+            ],
+            "IniFontsize": 9.100000381469727,
+            "text": "OUR PASTS–I\n",
+            "Character_count": 12,
+            "translated_text": "ನಮ್ಮ ಪಾಸ್ಟ್ಸ್ -ನಾನು",
+            "translated_character_count": 19,
+            "Font_Size": 14.408333937327066
+        },
+        {
+            "coordinates": [
+                216.0,
+                107.10519409179688,
+                539.281982421875,
+                133.50521850585938
+            ],
+            "IniFontsize": 12.0,
+            "text": "4.\nMake a list of all the objects that archaeologists may\nfind. Which of these could be made of stone?\n",
+            "Character_count": 103,
+            "translated_text": "4.\nಪುರಾತತ್ತ್ವಜ್ಞರು ಮಾಡಬಹುದಾದ ಎಲ್ಲಾ ವಸ್ತುಗಳ ಪಟ್ಟಿಯನ್ನು ಮಾಡಿ\nಹುಡುಕಿ.ಇವುಗಳಲ್ಲಿ ಯಾವುದು ಕಲ್ಲಿನಿಂದ ಮಾಡಬಹುದಾಗಿದೆ?",
+            "translated_character_count": 106,
+            "Font_Size": 12.349514563106796
+        },
+        {
+            "coordinates": [
+                216.0,
+                151.02523803710938,
+                539.279296875,
+                177.42526245117188
+            ],
+            "IniFontsize": 12.0,
+            "text": "5.\nWhy do you think ordinary men and women did not\ngenerally keep records of what they did?\n",
+            "Character_count": 92,
+            "translated_text": "5.\nಸಾಮಾನ್ಯ ಪುರುಷರು ಮತ್ತು ಮಹಿಳೆಯರು ಹಾಗೆ ಮಾಡಲಿಲ್ಲ ಎಂದು ನೀವು ಏಕೆ ಭಾವಿಸುತ್ತೀರಿ\nಸಾಮಾನ್ಯವಾಗಿ ಅವರು ಏನು ಮಾಡಿದರು ಎಂಬುದರ ದಾಖಲೆಗಳನ್ನು ಇಟ್ಟುಕೊಳ್ಳುತ್ತೀರಾ?",
+            "translated_character_count": 141,
+            "Font_Size": 18.391304347826086
+        },
+        {
+            "coordinates": [
+                216.0,
+                194.94528198242188,
+                539.28173828125,
+                235.74533081054688
+            ],
+            "IniFontsize": 12.0,
+            "text": "6.\nDescribe at least two ways in which you think the\nlives of kings would have been different from those\nof farmers.\n",
+            "Character_count": 117,
+            "translated_text": "6.\nನೀವು ಯೋಚಿಸುವ ಕನಿಷ್ಠ ಎರಡು ವಿಧಾನಗಳನ್ನು ವಿವರಿಸಿ\nರಾಜರ ಜೀವನವು ಅವರಿಗಿಂತ ಭಿನ್ನವಾಗಿತ್ತು\nರೈತರ.",
+            "translated_character_count": 88,
+            "Font_Size": 12.0
+        },
+        {
+            "coordinates": [
+                226.8000030517578,
+                270.7486267089844,
+                287.52410888671875,
+                286.7486267089844
+            ],
+            "IniFontsize": 16.0,
+            "text": "Let’s do\n",
+            "Character_count": 9,
+            "translated_text": "ಮಾಡೋಣ",
+            "translated_character_count": 5,
+            "Font_Size": 16.0
+        },
+        {
+            "coordinates": [
+                216.0,
+                308.2936706542969,
+                539.2808227539062,
+                363.665283203125
+            ],
+            "IniFontsize": 12.0,
+            "text": "7.\nFind the word crafts persons on page 1. List at least\nfive different crafts that you know about today. Are\nthe crafts persons — (a) men (b) women (c) both men\nand women?\n",
+            "Character_count": 173,
+            "translated_text": "7.\nಪುಟ 1 ರಲ್ಲಿ ಕರಕುಶಲ ವ್ಯಕ್ತಿಗಳನ್ನು ಹುಡುಕಿ. ಕನಿಷ್ಠ ಪಟ್ಟಿ ಮಾಡಿ\nಇಂದು ನಿಮಗೆ ತಿಳಿದಿರುವ ಐದು ವಿಭಿನ್ನ ಕರಕುಶಲ ವಸ್ತುಗಳು.ಇರು\nಕರಕುಶಲ ವ್ಯಕ್ತಿಗಳು - (ಎ) ಪುರುಷರು (ಬಿ) ಮಹಿಳೆಯರು (ಸಿ) ಇಬ್ಬರೂ ಪುರುಷರು\nಮತ್ತು ಮಹಿಳೆಯರು?",
+            "translated_character_count": 196,
+            "Font_Size": 13.595375722543352
+        },
+        {
+            "coordinates": [
+                216.0,
+                380.9452819824219,
+                539.280029296875,
+                407.34527587890625
+            ],
+            "IniFontsize": 12.0,
+            "text": "8.\nWhat were the subjects on which books were written\nin the past? Which of these would you like to read?\n",
+            "Character_count": 106,
+            "translated_text": "8.\nಪುಸ್ತಕಗಳನ್ನು ಬರೆಯಲಾದ ವಿಷಯಗಳು ಯಾವುವು\nಹಳೆಗಾಲದಲ್ಲಿ?ಇವುಗಳಲ್ಲಿ ಯಾವುದನ್ನು ನೀವು ಓದಲು ಬಯಸುತ್ತೀರಿ?",
+            "translated_character_count": 92,
+            "Font_Size": 12.0
+        },
+        {
+            "coordinates": [
+                71.63599395751953,
+                149.3433074951172,
+                162.72193908691406,
+                190.3433074951172
+            ],
+            "IniFontsize": 11.0,
+            "text": " the beginning of\nagriculture (8000\nyears ago)\n",
+            "Character_count": 56,
+            "translated_text": " ಪ್ರಾರಂಭ\nಕೃಷಿ (8000\nವರ್ಷಗಳ ಹಿಂದೆ)",
+            "translated_character_count": 47,
+            "Font_Size": 11.0
+        },
+        {
+            "coordinates": [
+                71.63609313964844,
+                201.42381286621094,
+                177.60560607910156,
+                242.42381286621094
+            ],
+            "IniFontsize": 11.0,
+            "text": " the first cities on the\nIndus (4700 years\nago)\n",
+            "Character_count": 57,
+            "translated_text": " ಮೊದಲ ನಗರಗಳು\nಸಿಂಧೂ (4700 ವರ್ಷಗಳು\nಹಿಂದೆ)",
+            "translated_character_count": 53,
+            "Font_Size": 11.0
+        },
+        {
+            "coordinates": [
+                71.63609313964844,
+                253.74375915527344,
+                176.40853881835938,
+                309.6237487792969
+            ],
+            "IniFontsize": 11.0,
+            "text": " cities in the Ganga\nvalley, a big kingdom\nin Magadha (2500\nyears ago)\n",
+            "Character_count": 80,
+            "translated_text": "\nಗಂಗಾದಲ್ಲಿ ಯು ನಗರಗಳು\nಕಣಿವೆ, ಒಂದು ದೊಡ್ಡ ಸಾಮ್ರಾಜ್ಯ\nಮಗಧದಲ್ಲಿ (2500\nವರ್ಷಗಳ ಹಿಂದೆ)",
+            "translated_character_count": 88,
+            "Font_Size": 12.1
+        },
+        {
+            "coordinates": [
+                71.63609313964844,
+                320.9437561035156,
+                168.24703979492188,
+                346.8237609863281
+            ],
+            "IniFontsize": 11.0,
+            "text": "the present (about\n2000 AD/CE)\n",
+            "Character_count": 41,
+            "translated_text": "ಪ್ರೆಸೆಂಟ್ (ಸುಮಾರು\n2000 ಕ್ರಿ.ಶ/ಸಿಇ)",
+            "translated_character_count": 49,
+            "Font_Size": 13.146341463414634
+        },
+        {
+            "coordinates": [
+                82.80000305175781,
+                107.35742950439453,
+                168.72271728515625,
+                138.15248107910156
+            ],
+            "IniFontsize": 16.0,
+            "text": "SOME IMPORTANT\nDATES\n",
+            "Character_count": 21,
+            "translated_text": "ಕೆಲವು ಪ್ರಮುಖ\nದಿನಾಂಕಗಳು",
+            "translated_character_count": 22,
+            "Font_Size": 16.761904761904763
+        },
+        {
+            "coordinates": [
+                298.4849853515625,
+                805.7586059570312,
+                331.5073547363281,
+                815.8132934570312
+            ],
+            "IniFontsize": 9.0,
+            "text": "2018-19\n",
+            "Character_count": 8,
+            "translated_text": "2018-19",
+            "translated_character_count": 7,
+            "Font_Size": 9.0
+        }
+    ],
+    "11": [
+        {
+            "coordinates": [
+                149.75999450683594,
+                722.8118286132812,
+                184.31988525390625,
+                735.6661376953125
+            ],
+            "IniFontsize": 12.0,
+            "text": "n 136\n",
+            "Character_count": 6,
+            "translated_text": "n 136",
+            "translated_character_count": 5,
+            "Font_Size": 12.0
+        },
+        {
+            "coordinates": [
+                117.59999084472656,
+                739.4733276367188,
+                184.29397583007812,
+                752.4733276367188
+            ],
+            "IniFontsize": 9.100000381469727,
+            "text": "OUR PASTS–I\n",
+            "Character_count": 12,
+            "translated_text": "ನಮ್ಮ ಪಾಸ್ಟ್ಸ್ -ನಾನು",
+            "translated_character_count": 19,
+            "Font_Size": 14.408333937327066
+        },
+        {
+            "coordinates": [
+                369.3599853515625,
+                154.1291046142578,
+                471.6069030761719,
+                180.04908752441406
+            ],
+            "IniFontsize": 12.0,
+            "text": "MAP : 8\nPolitical Map of India\n",
+            "Character_count": 31,
+            "translated_text": "ನಕ್ಷೆ: 8\nಭಾರತದ ರಾಜಕೀಯ ನಕ್ಷೆ",
+            "translated_character_count": 27,
+            "Font_Size": 12.0
+        },
+        {
+            "coordinates": [
+                298.4849853515625,
+                805.7586059570312,
+                331.5073547363281,
+                815.8132934570312
+            ],
+            "IniFontsize": 9.0,
+            "text": "2018-19\n",
+            "Character_count": 8,
+            "translated_text": "2018-19",
+            "translated_character_count": 7,
+            "Font_Size": 9.0
+        }
     ]
 }

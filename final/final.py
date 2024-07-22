@@ -5,8 +5,8 @@ import os
 import convertapi
 
 # Open the PDF document
-doc = fitz.open(r"documents/demo3.pdf") #---------> Specify the input file
-new_pdf_path = r"documents/TranslatedDemo3.pdf" #-----------> Specify the output file
+doc = fitz.open(r"documents/demo.pdf") #---------> Specify the input file
+new_pdf_path = r"documents/TranslatedDemo.pdf" #-----------> Specify the output file
 
 # Create a new PDF document
 new_doc = fitz.open()
@@ -99,9 +99,11 @@ for i in range(doc.page_count):
             # Ensure UTF-8 encoding
             translated_text = translated_text.encode('utf-8').decode('utf-8')
 
+            rect = fitz.Rect(x0, y0, x1, y1)
+
             # Draw translated text on the new page with the font buffer
-            new_page.insert_text(
-                (x0, y0),
+            new_page.insert_textbox(
+                rect,
                 translated_text,
                 fontname='NotoSansKannada',
                 fontfile=noto_sans_kannada_path,
