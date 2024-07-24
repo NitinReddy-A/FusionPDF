@@ -5,7 +5,7 @@ import convertapi
 convertapi.api_secret = '4OYbALQ2RREClhvm'
 
 #Specify the file path here
-doc = 'documents/sp'
+doc = 'documents/op'
 
 convertapi.convert('docx', {
     'File': f'{doc}.pdf' 
