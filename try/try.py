@@ -2,7 +2,7 @@ import fitz
 import json
 
 # Define the path to the PDF file
-pdf_path = r"documents\demo1.pdf"
+pdf_path = r"C:\Users\Lenovo\Downloads\scan1.pdf"
 
 # Dictionary to store text with coordinates and character count
 extracted_data = {}
@@ -36,14 +36,15 @@ blocks = page.get_text("dict", flags=11)["blocks"]
 for b in blocks:
     for l in b["lines"]:  # iterate through the text lines
         for s in l["spans"]:  # iterate through the text spans
-            #text = s["text"]
+            text = s["text"]
+            print(text)
             #bbox = s["bbox"]
             #origin = s["origin"]
             font_size = s["size"]
             #character_count = len(text)
     print(b , "\n")
-bl = page.get_text("blocks")
-print(bl)
+#bl = page.get_text("blocks")
+#print(bl)
 #Remove /n from all the text.
                 # Append to the result
                 #page_data.append({

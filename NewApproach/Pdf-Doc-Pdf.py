@@ -2,15 +2,21 @@
 
 import convertapi
 
-convertapi.api_secret = '4OYbALQ2RREClhvm'
+convertapi.api_secret = 'secret_gtNBzUG0bOmJiQU6'
 
 #Specify the file path here
-doc = 'documents/demo1'
+doc = r'NewApproach\op'
+#
+#convertapi.convert('docx', {
+#    'File': f'{doc}.pdf' 
+#}, from_format = 'pdf').save_files('documents')
 
-convertapi.convert('docx', {
-    'File': f'{doc}.pdf' 
-}, from_format = 'pdf').save_files('documents')
+convertapi.convert('pdf', {
+    'File': r'NewApproach\op.docx' 
+}, from_format = 'docx').save_files('documents')
 
-#convertapi.convert('pdf', {
-#    'File': f'{doc}.docx' 
-#}, from_format = 'docx').save_files('documents')
+#ocr
+
+#convertapi.convert('ocr', {
+#    'File': 'documents/scan1.pdf'
+#}, from_format = 'pdf').save_files('documents')
