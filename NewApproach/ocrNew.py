@@ -1,44 +1,30 @@
 import requests
-import os
 
-def convert_pdf_to_word(api_key, pdf_file_path):
-    # Define the API endpoint
-    url = "https://api.ocr.space/parse/image"
-    
-    # Prepare the files and parameters for the request
-    with open(pdf_file_path, 'rb') as pdf_file:
-        files = {
-            'file': pdf_file
-        }
-        data = {
-            'apikey': api_key,
-            'language': 'eng',  # You can change this to other supported languages
-            'isOverlayRequired': False,
-            'filetype': 'PDF'  # Specify the file type
-        }
+# Set your API key and endpoint
+API_KEY = 'wxo289alw442lloon'
+OCR_CONVERSION_URL = 'https://techhk.aoscdn.com/api/tasks/document/ocr'
 
-        # Make the API request
-        response = requests.post(url, files=files, data=data)
-        
-        if response.status_code == 200:
-            # Parse the JSON response
-            result = response.json()
-            if result['IsErroredOnProcessing']:
-                print("Error:", result['ErrorMessage'])
-                return None
-            
-            # Extract the text and save it to a Word document
-            text = result['ParsedResults'][0]['ParsedText']
-            output_file_path = os.path.splitext(pdf_file_path)[0] + '.docx'
-            
-            with open(output_file_path, 'w', encoding='utf-8') as word_file:
-                word_file.write(text)
-            
-            print(f"Converted '{pdf_file_path}' to '{output_file_path}'")
-        else:
-            print("Error:", response.status_code)
+# Specify the path to your scanned PDF file
+pdf_file_path = r'C:\Users\Lenovo\Desktop\repo\FusionPDF\documents\scan1.pdf'  # Replace with your actual file path
 
-# Example usage
-api_key = "K86228425088957"  # Your API key
-pdf_file_path = r"C:\Users\Lenovo\Desktop\repo\FusionPDF\documents\scan1.pdf"  # Replace with your PDF file path
-convert_pdf_to_word(api_key, pdf_file_path)
+# Prepare the request headers and payload
+headers = {
+    'X-API-KEY': API_KEY
+}
+
+# Prepare the request payload
+files = {'file': open(pdf_file_path, 'rb')}
+data = {'format': 'docx'}  # Desired output format (e.g., 'docx', 'txt')
+
+# Send a POST request to create the OCR conversion task
+response = requests.post(OCR_CONVERSION_URL, headers=headers, data=data, files=files)
+
+# Check if the request was successful
+if response.status_code == 200:
+    task_id = response.json().get('data', {}).get('task_id')
+    if task_id:
+        print(f"OCR task created successfully! Task ID: {task_id}")
+    else:
+        print(f"Error: {response.json().get('message')}")
+else:
+    print(f"Error: {response.status_code} - {response.text}")
