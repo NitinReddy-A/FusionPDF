@@ -5,7 +5,7 @@ import json
 pdf_path = r"FinOp.pdf"
 
 # Define the path to the output JSON file
-output_json_path = r"extracted_text_with_coordinates1.json"
+output_json_path = r"extracted_text_with_coordinates.json"
 
 # Dictionary to store text with coordinates and character count
 extracted_data = {}
@@ -42,6 +42,7 @@ for i in range(doc.page_count):
                 #origin = s["origin"]
                 font_size = s["size"]
                 #character_count = len(text)
+                color = s["color"]
 
         # Append to the result
         page_data.append({
@@ -49,6 +50,7 @@ for i in range(doc.page_count):
             #"text": text,
             #"IniCharacter_count": character_count,
             "IniFontsize": font_size,
+            "Color": color,
         })
 
     # Add the page data to the extracted data dictionary
