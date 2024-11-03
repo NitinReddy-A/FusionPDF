@@ -20,18 +20,17 @@ with open(json_path, "r", encoding="utf-8") as json_file:
     extracted_data = json.load(json_file)
 
 # Create a new PDF document
-new_doc = fitz.open(output_pdf_path)
+new_doc = fitz.open()  # Open a new, empty PDF document
 
 # Iterate through the pages in the JSON data
 for page_num, page_data in extracted_data.items():
-    # Load a page
-    new_page = new_doc.load_page(int(page_num)-1)
+    # Create a new page if one does not exist
+    new_page = new_doc.new_page()  # Create a standard A4 size page
 
     # Iterate through the text blocks on the current page
     for block in page_data:
         translated_text = block["translated_text"]
         coordinates = block["coordinates"]
-        #origin = block["origin"]
         x0, y0, x1, y1 = coordinates[0], coordinates[1], coordinates[2], coordinates[3]
 
         # Set the font size based on the height of the bounding box
@@ -42,19 +41,16 @@ for page_num, page_data in extracted_data.items():
         print(translated_text)
 
         # Draw translated text on the new page with the font file using insert_textbox
-        new_page.insert_htmlbox(
-            coordinates,
+        new_page.insert_textbox(
+            rect,
             translated_text,
-            #align=0,
-            #fontsize=font_size,
-            #fontname='NotoSansKannada',
-            #fontfile=noto_sans_kannada_path,
-            #color=(0, 0, 0),
-            #oc=0
-        )#
+            fontsize=font_size,
+            fontfile=noto_sans_kannada_path,
+            color=(0, 0, 0)
+        )
 
 # Save the new PDF
-new_doc.saveIncr()
+new_doc.save(output_pdf_path)
 
 # Close the document
 new_doc.close()
