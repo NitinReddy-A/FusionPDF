@@ -6,7 +6,7 @@ import os
 json_path = r"extracted_text_with_coordinates1.json"
 
 # Path to the output translated PDF file
-output_pdf_path = r"op.pdf"
+output_pdf_path = r"op1.pdf"
 
 # Define the path to the Noto Sans Kannada TTF file
 noto_sans_kannada_path = r"NotoSansKannada-VariableFont_wdth,wght.ttf"
@@ -45,8 +45,7 @@ for page_num, page_data in extracted_data.items():
             rect,
             translated_text,
             fontsize=font_size,
-            fontfile=noto_sans_kannada_path,
-            color=(0, 0, 0)
+            fontfile=noto_sans_kannada_path
         )
 
 # Save the new PDF

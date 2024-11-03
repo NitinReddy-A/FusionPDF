@@ -3,7 +3,7 @@ import pymupdf
 import os
 
 # Open the PDF document
-doc = fitz.open(r"FinOp.pdf") #---------> Specify the input file
+doc = fitz.open(r"Outline.pdf") #---------> Specify the input file
 new_pdf_path = r"op.pdf" #-----------> Specify the output file
 
 # Create a new PDF document

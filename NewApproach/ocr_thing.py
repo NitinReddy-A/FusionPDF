@@ -7,7 +7,7 @@ LicenseCode = '7132C263-625C-4CF9-A82C-8DE8F852CB07'
 UserName = 'nitin21'
 
 # Full path to uploaded document (PDF in this case)
-FilePath = r"C:\Users\Lenovo\Desktop\repo\FusionPDF\documents\scan1.pdf"
+FilePath = r"C:\Users\Lenovo\Desktop\repo\FusionPDF\documents\scan2.pdf"
 
 # URL to process the document using the OCRWebService
 # Convert the PDF into Word (docx) format
