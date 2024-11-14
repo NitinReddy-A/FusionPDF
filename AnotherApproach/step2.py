@@ -33,7 +33,7 @@ def insert_newlines(text, translated_text):
     return translated_text
 
 # Path to the input JSON file
-json_path = r"extracted_text_with_coordinates1.json"
+json_path = r"extracted_text_with_coordinates.json"
 
 # Load the JSON data
 with open(json_path, "r", encoding="utf-8") as json_file:

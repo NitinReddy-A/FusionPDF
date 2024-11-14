@@ -2,7 +2,7 @@ import fitz
 import json
 
 # Define the path to the PDF file
-pdf_path = r"FinOp.pdf"
+pdf_path = r"documents/FinOp.pdf"
 
 # Define the path to the output JSON file
 output_json_path = r"extracted_text_with_coordinates.json"
@@ -38,7 +38,7 @@ for i in range(doc.page_count):
         bbox = b["bbox"]
         for l in b["lines"]:  # iterate through the text lines
             for s in l["spans"]:  # iterate through the text spans
-                #text = s["text"]
+                text = s["text"]
                 #origin = s["origin"]
                 font_size = s["size"]
                 #character_count = len(text)
@@ -47,7 +47,7 @@ for i in range(doc.page_count):
         # Append to the result
         page_data.append({
             "coordinates": bbox,
-            #"text": text,
+            "text": text,
             #"IniCharacter_count": character_count,
             "IniFontsize": font_size,
             "Color": color,

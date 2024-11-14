@@ -5,7 +5,7 @@ image = Image.open(r"Scanned_HeadernFooter\page_1.jpg")
 
 # Define the coordinates for cropping (left, upper, right, lower)
 left = 0
-upper = 0
+upper = 100
 right = 1780
 lower = 650
 
