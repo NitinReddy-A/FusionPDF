@@ -5,7 +5,7 @@ API_KEY = 'wx6tkon97x0q5qyl8'
 OCR_CONVERSION_URL = 'https://techhk.aoscdn.com/api/tasks/document/ocr'
 
 # Specify the path to your scanned PDF file
-pdf_file_path = r'C:\Users\Lenovo\Desktop\repo\FusionPDF\documents\scan2.pdf'  # Replace with your actual file path
+pdf_file_path = r'C:\Users\Lenovo\Desktop\repo\FusionPDF\documents\scan1.pdf'  # Replace with your actual file path
 
 # Prepare the request headers and payload
 headers = {
