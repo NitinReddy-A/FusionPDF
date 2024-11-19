@@ -326,19 +326,19 @@ def translate_and_insert_newlines(pdf_path, json_path, dest_language='kn'):
     translator = Translator()
 
     # Function to translate text
-    def translate_text(text, dest_language='kn'):
+    def translate_text(text, dest_language='kn'):  # Change 'kn' to your desired language code
         try:
             translated = translator.translate(text, dest=dest_language)
             print("Translated:", translated.text)
-            return translated.text
+            return (translated.text)
         except Exception as e:
             print(f"Error in translation: {e}")
             return text
-    
+
     def insert_newlines(text, translated_text):
         # Find positions of '\n' in the original text
         newline_positions = [pos for pos, char in enumerate(text) if char == '\n']
-        
+
         # Adjust positions for translated text
         adjusted_positions = []
         offset = 0
@@ -346,12 +346,13 @@ def translate_and_insert_newlines(pdf_path, json_path, dest_language='kn'):
             while pos + offset < len(translated_text) and translated_text[pos + offset] != ' ':
                 offset += 1
             adjusted_positions.append(pos + offset)
-        
+
         # Insert '\n' at the adjusted positions
         for pos in reversed(adjusted_positions):  # reversed to avoid messing up positions
             translated_text = translated_text[:pos] + '\n' + translated_text[pos:]
-        
+
         return translated_text
+
 
     # Load the JSON data
     with open(json_path, "r", encoding="utf-8") as json_file:
@@ -363,7 +364,7 @@ def translate_and_insert_newlines(pdf_path, json_path, dest_language='kn'):
             original_text = block["text"]
             c1 = block["Character_count"]
             f = block["IniFontsize"]
-            translated_text = translate_text(original_text, dest_language)  # Translate text
+            translated_text = translate_text(original_text, dest_language='kn')  # Change 'kn' to your desired language code
             block["translated_text"] = translated_text
             block["translated_character_count"] = len(translated_text)
             #block["Translated_text"] = insert_newlines(block["text"], translated_text)
@@ -375,7 +376,7 @@ def translate_and_insert_newlines(pdf_path, json_path, dest_language='kn'):
     # Save the translated data back to the same JSON file
     with open(json_path, "w", encoding="utf-8") as json_file:
         json.dump(extracted_data, json_file, ensure_ascii=False, indent=4)
-
+    
     print(f"Translation and updates complete. Data saved to {json_path}.")
 
 
@@ -396,38 +397,41 @@ def create_translated_pdf(json_path, output_pdf_path, font_path):
     with open(json_path, "r", encoding="utf-8") as json_file:
         extracted_data = json.load(json_file)
 
-    # Open the existing PDF document
+    # Create a new PDF document
     new_doc = fitz.open(output_pdf_path)
 
-    # Iterate through the pages in the JSON data and add translated text
+    # Iterate through the pages in the JSON data
     for page_num, page_data in extracted_data.items():
-        # Load the corresponding page in the PDF
-        new_page = new_doc.load_page(int(page_num) - 1)
+        # Load a page
+        new_page = new_doc.load_page(int(page_num)-1)
 
-        # Iterate through the text blocks for the current page
+        # Iterate through the text blocks on the current page
         for block in page_data:
             translated_text = block["translated_text"]
             coordinates = block["coordinates"]
+            #origin = block["origin"]
             x0, y0, x1, y1 = coordinates[0], coordinates[1], coordinates[2], coordinates[3]
 
-            # Set the font size based on the bounding box height (optional)
+            # Set the font size based on the height of the bounding box
             font_size = block["IniFontsize"]
 
-            # Create a rectangle to define the area for inserting the text
             rect = fitz.Rect(x0, y0, x1, y1)
 
-            print(f"Inserting text: {translated_text}")
+            print(translated_text)
 
-            # Insert the translated text into the specified rectangle using the specified font
+            # Draw translated text on the new page with the font file using insert_textbox
             new_page.insert_htmlbox(
-                rect,
+                coordinates,
                 translated_text,
-                fontfile=font_path,  # Use the specified font file
-                fontsize=font_size,
-                color=(0, 0, 0)  # Set text color to black
-            )
+                #align=0,
+                #fontsize=font_size,
+                #fontname='NotoSansKannada',
+                #fontfile=noto_sans_kannada_path,
+                #color=(0, 0, 0),
+                #oc=0
+            )#
 
-    # Save the updated PDF
+    # Save the new PDF
     new_doc.saveIncr()
 
     # Close the document
