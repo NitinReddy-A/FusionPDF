@@ -6,7 +6,7 @@ API_KEY = 'wx6tkon97x0q5qyl8'
 RESULT_URL = 'https://techhk.aoscdn.com/api/tasks/document/ocr/'
 
 # Replace with the task_id obtained from the previous step
-task_id = '49f1c0b4-acbd-4b4b-99ad-d25c5b1b3490'  # Replace with your actual task_id
+task_id = '80419355-6fb2-4f3b-a0ed-f95de9cbd6ea'  # Replace with your actual task_id
 
 headers = {
     'X-API-KEY': API_KEY

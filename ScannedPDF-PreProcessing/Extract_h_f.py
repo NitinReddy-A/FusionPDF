@@ -1,7 +1,7 @@
 from PIL import Image
 
 # Open the image
-image = Image.open(r"Scanned_HeadernFooter\page_1.jpg")
+image = Image.open(r"ScannedPDF_IMG\page_1.jpg")
 
 # Define the coordinates for cropping (left, upper, right, lower)
 left = 0
