@@ -2,7 +2,7 @@
 
 import convertapi
 
-convertapi.api_secret = 'secret_gtNBzUG0bOmJiQU6'
+convertapi.api_credentials = 'secret_HVuqFuKW4UsSHiCI'
 
 #Specify the file path here
 doc = r'NewApproach\op'
@@ -12,7 +12,7 @@ doc = r'NewApproach\op'
 #}, from_format = 'pdf').save_files('documents')
 
 convertapi.convert('pdf', {
-    'File': r'NewApproach\op.docx' 
+    'File': r'TextOp.docx' 
 }, from_format = 'docx').save_files('documents')
 
 #ocr
