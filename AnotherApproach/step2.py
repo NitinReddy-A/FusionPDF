@@ -42,9 +42,9 @@ with open(json_path, "r", encoding="utf-8") as json_file:
 # Iterate through the extracted data and translate the text
 for page_num, page_data in extracted_data.items():
     for block in page_data:
-        original_text = block["text"]
-        c1 = block["Character_count"]
-        f = block["IniFontsize"]
+        original_text = block.get("text", "")
+        c1 = block.get("Character_count", len(original_text)) 
+        f = block.get("IniFontsize")
         translated_text = translate_text(original_text, dest_language='kn')  # Change 'kn' to your desired language code
         block["translated_text"] = translated_text
         block["translated_character_count"] = len(translated_text)

@@ -225,18 +225,18 @@ def extract_text_with_coordinates(pdf_path, output_json_path):
     :param pdf_path: Path to the input PDF file.
     :param output_json_path: Path to the output JSON file.
     """
-    # Dictionary to store text with coordinates and font size
+    # Dictionary to store text with coordinates and character count
     extracted_data = {}
-
+    
     # Create a document object
     doc = fitz.open(pdf_path)
-
+    
     # Extract the number of pages
     print(f"Number of pages: {doc.page_count}")
-
+    
     # Extract metadata
     print("Metadata:", doc.metadata)
-
+    
     # Iterate through all pages
     for i in range(doc.page_count):
         # Get the page
@@ -244,33 +244,40 @@ def extract_text_with_coordinates(pdf_path, output_json_path):
         
         # Extract text blocks from the page
         blocks = page.get_text("dict", flags=11)["blocks"]
-
+    
+        #blocks1 = page.get_text("blocks")
+        
         # List to store text and coordinates for the current page
         page_data = []
-
+    
+    
+    
         for b in blocks:
             bbox = b["bbox"]
             for l in b["lines"]:  # iterate through the text lines
                 for s in l["spans"]:  # iterate through the text spans
                     text = s["text"]
+                    #origin = s["origin"]
                     font_size = s["size"]
+                    #character_count = len(text)
                     color = s["color"]
-
-                    # Append to the result
-                    page_data.append({
-                        "coordinates": bbox,
-                        "text": text,
-                        "IniFontsize": font_size,
-                        "Color": color,
-                    })
-
+    
+            # Append to the result
+            page_data.append({
+                "coordinates": bbox,
+                "text": text,
+                #"IniCharacter_count": character_count,
+                "IniFontsize": font_size,
+                "Color": color,
+            })
+    
         # Add the page data to the extracted data dictionary
-        extracted_data[i + 1] = page_data
-
+        extracted_data[i+1] = page_data
+    
     # Save the extracted data to a JSON file
     with open(output_json_path, "w", encoding="utf-8") as json_file:
         json.dump(extracted_data, json_file, ensure_ascii=False, indent=4)
-
+    
     # Close the document
     doc.close()
     print(f"Extraction complete. Data saved to {output_json_path}.")
@@ -287,26 +294,26 @@ def add_text_and_character_count(pdf_path, json_path):
     # Load the JSON data
     with open(json_path, "r", encoding="utf-8") as json_file:
         extracted_data = json.load(json_file)
-
+    
     # Create a document object
     doc = fitz.open(pdf_path)
-
-    # Iterate through the extracted data and update text and character count
+    
+    # Iterate through the extracted data and translate the text
     for page_num, page_data in extracted_data.items():
-        # Get the page
-        page = doc.load_page(int(page_num) - 1)  # Page indexing starts from 0
-        blocks = page.get_text("blocks")
         
-        # Iterate over the blocks and update the extracted data
-        for block, data in zip(blocks, page_data):
-            text = block[4]  # Extract text from the block
-            data["text"] = text
-            data["Character_count"] = len(text)
-
-    # Save the updated extracted data to the JSON file
+        # Get the page
+        page = doc.load_page(int(page_num) - 1)  # or page = doc[i]
+        blocks = page.get_text("blocks")
+        for b,block in zip(blocks,page_data):
+            text = b[4]
+            block["text"] = text
+            block["Character_count"] = len(text)
+    
+    
+    # Save the extracted data to a JSON file
     with open(json_path, "w", encoding="utf-8") as json_file:
         json.dump(extracted_data, json_file, ensure_ascii=False, indent=4)
-
+    
     # Close the document
     doc.close()
 
@@ -361,9 +368,9 @@ def translate_and_insert_newlines(pdf_path, json_path, dest_language='kn'):
     # Iterate through the extracted data and translate the text
     for page_num, page_data in extracted_data.items():
         for block in page_data:
-            original_text = block["text"]
-            c1 = block["Character_count"]
-            f = block["IniFontsize"]
+            original_text = block.get("text", "")
+            c1 = block.get("Character_count", len(original_text)) 
+            f = block.get("IniFontsize", 12)
             translated_text = translate_text(original_text, dest_language='kn')  # Change 'kn' to your desired language code
             block["translated_text"] = translated_text
             block["translated_character_count"] = len(translated_text)
@@ -442,8 +449,8 @@ def create_translated_pdf(json_path, output_pdf_path, font_path):
 
 pdf_path = r"ScannedPDF_Final/TextOp.pdf"
 output_json_path = r"extracted_text_with_coordinates.json"
-extract_text_with_coordinates(pdf_path, output_json_path)
-add_text_and_character_count(pdf_path, output_json_path)
-translate_and_insert_newlines(pdf_path, output_json_path, dest_language='kn')
+# extract_text_with_coordinates(pdf_path, output_json_path)
+# add_text_and_character_count(pdf_path, output_json_path)
+# translate_and_insert_newlines(pdf_path, output_json_path, dest_language='kn')
 font_path = r"NotoSansKannada-VariableFont_wdth,wght.ttf"
 create_translated_pdf(output_json_path, output_pdf_path, font_path)

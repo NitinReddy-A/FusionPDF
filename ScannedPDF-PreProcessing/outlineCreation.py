@@ -10,4 +10,4 @@ class PDFWithImages(FPDF):
 
 pdf = PDFWithImages()
 pdf.add_page()
-pdf.output("Outline.pdf")
+pdf.output("FinalOutput.pdf")
