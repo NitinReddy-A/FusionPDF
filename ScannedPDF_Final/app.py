@@ -294,13 +294,13 @@ def add_text_and_character_count(pdf_path, json_path):
     # Load the JSON data
     with open(json_path, "r", encoding="utf-8") as json_file:
         extracted_data = json.load(json_file)
-    
+
     # Create a document object
     doc = fitz.open(pdf_path)
-    
+
     # Iterate through the extracted data and translate the text
     for page_num, page_data in extracted_data.items():
-        
+
         # Get the page
         page = doc.load_page(int(page_num) - 1)  # or page = doc[i]
         blocks = page.get_text("blocks")
@@ -308,12 +308,12 @@ def add_text_and_character_count(pdf_path, json_path):
             text = b[4]
             block["text"] = text
             block["Character_count"] = len(text)
-    
-    
+
+
     # Save the extracted data to a JSON file
     with open(json_path, "w", encoding="utf-8") as json_file:
         json.dump(extracted_data, json_file, ensure_ascii=False, indent=4)
-    
+
     # Close the document
     doc.close()
 
@@ -449,8 +449,8 @@ def create_translated_pdf(json_path, output_pdf_path, font_path):
 
 pdf_path = r"ScannedPDF_Final/TextOp.pdf"
 output_json_path = r"extracted_text_with_coordinates.json"
-# extract_text_with_coordinates(pdf_path, output_json_path)
-# add_text_and_character_count(pdf_path, output_json_path)
-# translate_and_insert_newlines(pdf_path, output_json_path, dest_language='kn')
+extract_text_with_coordinates(pdf_path, output_json_path)
+add_text_and_character_count(pdf_path, output_json_path)
+translate_and_insert_newlines(pdf_path, output_json_path, dest_language='kn')
 font_path = r"NotoSansKannada-VariableFont_wdth,wght.ttf"
 create_translated_pdf(output_json_path, output_pdf_path, font_path)
