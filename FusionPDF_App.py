@@ -2,7 +2,7 @@ import streamlit as st
 import fitz  # PyMuPDF for PDF processing
 from io import BytesIO
 import convertapi
-import app
+from ScannedPDF_Final import app
 
 
 # def process_pdf(input_pdf_bytes):
