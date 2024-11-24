@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 
 # Open the image
-image = Image.open(r"ScannedPDF_IMG\page_1.jpg")
+image = Image.open(r"ScannedPDF_Final\page_1.jpg")
 
 # Get the dimensions of the image
 width, height = image.size
@@ -17,7 +17,7 @@ plt.xticks(range(0, width + 1, width // 10))  # X-axis scale
 plt.yticks(range(0, height + 1, height // 10))  # Y-axis scale
 
 # Add grid lines for better visualization
-plt.grid(color='red', linestyle='--', linewidth=0.5)
+plt.grid(color='blue', linestyle='--', linewidth=0.15)
 
 # Add labels
 plt.xlabel("Width (pixels)")
