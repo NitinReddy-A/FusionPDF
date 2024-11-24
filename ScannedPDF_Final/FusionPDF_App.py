@@ -13,59 +13,70 @@ def process_pdf(input_pdf_bytes):
         input_pdf_bytes (bytes): Byte data of the input PDF.
 
     Returns:
-        str: Path to the processed output PDF file.
+        bytes: Byte data of the processed PDF.
     """
-    # Save the uploaded file as a temporary PDF
-    temp_input_pdf_path = "temp_input.pdf"
-    with open(temp_input_pdf_path, "wb") as temp_file:
-        temp_file.write(input_pdf_bytes)
+    # Open the input PDF
+    input_pdf = fitz.open(stream=input_pdf_bytes, filetype="pdf")
 
-    # Step 1: Create OCR Task
+    # Create a new PDF to store processed output
+    output_pdf = fitz.open()
+
+    # Set your API key and file path
     API_KEY = 'wx6tkon97x0q5qyl8'
     RESULT_URL = 'https://techhk.aoscdn.com/api/tasks/document/ocr/'
-    task_id = app.create_ocr_task(API_KEY, temp_input_pdf_path, output_format='docx')
+    pdf_file_path = input_pdf
+
+    # Step 1: Create OCR Task
+    task_id = app.create_ocr_task(API_KEY, pdf_file_path, output_format='docx')
 
     if 'Error' not in task_id:
-        st.info(f"Task created successfully. Task ID: {task_id}")
+        print(f"Task created successfully. Task ID: {task_id}")
 
         # Step 2: Retrieve OCR Result
         result_url = app.perform_ocr_task(task_id=task_id, api_key=API_KEY, result_url=RESULT_URL)
-        st.info(f"Processed document is available at: {result_url}")
+
+        print(f"Processed document is available at: {result_url}")
+
     else:
-        st.error(task_id)
-        return None
+        print(task_id)
 
-    # Process the document further
-    intermediate_docx_path = "TextOp.docx"
-    output_docx_path = "ProcessedText.docx"
-    para_indices_to_remove = [0, 1, 2, 3, 4, 5, 6, 7, 23, 24]
+    # Example usage:
+    file_path = 'o.docx'
+    output_path = 'TextOp.docx'
+    para_indices_to_remove = [0,1,2,3,4,5,6,7,23,24]  # Example: Remove paragraphs 2, 4, and 6 (0-based index)
 
-    app.remove_paragraphs_by_index(intermediate_docx_path, output_docx_path, para_indices_to_remove)
+    app.remove_paragraphs_by_index(file_path, output_path, para_indices_to_remove)
 
-    # Convert DOCX to PDF
-    convertapi.api_secret = 'secret_HVuqFuKW4UsSHiCI'
-    pdf_conversion = convertapi.convert('pdf', {'File': output_docx_path}, from_format='docx')
-    final_pdf_path = "FinalOutput.pdf"
-    pdf_conversion.save_files(final_pdf_path)
+    convertapi.api_credentials = 'secret_HVuqFuKW4UsSHiCI'
+    convertapi.convert('pdf', {
+        'File': r'TextOp.docx' 
+    }, from_format = 'docx').save_files('ScannedPDF_Final')
 
-    # Additional processing (images, headers/footers, etc.)
-    app.convert_pdf_to_jpg(final_pdf_path, "ScannedPDF_Final", zoom=3)
-    app.save_headersNfooters("ScannedPDF_Final/page_1.jpg")
+    app.convert_pdf_to_jpg(r"documents\scan1.pdf", "ScannedPDF_Final",zoom=3)
 
-    header_image = "Header.jpg"
-    footer_image = "Footer.jpg"
-    app.create_pdf_with_images(header_image, footer_image, final_pdf_path)
+    app.save_headersNfooters(r"ScannedPDF_Final\page_1.jpg")
 
-    # Final enhancements and text processing
-    output_json_path = "extracted_text_with_coordinates.json"
-    app.extract_text_with_coordinates(final_pdf_path, output_json_path)
-    app.add_text_and_character_count(final_pdf_path, output_json_path)
-    app.translate_and_insert_newlines(final_pdf_path, output_json_path, dest_language='kn')
+    header_image = "Header.jpg"  # Path to the header image
+    footer_image = "Footer.jpg"  # Path to the footer image
+    output_pdf_path = "FinalOutput.pdf"  # Path where the PDF will be saved
 
-    font_path = "NotoSansKannada-VariableFont_wdth,wght.ttf"
-    app.create_translated_pdf(output_json_path, final_pdf_path, font_path)
+    app.create_pdf_with_images(header_image, footer_image, output_pdf_path)
 
-    return final_pdf_path
+    pdf_path = r"ScannedPDF_Final/TextOp.pdf"
+    output_json_path = r"extracted_text_with_coordinates.json"
+    app.extract_text_with_coordinates(pdf_path, output_json_path)
+    app.add_text_and_character_count(pdf_path, output_json_path)
+    app.translate_and_insert_newlines(pdf_path, output_json_path, dest_language='kn')
+    font_path = r"NotoSansKannada-VariableFont_wdth,wght.ttf"
+    app.create_translated_pdf(output_json_path, output_pdf_path, font_path)
+
+    # Save the processed PDF to a byte stream
+    output_stream = BytesIO()
+    output_pdf.save(output_stream)
+    output_pdf.close()
+
+    # Return processed PDF as bytes
+    return output_stream.getvalue()
 
 
 def main():
@@ -83,23 +94,17 @@ def main():
 
         # Process the PDF
         st.markdown("### Processing...")
-        output_pdf_path = process_pdf(input_pdf_bytes)
+        processed_pdf_bytes = process_pdf(input_pdf_bytes)
+        st.success("Processing complete!")
 
-        if output_pdf_path:
-            st.success("Processing complete!")
-
-            # Provide a download link for the processed PDF
-            with open(output_pdf_path, "rb") as file:
-                processed_pdf_bytes = file.read()
-                st.markdown("### Download Processed PDF")
-                st.download_button(
-                    label="Download",
-                    data=processed_pdf_bytes,
-                    file_name=f"processed_{uploaded_pdf.name}",
-                    mime="application/pdf",
-                )
-        else:
-            st.error("Processing failed. Please check the logs and try again.")
+        # Provide a download link for the processed PDF
+        st.markdown("### Download Processed PDF")
+        st.download_button(
+            label="Download",
+            data=processed_pdf_bytes,
+            file_name=f"processed_{uploaded_pdf.name}",
+            mime="application/pdf",
+        )
 
 
 if __name__ == "__main__":
