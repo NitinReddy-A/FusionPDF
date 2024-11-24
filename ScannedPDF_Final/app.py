@@ -94,23 +94,23 @@ def perform_ocr_task(task_id, api_key, result_url, output_path='o.docx', timeout
 
 
 # Set your API key and file path
-API_KEY = 'wx6tkon97x0q5qyl8'
-RESULT_URL = 'https://techhk.aoscdn.com/api/tasks/document/ocr/'
-pdf_file_path = r'C:\Users\Lenovo\Desktop\repo\FusionPDF\documents\scan1.pdf'
-
+# API_KEY = 'wx6tkon97x0q5qyl8'
+# RESULT_URL = 'https://techhk.aoscdn.com/api/tasks/document/ocr/'
+# pdf_file_path = r'C:\Users\Lenovo\Desktop\repo\FusionPDF\documents\scan1.pdf'
+# 
 # Step 1: Create OCR Task
-task_id = create_ocr_task(API_KEY, pdf_file_path, output_format='docx')
-
-if 'Error' not in task_id:
-    print(f"Task created successfully. Task ID: {task_id}")
-    
+# task_id = create_ocr_task(API_KEY, pdf_file_path, output_format='docx')
+# 
+# if 'Error' not in task_id:
+    # print(f"Task created successfully. Task ID: {task_id}")
+    # 
     # Step 2: Retrieve OCR Result
-    result_url = perform_ocr_task(task_id=task_id, api_key=API_KEY, result_url=RESULT_URL)
-    
-    print(f"Processed document is available at: {result_url}")
-    
-else:
-    print(task_id)
+    # result_url = perform_ocr_task(task_id=task_id, api_key=API_KEY, result_url=RESULT_URL)
+    # 
+    # print(f"Processed document is available at: {result_url}")
+    # 
+# else:
+    # print(task_id)
 
 def remove_paragraphs_by_index(file_path, output_path, para_indices_to_remove):
     # Load the document
@@ -130,16 +130,16 @@ def remove_paragraphs_by_index(file_path, output_path, para_indices_to_remove):
     doc.save(output_path)
 
 # Example usage:
-file_path = 'o.docx'
-output_path = 'TextOp.docx'
-para_indices_to_remove = [0,1,2,3,4,5,6,7,23,24]  # Example: Remove paragraphs 2, 4, and 6 (0-based index)
-
-remove_paragraphs_by_index(file_path, output_path, para_indices_to_remove)
-
-convertapi.api_credentials = 'secret_HVuqFuKW4UsSHiCI'
-convertapi.convert('pdf', {
-    'File': r'TextOp.docx' 
-}, from_format = 'docx').save_files('ScannedPDF_Final')
+# file_path = 'o.docx'
+# output_path = 'TextOp.docx'
+# para_indices_to_remove = [0,1,2,3,4,5,6,7,23,24]  # Example: Remove paragraphs 2, 4, and 6 (0-based index)
+# 
+# remove_paragraphs_by_index(file_path, output_path, para_indices_to_remove)
+# 
+# convertapi.api_credentials = 'secret_HVuqFuKW4UsSHiCI'
+# convertapi.convert('pdf', {
+    # 'File': r'TextOp.docx' 
+# }, from_format = 'docx').save_files('ScannedPDF_Final')
 
 def convert_pdf_to_jpg(pdf_path, output_folder, zoom=2):
     doc = fitz.open(pdf_path)
@@ -154,7 +154,7 @@ def convert_pdf_to_jpg(pdf_path, output_folder, zoom=2):
 
     doc.close()
 
-convert_pdf_to_jpg(r"documents\scan1.pdf", "ScannedPDF_Final",zoom=3)
+# convert_pdf_to_jpg(r"documents\scan1.pdf", "ScannedPDF_Final",zoom=3)
 
 def save_headersNfooters(pdf_path):
     # Open the image
@@ -183,7 +183,7 @@ def save_headersNfooters(pdf_path):
 
     cropped_image1.save("Footer.jpg")
 
-save_headersNfooters(r"ScannedPDF_Final\page_1.jpg")
+# save_headersNfooters(r"ScannedPDF_Final\page_1.jpg")
 
 
 def create_pdf_with_images(header_image, footer_image, output_pdf_path):
@@ -209,11 +209,11 @@ def create_pdf_with_images(header_image, footer_image, output_pdf_path):
     # Output the PDF to the specified file path
     pdf.output(output_pdf_path)
 
-header_image = "Header.jpg"  # Path to the header image
-footer_image = "Footer.jpg"  # Path to the footer image
-output_pdf_path = "FinalOutput.pdf"  # Path where the PDF will be saved
-
-create_pdf_with_images(header_image, footer_image, output_pdf_path)
+# header_image = "Header.jpg"  # Path to the header image
+# footer_image = "Footer.jpg"  # Path to the footer image
+# output_pdf_path = "FinalOutput.pdf"  # Path where the PDF will be saved
+# 
+# create_pdf_with_images(header_image, footer_image, output_pdf_path)
 
 
 
@@ -447,10 +447,10 @@ def create_translated_pdf(json_path, output_pdf_path, font_path):
     print(f"Translated PDF saved to {output_pdf_path}.")
 
 
-pdf_path = r"ScannedPDF_Final/TextOp.pdf"
-output_json_path = r"extracted_text_with_coordinates.json"
-extract_text_with_coordinates(pdf_path, output_json_path)
-add_text_and_character_count(pdf_path, output_json_path)
-translate_and_insert_newlines(pdf_path, output_json_path, dest_language='kn')
-font_path = r"NotoSansKannada-VariableFont_wdth,wght.ttf"
-create_translated_pdf(output_json_path, output_pdf_path, font_path)
+# pdf_path = r"ScannedPDF_Final/TextOp.pdf"
+# output_json_path = r"extracted_text_with_coordinates.json"
+# extract_text_with_coordinates(pdf_path, output_json_path)
+# add_text_and_character_count(pdf_path, output_json_path)
+# translate_and_insert_newlines(pdf_path, output_json_path, dest_language='kn')
+# font_path = r"NotoSansKannada-VariableFont_wdth,wght.ttf"
+# create_translated_pdf(output_json_path, output_pdf_path, font_path)

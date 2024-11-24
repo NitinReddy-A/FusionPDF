@@ -1,0 +1,664 @@
+{
+    "1": [
+        {
+            "coordinates": [
+                311.1099853515625,
+                47.634124755859375,
+                315.8499755859375,
+                110.88227081298828
+            ],
+            "text": " \n \n \n \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 8,
+            "translated_text": " \n \n \n \n",
+            "translated_character_count": 8,
+            "Font_Size": 11.039999961853027
+        },
+        {
+            "coordinates": [
+                80.90399932861328,
+                111.83303833007812,
+                83.67288208007812,
+                152.2780303955078
+            ],
+            "text": " \n \n \n",
+            "IniFontsize": 9.960000038146973,
+            "Color": 0,
+            "Character_count": 6,
+            "translated_text": " \n \n \n",
+            "translated_character_count": 6,
+            "Font_Size": 9.960000038146973
+        },
+        {
+            "coordinates": [
+                87.86399841308594,
+                161.55198669433594,
+                90.93312072753906,
+                176.720947265625
+            ],
+            "text": " \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 2,
+            "translated_text": " \n",
+            "translated_character_count": 2,
+            "Font_Size": 11.039999961853027
+        },
+        {
+            "coordinates": [
+                133.22000122070312,
+                208.24978637695312,
+                492.239990234375,
+                226.1993865966797
+            ],
+            "text": "Sub : Rescheduling of Examinations against Equivalent subjects \n",
+            "IniFontsize": 12.960000038146973,
+            "Color": 0,
+            "Character_count": 64,
+            "translated_text": "ಉಪ: ಸಮಾನ ವಿಷಯಗಳ ವಿರುದ್ಧ ಪರೀಕ್ಷೆಗಳನ್ನು ಮರುಹೊಂದಿಸುವುದು",
+            "translated_character_count": 52,
+            "Font_Size": 12.960000038146973
+        },
+        {
+            "coordinates": [
+                228.77000427246094,
+                223.16311645507812,
+                396.6999816894531,
+                241.22935485839844
+            ],
+            "text": "Examination, June/July 2024. \n",
+            "IniFontsize": 12.960000038146973,
+            "Color": 0,
+            "Character_count": 30,
+            "translated_text": "ಪರೀಕ್ಷೆ, ಜೂನ್/ಜುಲೈ 2024.",
+            "translated_character_count": 24,
+            "Font_Size": 12.960000038146973
+        },
+        {
+            "coordinates": [
+                124.81999969482422,
+                262.1631164550781,
+                524.6400146484375,
+                279.4517517089844
+            ],
+            "text": "Due to overlapping of mapped subjects as per equivalence, the semester end \n",
+            "IniFontsize": 12.960000038146973,
+            "Color": 0,
+            "Character_count": 76,
+            "translated_text": "ಸಮಾನತೆಯ ಪ್ರಕಾರ ಮ್ಯಾಪ್ ಮಾಡಿದ ವಿಷಯಗಳ ಅತಿಕ್ರಮಣದಿಂದಾಗಿ, ಸೆಮಿಸ್ಟರ್ ಅಂತ್ಯ",
+            "translated_character_count": 67,
+            "Font_Size": 12.960000038146973
+        },
+        {
+            "coordinates": [
+                87.86399841308594,
+                284.1231384277344,
+                467.0199890136719,
+                301.4117736816406
+            ],
+            "text": "examinations, June/July 2024, for the following subjects of B.E./B.Tech \n",
+            "IniFontsize": 12.960000038146973,
+            "Color": 0,
+            "Character_count": 73,
+            "translated_text": "ಪರೀಕ್ಷೆಗಳು, ಜೂನ್/ಜುಲೈ 2024, ಬಿ.ಇ./ಬಿ.ಟೆಕ್ನ ಕೆಳಗಿನ ವಿಷಯಗಳಿಗಾಗಿ",
+            "translated_character_count": 61,
+            "Font_Size": 12.960000038146973
+        },
+        {
+            "coordinates": [
+                87.86399841308594,
+                306.0830993652344,
+                415.7799987792969,
+                323.3717346191406
+            ],
+            "text": "(2018 Scheme) are rescheduled. The details are as here below. \n",
+            "IniFontsize": 12.960000038146973,
+            "Color": 0,
+            "Character_count": 63,
+            "translated_text": "(2018 ರ ಯೋಜನೆ) ಮರುಹೊಂದಿಸಲಾಗಿದೆ.ವಿವರಗಳು ಕೆಳಗಿನಂತೆ ಇವೆ.",
+            "translated_character_count": 53,
+            "Font_Size": 12.960000038146973
+        },
+        {
+            "coordinates": [
+                75.86399841308594,
+                332.38641357421875,
+                93.59400177001953,
+                358.400390625
+            ],
+            "text": "SI. \nNo. \n",
+            "IniFontsize": 9.479999542236328,
+            "Color": 0,
+            "Character_count": 10,
+            "translated_text": "ಹೌದು.\nಇಲ್ಲ.",
+            "translated_character_count": 11,
+            "Font_Size": 10.427999496459961
+        },
+        {
+            "coordinates": [
+                110.66000366210938,
+                328.6663818359375,
+                390.30999755859375,
+                358.400390625
+            ],
+            "text": "Scheme \nSubject code \nScheduled \nDay / Date / Time \n",
+            "IniFontsize": 9.479999542236328,
+            "Color": 0,
+            "Character_count": 52,
+            "translated_text": "ಯೋಜನೆ\nವಿಷಯ ಸಂಹಿತೆ\nನಿಗದಿಯ\nದಿನ / ದಿನಾಂಕ / ಸಮಯ",
+            "translated_character_count": 43,
+            "Font_Size": 9.479999542236328
+        },
+        {
+            "coordinates": [
+                415.29998779296875,
+                329.50640869140625,
+                530.813720703125,
+                356.0003662109375
+            ],
+            "text": "Rescheduled Day / Date / \nTime \n",
+            "IniFontsize": 9.479999542236328,
+            "Color": 0,
+            "Character_count": 32,
+            "translated_text": "ಮರು ನಿಗದಿಪಡಿಸಿದ ದಿನ / ದಿನಾಂಕ /\nಕಾಲ",
+            "translated_character_count": 34,
+            "Font_Size": 10.072499513626099
+        },
+        {
+            "coordinates": [
+                75.86399841308594,
+                364.1448974609375,
+                155.29998779296875,
+                385.1322326660156
+            ],
+            "text": "1. \nB.E. \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 10,
+            "translated_text": "1.\nಬಿ.ಇ.",
+            "translated_character_count": 8,
+            "Font_Size": 11.039999961853027
+        },
+        {
+            "coordinates": [
+                110.66000366210938,
+                376.764892578125,
+                172.97000122070312,
+                391.49224853515625
+            ],
+            "text": "2018 Scheme \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 13,
+            "translated_text": "2018 ರ ಯೋಜನೆ",
+            "translated_character_count": 12,
+            "Font_Size": 11.039999961853027
+        },
+        {
+            "coordinates": [
+                184.00999450683594,
+                358.9848937988281,
+                296.3500061035156,
+                399.05224609375
+            ],
+            "text": "18EC643- \nObject Oriented \nProgramming using C++ \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 50,
+            "translated_text": "18ec643-\nವಸ್ತು ಆಧಾರಿತ\nಸಿ ++ ಬಳಸಿ ಪ್ರೋಗ್ರಾಮಿಂಗ್",
+            "translated_character_count": 46,
+            "Font_Size": 11.039999961853027
+        },
+        {
+            "coordinates": [
+                311.8299865722656,
+                364.1448974609375,
+                400.1800231933594,
+                391.49224853515625
+            ],
+            "text": "Friday, 30/08/2024 \n9.30am to 12.30pm \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 39,
+            "translated_text": "ಶುಕ್ರವಾರ, 30/08/2024\nಬೆಳಿಗ್ಗೆ 9.30 ರಿಂದ ಮಧ್ಯಾಹ್ನ 12.30 ರವರೆಗೆ",
+            "translated_character_count": 61,
+            "Font_Size": 17.26769224802653
+        },
+        {
+            "coordinates": [
+                415.29998779296875,
+                364.1448974609375,
+                512.760009765625,
+                392.1546630859375
+            ],
+            "text": "Monday, 09/09/2024 \n9.30am to 12.30pm \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 39,
+            "translated_text": "ಸೋಮವಾರ, 09/09/2024\nಬೆಳಿಗ್ಗೆ 9.30 ರಿಂದ ಮಧ್ಯಾಹ್ನ 12.30 ರವರೆಗೆ",
+            "translated_character_count": 59,
+            "Font_Size": 16.701538403828938
+        },
+        {
+            "coordinates": [
+                75.86399841308594,
+                424.764892578125,
+                86.90399932861328,
+                439.49224853515625
+            ],
+            "text": "2. \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 4,
+            "translated_text": "2.",
+            "translated_character_count": 2,
+            "Font_Size": 11.039999961853027
+        },
+        {
+            "coordinates": [
+                132.97999572753906,
+                404.8448791503906,
+                155.29998779296875,
+                419.5722351074219
+            ],
+            "text": "B.E. \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 6,
+            "translated_text": "ಬಿ.ಇ.",
+            "translated_character_count": 5,
+            "Font_Size": 11.039999961853027
+        },
+        {
+            "coordinates": [
+                110.66000366210938,
+                417.44488525390625,
+                172.97000122070312,
+                432.1722412109375
+            ],
+            "text": "2018 Scheme \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 13,
+            "translated_text": "2018 ರ ಯೋಜನೆ",
+            "translated_character_count": 12,
+            "Font_Size": 11.039999961853027
+        },
+        {
+            "coordinates": [
+                184.00999450683594,
+                397.52490234375,
+                312.9350891113281,
+                439.37225341796875
+            ],
+            "text": "18EC644- \nDigital System Design using \nVerilog \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 48,
+            "translated_text": "18ec644-\nಡಿಜಿಟಲ್ ಸಿಸ್ಟಮ್ ವಿನ್ಯಾಸವನ್ನು ಬಳಸುವುದು\nಪಳಗಿದ",
+            "translated_character_count": 52,
+            "Font_Size": 11.959999958674112
+        },
+        {
+            "coordinates": [
+                311.8299865722656,
+                404.8448791503906,
+                400.1800231933594,
+                432.1722412109375
+            ],
+            "text": "Friday, 30/08/2024 \n9.30am to 12.30pm \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 39,
+            "translated_text": "ಶುಕ್ರವಾರ, 30/08/2024\nಬೆಳಿಗ್ಗೆ 9.30 ರಿಂದ ಮಧ್ಯಾಹ್ನ 12.30 ರವರೆಗೆ",
+            "translated_character_count": 61,
+            "Font_Size": 17.26769224802653
+        },
+        {
+            "coordinates": [
+                415.29998779296875,
+                404.104248046875,
+                519.672119140625,
+                432.95465087890625
+            ],
+            "text": "Thursday, 12/09/2024 \n9.30am to 12.30pm \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 41,
+            "translated_text": "ಗುರುವಾರ, 12/09/2024\nಬೆಳಿಗ್ಗೆ 9.30 ರಿಂದ ಮಧ್ಯಾಹ್ನ 12.30 ರವರೆಗೆ",
+            "translated_character_count": 60,
+            "Font_Size": 16.156097505150772
+        },
+        {
+            "coordinates": [
+                75.86399841308594,
+                446.7248840332031,
+                155.29998779296875,
+                463.37225341796875
+            ],
+            "text": "3. \nB.E. \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 10,
+            "translated_text": "3.\nಬಿ.ಇ.",
+            "translated_character_count": 8,
+            "Font_Size": 11.039999961853027
+        },
+        {
+            "coordinates": [
+                110.66000366210938,
+                459.32489013671875,
+                172.97000122070312,
+                474.05224609375
+            ],
+            "text": "2018 Scheme \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 13,
+            "translated_text": "2018 ರ ಯೋಜನೆ",
+            "translated_character_count": 12,
+            "Font_Size": 11.039999961853027
+        },
+        {
+            "coordinates": [
+                184.00999450683594,
+                446.7248840332031,
+                296.1100158691406,
+                474.05224609375
+            ],
+            "text": "18EE647- \nSensors and Transducers \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 35,
+            "translated_text": "18ee647-\nಸಂವೇದಕಗಳು ಮತ್ತು ಸಂಜ್ಞಾಪರಿವರ್ತಕಗಳು",
+            "translated_character_count": 42,
+            "Font_Size": 13.247999954223634
+        },
+        {
+            "coordinates": [
+                311.8299865722656,
+                446.7248840332031,
+                400.1800231933594,
+                474.05224609375
+            ],
+            "text": "Friday, 30/08/2024 \n9.30am to 12.30pm \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 39,
+            "translated_text": "ಶುಕ್ರವಾರ, 30/08/2024\nಬೆಳಿಗ್ಗೆ 9.30 ರಿಂದ ಮಧ್ಯಾಹ್ನ 12.30 ರವರೆಗೆ",
+            "translated_character_count": 61,
+            "Font_Size": 17.26769224802653
+        },
+        {
+            "coordinates": [
+                415.29998779296875,
+                445.1442565917969,
+                513.5669555664062,
+                473.9946594238281
+            ],
+            "text": "Tuesday, 17/09/2024 \n9.30am to 12.30pm \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 40,
+            "translated_text": "ಮಂಗಳವಾರ, 17/09/2024\nಬೆಳಿಗ್ಗೆ 9.30 ರಿಂದ ಮಧ್ಯಾಹ್ನ 12.30 ರವರೆಗೆ",
+            "translated_character_count": 60,
+            "Font_Size": 16.55999994277954
+        },
+        {
+            "coordinates": [
+                75.86399841308594,
+                479.9648742675781,
+                155.29998779296875,
+                501.05224609375
+            ],
+            "text": "4. \nB.E. \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 10,
+            "translated_text": "4.\nಬಿ.ಇ.",
+            "translated_character_count": 8,
+            "Font_Size": 11.039999961853027
+        },
+        {
+            "coordinates": [
+                110.66000366210938,
+                492.68487548828125,
+                172.97000122070312,
+                507.4122314453125
+            ],
+            "text": "2018 Scheme \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 13,
+            "translated_text": "2018 ರ ಯೋಜನೆ",
+            "translated_character_count": 12,
+            "Font_Size": 11.039999961853027
+        },
+        {
+            "coordinates": [
+                184.00999450683594,
+                472.6448974609375,
+                398.9800109863281,
+                501.05224609375
+            ],
+            "text": "18CS644- \nAdvanced JAVA and J2EE Friday, 30/08/2024 \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 53,
+            "translated_text": "18cs644-\nಸುಧಾರಿತ ಜಾವಾ ಮತ್ತು ಜೆ 2 ಇಇ ಶುಕ್ರವಾರ, 30/08/2024",
+            "translated_character_count": 56,
+            "Font_Size": 11.664905620071123
+        },
+        {
+            "coordinates": [
+                311.8299865722656,
+                492.68487548828125,
+                400.1800231933594,
+                507.4122314453125
+            ],
+            "text": "9.30am to 12.30pm \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 19,
+            "translated_text": "ಬೆಳಿಗ್ಗೆ 9.30 ರಿಂದ ಮಧ್ಯಾಹ್ನ 12.30 ರವರೆಗೆ",
+            "translated_character_count": 40,
+            "Font_Size": 23.24210518284848
+        },
+        {
+            "coordinates": [
+                415.29998779296875,
+                479.9648742675781,
+                528.1199951171875,
+                508.07464599609375
+            ],
+            "text": "Wednesday, 18/09/2024 \n9.30am to 12.30pm \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 42,
+            "translated_text": "ಬುಧವಾರ, 18/09/2024\nಬೆಳಿಗ್ಗೆ 9.30 ರಿಂದ ಮಧ್ಯಾಹ್ನ 12.30 ರವರೆಗೆ",
+            "translated_character_count": 59,
+            "Font_Size": 15.508571374984015
+        },
+        {
+            "coordinates": [
+                75.86399841308594,
+                522.8348999023438,
+                155.29998779296875,
+                539.1222534179688
+            ],
+            "text": "5. \nB.E. \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 10,
+            "translated_text": "5.\nಬಿ.ಇ.",
+            "translated_character_count": 8,
+            "Font_Size": 11.039999961853027
+        },
+        {
+            "coordinates": [
+                110.66000366210938,
+                535.554931640625,
+                172.97000122070312,
+                550.2822875976562
+            ],
+            "text": "2018 Scheme \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 13,
+            "translated_text": "2018 ರ ಯೋಜನೆ",
+            "translated_character_count": 12,
+            "Font_Size": 11.039999961853027
+        },
+        {
+            "coordinates": [
+                184.00999450683594,
+                522.8348999023438,
+                262.25,
+                550.2822875976562
+            ],
+            "text": "18IS645- \nSoftware Testing \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 28,
+            "translated_text": "18is645-\nಸಾಂದರ್ಭಿಕ ಪರೀಕ್ಷೆ",
+            "translated_character_count": 26,
+            "Font_Size": 11.039999961853027
+        },
+        {
+            "coordinates": [
+                311.8299865722656,
+                522.8348999023438,
+                400.1800231933594,
+                550.2822875976562
+            ],
+            "text": "Friday, 30/08/2024 \n9.30am to 12.30pm \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 39,
+            "translated_text": "ಶುಕ್ರವಾರ, 30/08/2024\nಬೆಳಿಗ್ಗೆ 9.30 ರಿಂದ ಮಧ್ಯಾಹ್ನ 12.30 ರವರೆಗೆ",
+            "translated_character_count": 61,
+            "Font_Size": 17.26769224802653
+        },
+        {
+            "coordinates": [
+                415.29998779296875,
+                522.8348999023438,
+                519.6000366210938,
+                550.9447021484375
+            ],
+            "text": "Thursday, 19/09/2024 \n9.30am to 12.30pm \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 41,
+            "translated_text": "ಗುರುವಾರ, 19/09/2024\nಬೆಳಿಗ್ಗೆ 9.30 ರಿಂದ ಮಧ್ಯಾಹ್ನ 12.30 ರವರೆಗೆ",
+            "translated_character_count": 60,
+            "Font_Size": 16.156097505150772
+        },
+        {
+            "coordinates": [
+                72.86399841308594,
+                548.7130126953125,
+                463.78887939453125,
+                564.9520263671875
+            ],
+            "text": "The contents of this circular may kindly be brought to the notice of all the concerned. \n \n",
+            "IniFontsize": 12.0,
+            "Color": 0,
+            "Character_count": 91,
+            "translated_text": "ಈ ವೃತ್ತಾಕಾರದ ವಿಷಯಗಳನ್ನು ದಯೆಯಿಂದ ಸಂಬಂಧಪಟ್ಟ ಎಲ್ಲರ ಗಮನಕ್ಕೆ ತರಬಹುದು.",
+            "translated_character_count": 64,
+            "Font_Size": 12.0
+        },
+        {
+            "coordinates": [
+                431.9800109863281,
+                567.1119995117188,
+                455.2091369628906,
+                582.2809448242188
+            ],
+            "text": "Sd/- \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 6,
+            "translated_text": "Sd/-",
+            "translated_character_count": 4,
+            "Font_Size": 11.039999961853027
+        },
+        {
+            "coordinates": [
+                386.9800109863281,
+                582.7120361328125,
+                496.5091247558594,
+                597.8809814453125
+            ],
+            "text": "Registrar (Evaluation) \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 24,
+            "translated_text": "ರಿಜಿಸ್ಟ್ರಾರ್ (ಮೌಲ್ಯಮಾಪನ)",
+            "translated_character_count": 24,
+            "Font_Size": 11.039999961853027
+        },
+        {
+            "coordinates": [
+                72.86399841308594,
+                595.4348754882812,
+                90.6240005493164,
+                610.1622314453125
+            ],
+            "text": "To, \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 5,
+            "translated_text": "ಗೆ,",
+            "translated_character_count": 3,
+            "Font_Size": 11.039999961853027
+        },
+        {
+            "coordinates": [
+                85.8239974975586,
+                608.27490234375,
+                491.8800048828125,
+                623.0022583007812
+            ],
+            "text": "The Principals of all the affiliated engineering colleges and constituent engineering college. \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 96,
+            "translated_text": "ಎಲ್ಲಾ ಅಂಗಸಂಸ್ಥೆ ಎಂಜಿನಿಯರಿಂಗ್ ಕಾಲೇಜುಗಳು ಮತ್ತು ಸಂವಿಧಾನ ಎಂಜಿನಿಯರಿಂಗ್ ಕಾಲೇಜಿನ ಪ್ರಾಂಶುಪಾಲರು.",
+            "translated_character_count": 87,
+            "Font_Size": 11.039999961853027
+        },
+        {
+            "coordinates": [
+                72.86399841308594,
+                627.4359130859375,
+                480.54998779296875,
+                692.1380615234375
+            ],
+            "text": "c.w.c.: \n1. The Hon'ble Vice Chancellor, through the Secretary to VC, VTU, Belagavi, for kind information. \n2. The Registrar, VTU, Belagavi, for kind information. \n3. The Regional Directors, R.O. Bengaluru / Belagavi / Kalaburagi /Mysuru, for kind information. \n4. The Director, ITISMU, VTU Belagavi, for information and needful. \n",
+            "IniFontsize": 9.960000038146973,
+            "Color": 0,
+            "Character_count": 331,
+            "translated_text": "C.W.C .:\n1. ಗೌರವಾನ್ವಿತ ಉಪಕುಲಪತಿ, ವಿಸಿ, ವಿಟಿಯು, ಬೆಲಗವಿ, ರೀತಿಯ ಮಾಹಿತಿಗಾಗಿ ಕಾರ್ಯದರ್ಶಿ ಮೂಲಕ.\n2. ರಿಜಿಸ್ಟ್ರಾರ್, ವಿಟಿಯು, ಬೆಲಗವಿ, ರೀತಿಯ ಮಾಹಿತಿಗಾಗಿ.\n3. ಪ್ರಾದೇಶಿಕ ನಿರ್ದೇಶಕರು, ಆರ್.ಒ.ಬೆಂಗಳೂರು / ಬೆಲಗವಿ / ಕಲಾಬುರಗಿ / ಮೈಸೂರು, ದಯೆ ಮಾಹಿತಿಗಾಗಿ.\n4. ನಿರ್ದೇಶಕ, ಇಟಿಸ್ಮು, ವಿಟಿಯು ಬೆಲಗವಿ, ಮಾಹಿತಿಗಾಗಿ ಮತ್ತು ಅಗತ್ಯತೆಗಾಗಿ.",
+            "translated_character_count": 292,
+            "Font_Size": 9.960000038146973
+        },
+        {
+            "coordinates": [
+                515.280029296875,
+                718.81201171875,
+                518.34912109375,
+                733.98095703125
+            ],
+            "text": " \n",
+            "IniFontsize": 11.039999961853027,
+            "Color": 0,
+            "Character_count": 2,
+            "translated_text": " \n",
+            "translated_character_count": 2,
+            "Font_Size": 11.039999961853027
+        }
+    ]
+}
