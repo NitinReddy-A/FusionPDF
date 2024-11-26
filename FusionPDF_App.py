@@ -1,5 +1,5 @@
 import streamlit as st
-import fitz  # PyMuPDF for PDF processing
+import fitz 
 from io import BytesIO
 import convertapi
 from ScannedPDF_Final import app
@@ -82,8 +82,8 @@ def process_pdf(input_pdf_bytes):
         os.unlink(temp_pdf_path)
 
 # Streamlit UI
-st.title("PDF Processor")
-st.markdown("Upload a PDF file, process it, and download the result.")
+st.title("PDF Linguist")
+st.markdown("Upload a Scanned file and download the translated result.")
 
 uploaded_pdf = st.file_uploader("Upload a PDF file", type=["pdf"])
 if uploaded_pdf is not None:
@@ -127,11 +127,11 @@ if uploaded_pdf is not None:
         try:
             processed_pdf_bytes = process_pdf(input_pdf_bytes)
             st.success("Processing complete!")
-            st.markdown("### Download Processed PDF")
+            st.markdown("### Download the Translated PDF")
             st.download_button(
                 label="Download",
                 data=processed_pdf_bytes,
-                file_name=f"processed_{uploaded_pdf.name}",
+                file_name=f"Translated_{uploaded_pdf.name}",
                 mime="application/pdf",
             )
         except Exception as e:
