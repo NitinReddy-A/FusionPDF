@@ -156,31 +156,38 @@ def convert_pdf_to_jpg(pdf_path, output_folder, zoom=2):
 
 # convert_pdf_to_jpg(r"documents\scan1.pdf", "ScannedPDF_Final",zoom=3)
 
-def save_headersNfooters(pdf_path):
+def save_headers(pdf_path,left, upper, right, lower):
     # Open the image
     image = Image.open(pdf_path)
 
     # Define the coordinates for cropping (left, upper, right, lower)
-    left = 0
-    upper = 100
-    right = 1780
-    lower = 650
+    # left = 0
+    # upper = 100
+    # right = 1780
+    # lower = 650
 
     # Crop the image
     cropped_image = image.crop((left, upper, right, lower))
 
-    left1 = 0
-    upper1 = 2235
-    right1 = 1780
-    lower1 = 2520
+    # Display or save the cropped image
+    cropped_image.show()
+    cropped_image.save("Header.jpg")
+
+
+def save_footers(pdf_path,left1, upper1, right1, lower1):
+    # Open the image
+    image = Image.open(pdf_path)
+
+    # left1 = 0
+    # upper1 = 2235
+    # right1 = 1780
+    # lower1 = 2520
 
     # Crop the image
     cropped_image1 = image.crop((left1, upper1, right1, lower1))
 
     # Display or save the cropped image
     cropped_image1.show()
-    cropped_image.save("Header.jpg")
-
     cropped_image1.save("Footer.jpg")
 
 # save_headersNfooters(r"ScannedPDF_Final\page_1.jpg")
