@@ -2,10 +2,10 @@ import fitz
 import json
 
 # Define the path to the PDF file
-pdf_path = r"documents/FinOp.pdf"
+pdf_path = r"TranslatedOutput.pdf"
 
 # Define the path to the output JSON file
-output_json_path = r"extracted_text_with_coordinates.json"
+output_json_path = r"extracted_text_with_coordinates1.json"
 
 # Dictionary to store text with coordinates and character count
 extracted_data = {}
@@ -25,9 +25,10 @@ for i in range(doc.page_count):
     page = doc.load_page(i)  # or page = doc[i]
     
     # Extract text blocks from the page
-    blocks = page.get_text("dict", flags=11)["blocks"]
+    #blocks = page.get_text("dict", flags=11)["blocks"]
 
-    #blocks1 = page.get_text("blocks")
+    blocks = page.get_text("blocks")
+    
     
     # List to store text and coordinates for the current page
     page_data = []
@@ -35,22 +36,26 @@ for i in range(doc.page_count):
 
 
     for b in blocks:
-        bbox = b["bbox"]
-        for l in b["lines"]:  # iterate through the text lines
-            for s in l["spans"]:  # iterate through the text spans
-                text = s["text"]
-                #origin = s["origin"]
-                font_size = s["size"]
-                #character_count = len(text)
-                color = s["color"]
+        print(b)
+        bbox = b[:4]
+        text = b[4]
+        # for l in b["lines"]:  # iterate through the text lines
+        #     #print(l)
+        #     for s in l["spans"]:  # iterate through the text spans
+        #         text = s["text"]
+        #         print(text)
+        #         #origin = s["origin"]
+        #         font_size = s["size"]
+        #         #character_count = len(text)
+        #         color = s["color"]
 
         # Append to the result
         page_data.append({
             "coordinates": bbox,
             "text": text,
             #"IniCharacter_count": character_count,
-            "IniFontsize": font_size,
-            "Color": color,
+            #"IniFontsize": font_size,
+            #"Color": color,
         })
 
     # Add the page data to the extracted data dictionary
