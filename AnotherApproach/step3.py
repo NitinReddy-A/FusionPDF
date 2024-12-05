@@ -20,13 +20,12 @@ with open(json_path, "r", encoding="utf-8") as json_file:
     extracted_data = json.load(json_file)
 
 # Create a new PDF document
-new_doc = fitz.open(output_pdf_path)
+new_doc = fitz.open()
 
 # Iterate through the pages in the JSON data
 for page_num, page_data in extracted_data.items():
     # Load a page
-    new_page = new_doc.load_page(int(page_num)-1)
-
+    new_page = new_doc.new_page()
     # Iterate through the text blocks on the current page
     for block in page_data:
         translated_text = block["translated_text"]
@@ -35,7 +34,7 @@ for page_num, page_data in extracted_data.items():
         x0, y0, x1, y1 = coordinates[0], coordinates[1], coordinates[2], coordinates[3]
 
         # Set the font size based on the height of the bounding box
-        font_size = block["IniFontsize"]
+        #font_size = block["IniFontsize"]
 
         rect = fitz.Rect(x0, y0, x1, y1)
 
@@ -54,7 +53,7 @@ for page_num, page_data in extracted_data.items():
         )#
 
 # Save the new PDF
-new_doc.saveIncr()
+new_doc.save(output_pdf_path)
 
 # Close the document
 new_doc.close()

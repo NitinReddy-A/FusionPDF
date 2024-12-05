@@ -12,4 +12,4 @@ def convert_pdf_to_jpg(pdf_path, output_folder, zoom=2):
 
     doc.close()
 
-convert_pdf_to_jpg(r"documents\scan1.pdf", "ScannedPDF_Final",zoom=3)
+convert_pdf_to_jpg(r"TranslatedOutput.pdf", "ScannedPDF_Final",zoom=3)

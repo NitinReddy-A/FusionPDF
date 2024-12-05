@@ -2,7 +2,7 @@ import fitz
 import json
 
 # Define the path to the PDF file
-pdf_path = r"TranslatedOutput.pdf"
+pdf_path = r"documents\knpdf.pdf"
 
 # Define the path to the output JSON file
 output_json_path = r"extracted_text_with_coordinates1.json"
