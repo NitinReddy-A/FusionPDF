@@ -28,7 +28,7 @@ def convert_image_to_pdf_with_layout(input_image_path, output_pdf_path):
 # Step 4: Use a file dialog for image selection
 Tk().withdraw()  # Hide the root window
 print("Select an image file to process:")
-input_image_path = filedialog.askopenfilename(filetypes=[("Image Files", ".png;.jpg;*.jpeg")])
+input_image_path = filedialog.askopenfilename(filetypes=[("Image Files", "*.png;*.jpg;*.jpeg")])
 
 if input_image_path:
     # Set the output path
@@ -38,4 +38,4 @@ if input_image_path:
     convert_image_to_pdf_with_layout(input_image_path, output_pdf_path)
     print(f"Output saved at: {output_pdf_path}")
 else:
-    print("No file selected.")
+    print("No file selected.")
