@@ -5,7 +5,7 @@ import json
 pdf_path = r"documents\knpdf.pdf"
 
 # Define the path to the output JSON file
-output_json_path = r"extracted_text_with_coordinates1.json"
+output_json_path = r"extracted_text_with_coordinates.json"
 
 # Dictionary to store text with coordinates and character count
 extracted_data = {}
