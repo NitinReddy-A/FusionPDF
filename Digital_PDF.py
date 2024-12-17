@@ -3,7 +3,6 @@ import fitz
 from io import BytesIO
 import convertapi
 from ScannedPDF_Final import app
-from ScannedPDF_PreProcessing import DimensionofCircular
 import tempfile
 import os
 

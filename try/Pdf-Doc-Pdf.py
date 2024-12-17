@@ -2,7 +2,7 @@
 
 import convertapi
 
-convertapi.api_credentials = 'secret_VKClb7Ifmmxbbz2K'  
+convertapi.api_credentials = 'secret_KWmzJQRIOe8M5ueS'  
 
 # Specify the file path here
 doc = 'documents/tem'
