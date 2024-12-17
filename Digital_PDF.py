@@ -2,7 +2,7 @@ import streamlit as st
 import fitz 
 from io import BytesIO
 import convertapi
-from ScannedPDF_Final import app
+from DigitalPDF_Final import app
 import tempfile
 import os
 
