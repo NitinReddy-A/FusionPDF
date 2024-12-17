@@ -10,220 +10,6 @@ from fpdf import FPDF
 import convertapi
 from googletrans import Translator
 
-def create_ocr_task(api_key, file_path, output_format='docx'):
-    """
-    Creates an OCR task for a scanned document.
-    
-    :param api_key: The API key for authentication.
-    :param file_path: The path to the scanned PDF file.
-    :param output_format: The desired output format (default is 'docx').
-    :return: The task ID if successful, otherwise an error message.
-    """
-    OCR_CONVERSION_URL = 'https://techhk.aoscdn.com/api/tasks/document/ocr'
-    
-    # Prepare the request headers and payload
-    headers = {'X-API-KEY': api_key}
-    files = {'file': open(file_path, 'rb')}
-    data = {'format': output_format}
-    
-    try:
-        # Send a POST request to create the OCR conversion task
-        response = requests.post(OCR_CONVERSION_URL, headers=headers, data=data, files=files)
-        
-        # Check if the request was successful
-        if response.status_code == 200:
-            task_id = response.json().get('data', {}).get('task_id')
-            if task_id:
-                return task_id
-            else:
-                return f"Error: {response.json().get('message')}"
-        else:
-            return f"Error: {response.status_code} - {response.text}"
-    except Exception as e:
-        return f"Exception occurred: {str(e)}"
-
-
-def perform_ocr_task(task_id, api_key, result_url, output_path='o.docx', timeout=30):
-    """
-    Perform OCR task by checking status and downloading the result.
-
-    :param task_id: ID of the OCR task
-    :param api_key: API key for authentication
-    :param result_url: URL endpoint for the OCR task
-    :param output_path: Path to save the output file
-    :param timeout: Maximum time in seconds to wait for task completion
-    """
-    headers = {'X-API-KEY': api_key}
-    
-    for _ in range(timeout):
-        # Check OCR task status
-        response = requests.get(f"{result_url}{task_id}", headers=headers)
-        if response.status_code != 200:
-            print(f"Error checking OCR status: {response.status_code} - {response.text}")
-            return False
-
-        result = response.json()
-        state = result.get('data', {}).get('state')
-
-        if state == 1:  # State 1 indicates completion
-            file_url = result.get('data', {}).get('file')
-            if file_url:
-                # Download the file
-                file_response = requests.get(file_url)
-                if file_response.status_code == 200:
-                    with open(output_path, 'wb') as output_file:
-                        output_file.write(file_response.content)
-                    print(f"OCR conversion successful! Output saved as '{output_path}'.")
-                    return True
-                else:
-                    print(f"Error downloading the file: {file_response.status_code} - {file_response.text}")
-                    return False
-            else:
-                print("Error: File URL not found in the response.")
-                return False
-        elif state < 0:  # Any negative state indicates failure
-            print(f"OCR conversion failed with state: {state}.")
-            return False
-        else:
-            progress = result.get('data', {}).get('progress', 0)
-            print(f"OCR conversion in progress... {progress}% complete.")
-            time.sleep(1)  # Wait 1 second before checking again
-
-    print("OCR conversion timed out.")
-    return False
-
-
-# Set your API key and file path
-# API_KEY = 'wx6tkon97x0q5qyl8'
-# RESULT_URL = 'https://techhk.aoscdn.com/api/tasks/document/ocr/'
-# pdf_file_path = r'C:\Users\Lenovo\Desktop\repo\FusionPDF\documents\scan1.pdf'
-# 
-# Step 1: Create OCR Task
-# task_id = create_ocr_task(API_KEY, pdf_file_path, output_format='docx')
-# 
-# if 'Error' not in task_id:
-    # print(f"Task created successfully. Task ID: {task_id}")
-    # 
-    # Step 2: Retrieve OCR Result
-    # result_url = perform_ocr_task(task_id=task_id, api_key=API_KEY, result_url=RESULT_URL)
-    # 
-    # print(f"Processed document is available at: {result_url}")
-    # 
-# else:
-    # print(task_id)
-
-def remove_paragraphs_by_index(file_path, output_path, para_indices_to_remove):
-    # Load the document
-    doc = Document(file_path)
-
-    # Sort the indices in reverse order so removing paragraphs doesn't affect the numbering
-    para_indices_to_remove = sorted(para_indices_to_remove, reverse=True)
-
-    # Loop through the paragraphs and remove based on their indices
-    for index in para_indices_to_remove:
-        if 0 <= index < len(doc.paragraphs):
-            # Clear the paragraph's text at the specified index
-            para = doc.paragraphs[index]
-            para.clear()
-
-    # Save the modified document
-    doc.save(output_path)
-
-# Example usage:
-# file_path = 'o.docx'
-# output_path = 'TextOp.docx'
-# para_indices_to_remove = [0,1,2,3,4,5,6,7,23,24]  # Example: Remove paragraphs 2, 4, and 6 (0-based index)
-# 
-# remove_paragraphs_by_index(file_path, output_path, para_indices_to_remove)
-# 
-# convertapi.api_credentials = 'secret_HVuqFuKW4UsSHiCI'
-# convertapi.convert('pdf', {
-    # 'File': r'TextOp.docx' 
-# }, from_format = 'docx').save_files('ScannedPDF_Final')
-
-def convert_pdf_to_jpg(pdf_path, output_folder, zoom=2):
-    doc = fitz.open(pdf_path)
-    for page_num in range(doc.page_count):
-        page = doc.load_page(page_num)
-        
-        # Set a matrix to scale the page by the zoom factor (2 = 200% size)
-        mat = fitz.Matrix(zoom, zoom)
-        pix = page.get_pixmap(matrix=mat)
-        
-        pix.save(f"{output_folder}/page_{page_num + 1}.jpg")
-
-    doc.close()
-
-# convert_pdf_to_jpg(r"documents\scan1.pdf", "ScannedPDF_Final",zoom=3)
-
-def save_headers(pdf_path,left, upper, right, lower):
-    # Open the image
-    image = Image.open(pdf_path)
-
-    # Define the coordinates for cropping (left, upper, right, lower)
-    # left = 0
-    # upper = 100
-    # right = 1780
-    # lower = 650
-
-    # Crop the image
-    cropped_image = image.crop((left, upper, right, lower))
-
-    # Display or save the cropped image
-    cropped_image.show()
-    cropped_image.save("Header.jpg")
-
-
-def save_footers(pdf_path,left1, upper1, right1, lower1):
-    # Open the image
-    image = Image.open(pdf_path)
-
-    # left1 = 0
-    # upper1 = 2235
-    # right1 = 1780
-    # lower1 = 2520
-
-    # Crop the image
-    cropped_image1 = image.crop((left1, upper1, right1, lower1))
-
-    # Display or save the cropped image
-    cropped_image1.show()
-    cropped_image1.save("Footer.jpg")
-
-# save_headersNfooters(r"ScannedPDF_Final\page_1.jpg")
-
-
-def create_pdf_with_images(header_image, footer_image, output_pdf_path):
-    """
-    Creates a PDF document with a header and footer image.
-
-    :param header_image: Path to the header image.
-    :param footer_image: Path to the footer image.
-    :param output_pdf_path: Path to save the generated PDF.
-    """
-    class PDFWithImages(FPDF):
-        def header(self):
-            self.image(header_image, x=10, y=10, w=self.w - 20)
-
-        def footer(self):
-            self.set_y(-30)
-            self.image(footer_image, x=10, w=self.w - 20)
-
-    # Initialize PDF document
-    pdf = PDFWithImages()
-    pdf.add_page()
-    
-    # Output the PDF to the specified file path
-    pdf.output(output_pdf_path)
-
-# header_image = "Header.jpg"  # Path to the header image
-# footer_image = "Footer.jpg"  # Path to the footer image
-# output_pdf_path = "FinalOutput.pdf"  # Path where the PDF will be saved
-# 
-# create_pdf_with_images(header_image, footer_image, output_pdf_path)
-
-
-
 def extract_text_with_coordinates(pdf_path, output_json_path):
     """
     Extract text from a PDF file along with coordinates, font size, and color,
@@ -325,6 +111,55 @@ def add_text_and_character_count(pdf_path, json_path):
     doc.close()
 
     print(f"Text and character count added. Data saved to {json_path}.")
+
+def create_pdf_with_images(input_pdf_path, output_pdf_path, image_dir='images/'):
+    """Extract images from a PDF and create a new PDF with those images."""
+    # Create the images directory
+    if not os.path.exists(image_dir):
+        os.mkdir(image_dir)
+
+    # Open the PDF document
+    doc = fitz.open(input_pdf_path)
+
+    # Create a new PDF document
+    new_doc = fitz.open()
+
+    # Process each page
+    for page_index in range(doc.page_count):
+        original_page = doc.load_page(page_index)
+
+        # Create a new page with the same size as the original
+        new_page = new_doc.new_page(width=original_page.rect.width, height=original_page.rect.height)
+
+        # Extract images from the page
+        page = doc.load_page(page_index)
+        image_list = page.get_images(full=True)
+
+        for img_index, img in enumerate(image_list):
+            try:
+                if img[1] == 0:
+                    bbox = page.get_image_bbox(img)
+                    xref = img[0]  # Get the XREF of the image
+                    pix = pymupdf.Pixmap(doc, xref)  # Create a Pixmap
+                    if pix.n - pix.alpha > 3:  # CMYK: convert to RGB
+                        pix = pymupdf.Pixmap(pymupdf.csRGB, pix)
+
+                    image_path = os.path.join(image_dir, f"page{page_index}-image{img_index}.png")
+                    pix.save(image_path)  # Save the image as PNG
+                    pix = None
+
+                    with open(image_path, "rb") as image_file:
+                        new_page.insert_image(bbox, stream=image_file.read())
+
+                    print(f"Image {img_index} on page {page_index} extracted and inserted: {bbox}")
+            except Exception as e:
+                print(f"An error occurred while extracting image: {e}")
+
+    # Save the new PDF document
+    new_doc.save(output_pdf_path)
+    new_doc.close()
+    doc.close()
+
 
 def translate_and_insert_newlinesk(pdf_path, json_path, dest_language='kn'):
     """
