@@ -6,6 +6,27 @@ from DigitalPDF_Final import app
 import tempfile
 import os
 
+def display_pdf_with_scrollbar(input_pdf_bytes):
+    """
+    Display the PDF with a scrollbar for page navigation.
+    """
+    try:
+        # Open the PDF with PyMuPDF
+        pdf_document = fitz.open(stream=input_pdf_bytes, filetype="pdf")
+        total_pages = pdf_document.page_count
+        
+        # Add a slider to navigate pages
+        st.markdown("### PDF Preview:")
+        page_num = st.slider("Select Page", min_value=1, max_value=total_pages, value=1)
+        page = pdf_document[page_num - 1]
+        pix = page.get_pixmap()  # Render page to an image
+        img_data = BytesIO(pix.tobytes("png"))
+        st.image(img_data, caption=f"Page {page_num} of {total_pages}", use_column_width=True)
+        
+        pdf_document.close()
+    except Exception as e:
+        st.error(f"Unable to generate preview: {e}")
+
 
 
 def process_pdfk(input_pdf_bytes):
@@ -103,6 +124,9 @@ uploaded_pdf = st.file_uploader("Upload a PDF file", type=["pdf"])
 if uploaded_pdf is not None:
     st.success(f"Uploaded file: {uploaded_pdf.name}")
     input_pdf_bytes = uploaded_pdf.read()
+
+    # Display PDF preview with scrollbar
+    display_pdf_with_scrollbar(input_pdf_bytes)
 
     st.markdown("### Translate PDF:")
     col1, col2, col3 = st.columns([1, 1, 1])
