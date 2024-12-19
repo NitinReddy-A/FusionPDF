@@ -47,22 +47,30 @@ st.markdown('<p class="title">PDFLinguist</p>', unsafe_allow_html=True)
 
 # Function to run the ScannedPDF script
 def run_scanned_pdf():
-    subprocess.run(["streamlit", "run", "Scanned_PDF.py"])
+    subprocess.run(["streamlit", "run", "ScannedPDF.py"])
 
 # Function to run the DigitalPDF script
 def run_digital_pdf():
-    subprocess.run(["streamlit", "run", "Digital_PDF.py"])
+    subprocess.run(["streamlit", "run", "DigitalPDF.py"])
+
+# Function to run the DigitalPDF script
+def run_KannadaOCR_pdf():
+    subprocess.run(["streamlit", "run", "KannadaOCR.py"])
 
 # Create a container for the buttons and make them side by side
 with st.container():
     st.markdown('<div class="buttons-container">', unsafe_allow_html=True)
 
     # Button for Scanned PDF
-    if st.button("Upload Scanned PDF", key="scanned", help="Run Scanned PDF processing"):
+    if st.button("Upload Scanned ENG PDF", key="scanned", help="Run Scanned PDF processing"):
         run_scanned_pdf()
 
     # Button for Digital PDF
-    if st.button("Upload Digital PDF", key="digital", help="Run Digital PDF processing"):
+    if st.button("Upload Digital ENG PDF", key="digital", help="Run Digital PDF processing"):
         run_digital_pdf()
+
+    # Button for Digital PDF
+    if st.button("Upload Scanned KANNADA PDF", key="KannadaOCR", help="Run Kannada PDF processing"):
+        run_KannadaOCR_pdf()
 
     st.markdown('</div>', unsafe_allow_html=True)
