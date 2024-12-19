@@ -17,7 +17,7 @@ def display_pdf_with_scrollbar(input_pdf_bytes):
         
         # Add a slider to navigate pages
         st.markdown("### PDF Preview:")
-        page_num = st.slider("Select Page", min_value=1, max_value=total_pages, value=1)
+        page_num = st.slider("Select Page", min_value=0, max_value=total_pages, value=1)
         page = pdf_document[page_num - 1]
         pix = page.get_pixmap()  # Render page to an image
         img_data = BytesIO(pix.tobytes("png"))

@@ -199,9 +199,9 @@ if uploaded_pdf is not None:
         
         st.markdown("### Header Selection:")
         x0_h = st.number_input("Header Top-left x (x0):", step=1, value=0, key="x0_h")
-        y0_h = st.number_input("Header Top-left y (y0):", step=1, value=0, key="y0_h")
-        width_h = st.number_input("Header Width:", step=1, value=100, key="width_h")
-        height_h = st.number_input("Header Height:", step=1, value=50, key="height_h")
+        y0_h = st.number_input("Header Top-left y (y0):", step=1, value=100, key="y0_h")
+        width_h = st.number_input("Header Width:", step=1, value=1780, key="width_h")
+        height_h = st.number_input("Header Height:", step=1, value=650, key="height_h")
 
         if st.button("Confirm Header"):
             app.save_headers(r"ScannedPDF_Final\page_1.jpg",x0_h, y0_h,width_h,height_h)
@@ -211,9 +211,9 @@ if uploaded_pdf is not None:
 
         st.markdown("### Footer Selection:")
         x0_f = st.number_input("Footer Top-left x (x0):", step=1, value=0, key="x0_f")
-        y0_f = st.number_input("Footer Top-left y (y0):", step=1, value=0, key="y0_f")
-        width_f = st.number_input("Footer Width:", step=1, value=100, key="width_f")
-        height_f = st.number_input("Footer Height:", step=1, value=50, key="height_f")
+        y0_f = st.number_input("Footer Top-left y (y0):", step=1, value=2235, key="y0_f")
+        width_f = st.number_input("Footer Width:", step=1, value=1780, key="width_f")
+        height_f = st.number_input("Footer Height:", step=1, value=2520, key="height_f")
         
         if st.button("Confirm Footer"):
             app.save_footers(r"ScannedPDF_Final\page_1.jpg",x0_f, y0_f,width_f,height_f)
