@@ -7,12 +7,13 @@ import tempfile
 from pdf2image import convert_from_path
 from streamlit_drawable_canvas import st_canvas
 import re
+import os
 import json
 from fpdf import FPDF
 
 # Function to convert PDF pages to images
 def pdf_to_images(pdf_path):
-    images = convert_from_path(pdf_path,dpi=300)
+    images = convert_from_path(pdf_path,dpi=300, poppler_path=r'C:\Users\Lenovo\Downloads\Release-24.08.0-0\poppler-24.08.0\Library\bin')
     return images
 
 # Function to save translations to JSON file
@@ -92,18 +93,19 @@ if uploaded_pdf:
 
         # Step 2: Allow area selection
         st.write("Draw a rectangle to crop Kannada text:")
-        image = selected_image.resize((700*2, 700*2), Image.LANCZOS)
+        image = selected_image.resize((1400, 1700), Image.LANCZOS)
         canvas_result = st_canvas(
-            fill_color="rgba(0, 0, 0, 0)",
+            fill_color="rgba(0, 0, 0, 0)",  # Transparent fill
             stroke_width=3,
             stroke_color="#FF0000",
-            background_image=selected_image,
+            background_image=image,
             update_streamlit=True,
-            height=700,
+            height=850,
             width=700,
             drawing_mode="rect",
             key="canvas"
         )
+
 
         # Step 3: Process selected area
         if canvas_result.json_data is not None:
@@ -115,29 +117,38 @@ if uploaded_pdf:
                 # Scale coordinates to original image size
                 orig_width, orig_height = selected_image.size
                 scale_x = orig_width / 700  # Canvas width
-                scale_y = orig_height / 500  # Canvas height
+                scale_y = orig_height / 850  # Canvas height
                 x, y, width, height = int(x * scale_x), int(y * scale_y), int(width * scale_x), int(height * scale_y)
 
                 # Crop the selected area
-                cropped_image = selected_image.crop((x, y, x + width, y + height))
+                cropped_image = selected_image.crop((x, y, x + width, y + height)).convert("RGB")
                 st.image(cropped_image, caption="Cropped Area", use_column_width=True)
 
                 # Step 4: Extract text
                 if st.button("Translate and Save"):
                     st.write("Extracting Kannada text...")
+                    
+                    # Specify the exact path to tesseract.exe
+                    pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+                    # Set the TESSDATA_PREFIX environment variable
+                    os.environ["TESSDATA_PREFIX"] = r'C:\Program Files\Tesseract-OCR'
+                    # Extract text from the cropped image
                     kannada_text = pytesseract.image_to_string(cropped_image, lang="kan")
                     st.subheader("Extracted Kannada Text:")
                     st.write(kannada_text)
 
-                    # Step 5: Translate sentence by sentence
+                    # Translate the text
                     st.write("Translating sentence by sentence...")
                     translated_text = translate_sentence_by_sentence(kannada_text)
                     st.subheader("Translated Text (English):")
                     st.write(translated_text)
 
-                    # Step 6: Save final translation to PDF
-                    save_to_pdf(translated_text, "final_translation.pdf")
-                    with open("final_translation.pdf", "rb") as f:
+                    # Save translated text to a PDF
+                    save_dir = os.path.expanduser("~/Documents")  # Save to Documents directory
+                    save_path = os.path.join(save_dir, "final_translation.pdf")
+                    save_to_pdf(translated_text, save_path)
+
+                    with open(save_path, "rb") as f:
                         st.download_button("Download Translated PDF", f, file_name="final_translation.pdf")
             else:
                 st.info("Please draw a rectangle to select the area containing text.")
