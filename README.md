@@ -19,7 +19,7 @@ All these features are wrapped up in a single app, giving you complete control o
 
 - **📄 Extract Text and Images**: Quickly extract searchable text and embedded images.
 - **💬 Translate Content**: Convert text into your desired language effortlessly.
-- **🔠 Render Complex Scripts**: Perfect for Indic languages like Devanagari, thanks to the **HarfBuzz** engine.
+- **🔠 Render Complex Scripts**: Perfect for Indic languages like Devanagari, thanks to the **HarfBuzz** engine to handle intricate ligatures and unicode combinations.
 - **🌈 Merge & Preserve Layout**: Combines translated content while keeping the original layout intact.
 - **🔖 Multiple Output Formats**: Save your work as PDF and Word (DOCX).
 - **🔄 Multi-page Handling**: Process multi-page documents seamlessly.
