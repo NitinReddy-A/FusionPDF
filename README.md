@@ -1,125 +1,152 @@
-# **PDF Linguist** : A Seamless PDF Content Extraction, Merging and Translation Tool
+# 🔹 **PDF Linguist**: A Seamless PDF Content Extraction, Merging, and Translation Tool
 
-## Overview
+## 🌐 *Overview*
 
-PDF Linguist is a comprehensive tool designed for seamless extraction of text and images from PDF documents, with the ability to translate the extracted content and generate both PDF and Word documents. This tool preserves the original layout, formatting, and images, making it ideal for document translation and content manipulation. The tool supports two distinct functionalities:
+**Meet PDF Linguist** – your ultimate tool for extracting, merging, and translating PDF content! 🌟 Whether it’s digital PDFs or scanned ones, this versatile app makes it a breeze to transform and translate documents while keeping the original formatting intact. Perfect for tackling all your document translation and manipulation needs! 📄✨
 
-1. **Translation of Digital PDFs**
-2. **Translation of Scanned PDFs**
+### 🔹 *Key Highlights:*
 
-Both options are integrated into a single application, allowing users to select the desired mode for processing their PDF files.
+1. **Translation for Digital PDFs** 🔍
+2. **Translation for Scanned PDFs** 🔐
 
-## Features
+All these features are wrapped up in a single app, giving you complete control over your PDF workflows. 🏠
 
-### Digital PDFs
+---
 
-- **Extract Text and Images**: Efficiently extracts searchable text and embedded images from digital PDFs.
-- **Translate Content**: Translates extracted text into a specified language.
-- **Render Complex Scripts** (Indic languages): Accurately renders complex scripts like Devanagari and other Asian languages, utilizing the **HarfBuzz software package** to handle intricate ligatures and unicode combinations.
-- **Merge and Preserve Layout**: Merges translated text and extracted images into a new PDF, maintaining the original layout and formatting.
-- **Generate Multiple Formats**: Creates both PDF and Word (DOCX) documents from the translated content.
-- **Multi-page Handling**: Supports extraction and processing across multiple pages of a PDF.
+## 🔧 *Features*
 
+### ⭐ *Digital PDFs*
 
+- **📄 Extract Text and Images**: Quickly extract searchable text and embedded images.
+- **💬 Translate Content**: Convert text into your desired language effortlessly.
+- **🔠 Render Complex Scripts**: Perfect for Indic languages like Devanagari, thanks to the **HarfBuzz** engine.
+- **🌈 Merge & Preserve Layout**: Combines translated content while keeping the original layout intact.
+- **🔖 Multiple Output Formats**: Save your work as PDF and Word (DOCX).
+- **🔄 Multi-page Handling**: Process multi-page documents seamlessly.
 
-### Scanned PDFs
+### 🔐 *Scanned PDFs*
 
-- **OCR-Based Text Extraction**: Utilizes Tesseract OCR to extract text from scanned PDF images.
-- **Customizable Content Cropping**: Users can specify dimensions for preserving headers and footers or removing irrelevant content.
-- **Translate Content**: Translates OCR-extracted text into a specified language, ensuring high-quality rendering of regional languages.
-- **Merge and Preserve Layout**: Combines the translated text with the scanned PDF layout for a seamless final output.
-- **Generate Multiple Formats**: Outputs the translated content as PDF and Word (DOCX) documents.
+- **🔍 OCR-Based Extraction**: Extract text from scanned images using **Tesseract OCR**.
+- **🕒 Customizable Cropping**: Select specific dimensions to exclude unwanted sections.
+- **💬 Translate Content**: High-quality translations for regional languages.
+- **🎨 Merge & Preserve Layout**: Seamlessly combine translated text with the scanned PDF’s layout.
+- **🔖 Multiple Output Formats**: Export translations as PDF and Word (DOCX).
 
-## Installation
+---
 
-Clone the repository:
+## 🛠️ *Installation*
 
-```bash
-git clone https://github.com/NitinReddy-A/PDF_Linguist.git
-```
+### *Prerequisites*
 
-Navigate to the project directory:
+1. Python installed on your system.
+2. Recommended: Virtual environment setup.
 
-```bash
-cd PDF_Linguist
-```
+### *Steps*
 
-Setup a virtual environment (Optional):
+1. **Clone the repository**:
 
-```bash
-python -m venv virtual-env
-virtual-env\Scripts\activate
-```
+   ```bash
+   git clone https://github.com/NitinReddy-A/PDF_Linguist.git
+   ```
 
-Install the required dependencies:
+2. **Navigate to the project directory**:
 
-```bash
-pip install -r requirements.txt
-```
+   ```bash
+   cd PDF_Linguist
+   ```
 
-## Usage
+3. **Set up a virtual environment (optional)**:
 
-### Prepare Your PDF Document
+   ```bash
+   python -m venv virtual-env
+   source virtual-env/bin/activate  # Linux/Mac
+   virtual-env\Scripts\activate    # Windows
+   ```
 
-- Place the PDF document you want to process in the **documents/** directory.
+4. **Install dependencies**:
 
-### Run the Application
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-- Launch the Streamlit app:
+---
+
+## 🎨 *Usage*
+
+### *Step 1: Prepare Your PDF Document*
+
+Place the PDF file you want to process in the `documents/` folder.
+
+### *Step 2: Run the Application*
+
+Launch the app using Streamlit:
 
 ```bash
 streamlit run app.py
 ```
 
-- Select the type of PDF to process:
-  - **Digital PDF**: For PDFs with searchable text.
-  - **Scanned PDF**: For image-based PDFs requiring OCR.
+### *Step 3: Select PDF Type*
 
-### Digital PDFs
+- **Digital PDF**: For PDFs with searchable text.
+- **Scanned PDF**: For image-based PDFs needing OCR.
 
-1. **Upload PDF**: Use the file uploader to select the PDF.
-2. **Select Language**: Choose the target language for translation.
-3. **Process**: Click the button to extract, translate, and reassemble the PDF.
-4. **Download Output**: Save the translated PDF or DOCX from the provided download links.
+#### 🔹 *Digital PDFs*
 
-### Scanned PDFs
+1. Upload your PDF using the file uploader.
+2. Choose the target language for translation.
+3. Click the button to extract, translate, and reassemble the PDF.
+4. Download your translated file in PDF or DOCX format.
 
-1. **Upload PDF**: Use the file uploader to select the scanned PDF.
-2. **Crop Dimensions (Optional)**: Define areas to select headers or footers for cleaner text extraction.
-3. **Select Language**: Choose the target language for translation.
-4. **Process**: Click the button to extract text via OCR, translate, and reassemble the PDF.
-5. **Download Output**: Save the translated PDF or DOCX from the provided download links.
+#### 🔹 *Scanned PDFs*
 
-## Note
+1. Upload your scanned PDF.
+2. Define crop dimensions (optional).
+3. Select the target translation language.
+4. Process the file to extract text via OCR, translate, and merge the layout.
+5. Download your translated file in PDF or DOCX format.
 
-- You need an API key for ConvertAPI and LightPDF API. Update the script with your API key.
-- Modify the destination language code as needed in the translation function.
+---
 
-## Dependencies
+## 📊 *Notes*
 
-- **Streamlit**: For building the interactive web application.
-- **PyMuPDF (fitz)**: For handling digital PDFs and converting pages to images.
-- **Pillow (PIL)**: For image processing tasks such as cropping and resizing.
-- **PyTesseract**: For OCR-based text extraction from scanned PDFs.
+- You’ll need API keys for **ConvertAPI** and **LightPDF API**.
+- Update the script with your API keys and specify the destination language code.
+
+---
+
+## 📝 *Dependencies*
+
+- **Streamlit**: For the user-friendly web app.
+- **PyMuPDF (fitz)**: Handles digital PDFs and converts pages to images.
+- **Pillow (PIL)**: For image processing like cropping and resizing.
+- **PyTesseract**: Extracts text from scanned PDFs using OCR.
 - **Googletrans**: For language translation.
-- **FPDF**: For generating translated PDF files.
-- **PDF2Image**: For converting PDF pages to images for OCR.
+- **FPDF**: Generates PDF files from translations.
+- **PDF2Image**: Converts PDF pages to images for OCR.
 
+---
 
+## 🚀 *APIs Utilized*
 
-## APIs Utilized
+- **LightPDF API**: Enables OCR-based conversion of scanned PDFs.
+- **ConvertAPI**: Converts between PDF and other formats seamlessly.
 
-- **LightPDF API**: Supports  conversions between Scanned PDF into other formats using OCR.
-- **ConvertAPI**: Facilitates conversions between PDF and other formats.
+---
 
+## 🗃️ *Output Files*
 
+- Translated PDFs and DOCX files are saved in the `documents/` folder.
+- Both formats preserve the layout and formatting of the original document.
 
-## Output Files
+---
 
-- Translated PDFs and DOCX files are saved in the **documents/** directory.
-- Both formats retain the layout and formatting of the original document, excluding unwanted sections like headers and footers.
+## 🖌️ *Summary*
 
-## Summary
+PDF Linguist simplifies document management with:
 
-PDF Linguist simplifies the processing of both digital and scanned PDFs, offering high accuracy in content extraction and translation while maintaining the document's original structure. The dual-mode functionality ensures versatility, catering to diverse user needs in document management and translation.
+- High-accuracy text and image extraction.
+- Smooth translations in multiple languages.
+- Seamless merging while preserving original layouts.
+
+💡 The dual-mode functionality ensures you’re ready for any type of PDF – digital or scanned. Manage and translate documents like a pro! 🔹✨
 
