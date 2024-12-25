@@ -35,13 +35,13 @@ Both options are integrated into a single application, allowing users to select 
 Clone the repository:
 
 ```bash
-git clone https://github.com/NitinReddy-A/PDFLinguist.git
+git clone https://github.com/NitinReddy-A/PDF_Linguist.git
 ```
 
 Navigate to the project directory:
 
 ```bash
-cd PDFLinguist
+cd PDF_Linguist
 ```
 
 Setup a virtual environment (Optional):
