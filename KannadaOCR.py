@@ -131,10 +131,6 @@ if uploaded_pdf:
                 if st.button("Translate and Save"):
                     st.write("Extracting Kannada text...")
                     
-                    # Specify the exact path to tesseract.exe
-                    pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
-                    # Set the TESSDATA_PREFIX environment variable
-                    os.environ["TESSDATA_PREFIX"] = r'C:\Program Files\Tesseract-OCR'
                     # Extract text from the cropped image
                     kannada_text = pytesseract.image_to_string(cropped_image, lang="kan")
                     st.subheader("Extracted Kannada Text:")
