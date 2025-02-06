@@ -10,6 +10,9 @@ import re
 import os
 import json
 from fpdf import FPDF
+import pytesseract
+pytesseract.pytesseract.tesseract_cmd = r"C:/Program Files/Tesseract-OCR/tesseract.exe"
+os.environ["TESSDATA_PREFIX"] = r"C:/Program Files/Tesseract-OCR/tessdata" 
 
 # Function to convert PDF pages to images
 def pdf_to_images(pdf_path):

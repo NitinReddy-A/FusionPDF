@@ -43,7 +43,7 @@ def process_pdfk(input_pdf_bytes):
             temp_pdf_path = temp_pdf.name
 
         # OCR and text extraction
-        API_KEY = 'wxj3ry5ayzkbk33ff'
+        API_KEY = 'wxevfmmpgifpjey11'
         RESULT_URL = 'https://techhk.aoscdn.com/api/tasks/document/ocr/'
 
         task_id = app.create_ocr_task(API_KEY, temp_pdf_path, output_format='docx')
@@ -59,7 +59,7 @@ def process_pdfk(input_pdf_bytes):
         para_indices_to_remove = [0, 1, 2, 3, 4, 5, 6, 7, 23, 24]
         app.remove_paragraphs_by_index(file_path, output_path, para_indices_to_remove)
 
-        convertapi.api_credentials = 'secret_KWmzJQRIOe8M5ueS'
+        convertapi.api_credentials = 'secret_QiCLNGSoAgsUgesp'
         convertapi.convert('pdf', {'File': output_path}, from_format='docx').save_files('ScannedPDF_Final')
 
         # Text analysis and translation
@@ -91,7 +91,7 @@ def process_pdfh(input_pdf_bytes):
             temp_pdf_path = temp_pdf.name
 
         # OCR and text extraction
-        API_KEY = 'wxj3ry5ayzkbk33ff'
+        API_KEY = 'wxevfmmpgifpjey11'
         RESULT_URL = 'https://techhk.aoscdn.com/api/tasks/document/ocr/'
 
         task_id = app.create_ocr_task(API_KEY, temp_pdf_path, output_format='docx')
@@ -107,7 +107,7 @@ def process_pdfh(input_pdf_bytes):
         para_indices_to_remove = [0, 1, 2, 3, 4, 5, 6, 7, 23, 24]
         app.remove_paragraphs_by_index(file_path, output_path, para_indices_to_remove)
 
-        convertapi.api_credentials = 'secret_KWmzJQRIOe8M5ueS'
+        convertapi.api_credentials = 'secret_QiCLNGSoAgsUgesp'
         convertapi.convert('pdf', {'File': output_path}, from_format='docx').save_files('ScannedPDF_Final')
 
         # Text analysis and translation
@@ -140,7 +140,7 @@ def process_pdfr(input_pdf_bytes):
             temp_pdf_path = temp_pdf.name
 
         # OCR and text extraction
-        API_KEY = 'wxj3ry5ayzkbk33ff'
+        API_KEY = 'wxevfmmpgifpjey11'
         RESULT_URL = 'https://techhk.aoscdn.com/api/tasks/document/ocr/'
 
         task_id = app.create_ocr_task(API_KEY, temp_pdf_path, output_format='docx')
@@ -156,7 +156,7 @@ def process_pdfr(input_pdf_bytes):
         para_indices_to_remove = [0, 1, 2, 3, 4, 5, 6, 7, 23, 24]
         app.remove_paragraphs_by_index(file_path, output_path, para_indices_to_remove)
 
-        convertapi.api_credentials = 'secret_KWmzJQRIOe8M5ueS'
+        convertapi.api_credentials = 'secret_QiCLNGSoAgsUgesp'
         convertapi.convert('pdf', {'File': output_path}, from_format='docx').save_files('ScannedPDF_Final')
 
         # Text analysis and translation
