@@ -13,13 +13,6 @@ st.markdown("""
             padding-bottom: 50px;
         }
         
-        /* Styling the buttons container */
-        .stmarkdown div{
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            margin-top: 20px;
-        }
 
         /* Styling individual buttons */
         .stButton button {
@@ -45,17 +38,19 @@ st.markdown("""
 # Title of the landing page with custom font and color
 st.markdown('<p class="title">PDFLinguist</p>', unsafe_allow_html=True)
 
-# Function to run the ScannedPDF script
-def run_scanned_pdf():
-    subprocess.run(["streamlit", "run", "Scanned_PDF.py"])
-
-# Function to run the DigitalPDF script
-def run_digital_pdf():
-    subprocess.run(["streamlit", "run", "Digital_PDF.py"])
-
-# Function to run the DigitalPDF script
-def run_KannadaOCR_pdf():
-    subprocess.run(["streamlit", "run", "KannadaOCR.py"])
+col1, col2, col3 = st.columns([1, 1, 1])
+with col1:
+    # Function to run the ScannedPDF script
+    def run_scanned_pdf():
+        subprocess.run(["streamlit", "run", "Scanned_PDF.py"])
+with col2:
+    # Function to run the DigitalPDF script
+    def run_digital_pdf():
+        subprocess.run(["streamlit", "run", "Digital_PDF.py"])
+with col3:
+    # Function to run the DigitalPDF script
+    def run_KannadaOCR_pdf():
+        subprocess.run(["streamlit", "run", "KannadaOCR.py"])
 
 # Create a container for the buttons and make them side by side
 with st.container():
